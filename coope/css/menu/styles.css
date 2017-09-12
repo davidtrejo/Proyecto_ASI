@@ -1,0 +1,563 @@
+﻿
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+
+@font-face {
+
+    font-family: 'franklin_gothic_fsCnIt';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.svg#franklin_gothic_fsCnIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemiCnIt';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.svg#franklin_gothic_fsdemiCnIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'franklin_gothic_fsbook';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.svg#franklin_gothic_fsbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'franklin_gothic_fsbook_italic';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.svg#franklin_gothic_fsbook_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemi';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.svg#franklin_gothic_fsdemi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemi_italic';
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.eot');
+    src: url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.woff2') format('woff2'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.woff') format('woff'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.ttf') format('truetype'),
+         url('http://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.svg#franklin_gothic_fsdemi_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.wrap
+{
+    margin:0 auto;
+    width:960px;
+}
+
+.wrap2
+{
+    margin:0 auto;
+    width:960px;
+}
+
+.estiloMenu
+{
+    width:100%;height: 51px; border: 1px solid #808284; background: -moz-linear-gradient(center top , #FFFFFF, #CACCCE); 
+    }
+
+.degrade
+{
+    border: 1px solid #808284; 
+    background: -webkit-linear-gradient(top , #FFFFFF, #CACCCE); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #CACCCE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #CACCCE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #CACCCE); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #CACCCE);
+}
+
+
+.submenuright
+{
+    font-family: 'franklin_gothic_fsbook';
+    float:right;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.submenuleft
+{
+    font-family: 'franklin_gothic_fsbook';
+    float:left;
+    color:#808284;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.banner1{float:left;width:454px;height:61px;}
+.banner2{float:left;width:202px;height:61px;}
+.banner3{float:left;width:174px;height:61px;}
+
+.menuspli t
+{
+    /*width:120px;*/
+    border-left:1px solid #808284;
+}
+
+
+.block{display:block;}
+.linea1bottom{
+    border-bottom:1px solid #818383;
+}
+
+/*Titulares y formularios*/
+.titular1 {font-size:24px;}
+
+
+
+.cajacampomediana{color:#FFFFFF; width:300px; height:30px;border:1px solid #e6e6e6;}
+.cajacampogrande  {color:#FFFFFF; width:620px; height:30px;border:1px solid #e6e6e6;}
+.cajacampo0 {color:#FFFFFF; height:30px;border:1px solid #e6e6e6;}  
+
+
+.titular1{padding:17px 0px 15px 10px ;font-family:'franklin_gothic_fsdemiCnIt';font-size:38px; color:#003d7d ;line-height: 42px;}
+.titular2{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:30px; color:#000000 ;line-height: 36px;}
+.titular2azul{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+.titular2azul2{padding:0px 0px 0px 0px ;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+
+.titular2azulitalic{padding:10px 0px 10px 10px;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+.titular2azulitalicrecuadro{font-family:'franklin_gothic_fsdemi_italic';font-size:22px; color:#FFFFFF ;line-height: 36px;}
+.titular3{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:24px; color:#000000 ;line-height: 28px;}
+.titular4{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:20px; color:#000000 ;line-height: 24px;}
+
+.subtitulo1Demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#003d7d;}
+.subtitulo1Demi2{padding:15px 0px 0px 0px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#003d7d;}
+.subtitulo1demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#000000;}
+.subtitulo2demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:15px; color:#000000 ;line-height: 17px;}
+.subtitulo2demiitalic{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemiCnIt';font-size:15px; color:#000000 ;line-height: 17px;}
+
+.subtitulo2demiitalicazul{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemiCnIt';font-size:17px; color:#003d7d ;line-height: 17px;}
+
+.menufooter{font-family:'franklin_gothic_fsdemi';font-size:15px; color:#4f4f4f ;line-height: 17px;}
+
+.subtitulo3Demi{padding:15px 0px 0px 0px;font-family:'franklin_gothic_fsbook';font-size:17px; color:#003d7d;}
+
+.demiazul{padding:0px 0px 0px 10px;font-family:'franklin_gothic_fsdemi';font-size:15px; color:#003d7d ;line-height: 17px;}
+.cuerpoazul{padding:0px 0px 0px 10px;font-family:'franklin_gothic_fsbook';font-size:15px; color:#003d7d ;line-height: 17px;}
+.cuerpo{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsbook';font-size:14px; color:#000000 ;line-height: 17px; }
+.cuerpogris{padding:0px 0px 15px 10px; font-family: 'franklin_gothic_fsbook';font-size:14px; color:#6d6e70; line-height: 16px;}
+.notificacioneshover:hover,.fotoshover:hover,.documentoshover:hover, .activated{color:#FFFFFF;background-color:#003d7d;}
+
+.contenido { margin: 2px auto;  }
+.menu-textgray{
+line-height: 23px;
+	}
+
+
+.footerr{
+    border-top:1px solid #818382;
+    margin: 0 20px;
+    text-align:center;
+}
+.footertext{  font-family: "franklin_gothic_fsbook";
+              font-size: 12px;color:#6c6e6d;display:block;
+              padding:0px 0px 100px 0px;
+}
+
+#main-content
+{
+    float: left;
+    padding: 0 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.panel {
+    border: medium none;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 30px;
+}
+
+.panel .panel-heading {
+    line-height: 34px;
+    padding: 0px 15px;
+    min-height: 34px;
+    border-left: 2px solid 003d7d;
+    border-right: 2px solid #003d7d;
+    border-radius: 0px;
+    position: relative;
+    box-shadow: 0px -2px 0px rgba(0, 0, 0, 0.05) inset;
+}
+
+.panel-heading, .modal-header {
+    background: #003d7d none repeat scroll 0% 0%;
+    color: white;
+    border-width: 1px 4px 0px 4px;
+    border-color: #CCC;
+    }
+
+.panel-body
+{    border-width: medium 1px 2px;
+    border-style: none solid solid;
+    border-top: medium none;
+    border-right-color: #CCC !important;
+    border-bottom-color: #CCC !important;
+    border-left-color: #CCC !important;
+}
+
+.form-horizontal .form-group {
+    border-bottom: 1px solid #EFF2F7;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.control-label2
+{
+   text-align:left;
+}
+
+tr
+{
+    margin-bottom:25px;
+    padding-bottom:15px;  
+    }
+
+td
+{
+    height:35px;
+    padding:2px;
+    margin:2px; 
+}
+
+.tdimgsubasta
+{
+   
+    
+}
+
+.tdinfosubasta
+{
+   
+    
+}
+
+/*------- Wizard ------------*/
+
+.wizard {
+	position: relative;
+	width:98%;
+    top: 0px;
+    left: 0px;
+    height: 166px;
+}
+
+.wizard .button_bar {
+	position: relative;
+	padding: 10px;
+}
+
+.wizard_content .step {
+	display: none;
+}
+
+.wizard_content {
+	display: block;
+}
+
+.wizard_steps {
+	display: block;
+}
+
+.wizard_content h1 {
+	font-weight: normal;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 15px;
+	border-bottom-color: #EEE;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin-bottom: 0px !important;
+}
+
+.wizard_progressbar {
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: -26px;
+	width: 223px;
+	z-index: 9999;
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+	border-top-color: #FFF;
+	border-right-color: #FFF;
+	border-bottom-color: #FFF;
+	border-left-color: #FFF;
+}
+
+.wizard_progressbar > div {
+	border-width: 0px;
+	margin: 0px !important;
+}
+
+
+.wizard .wizard_steps ul li {
+	min-width: 170px;
+	display: inline-block;
+	float: left;
+	list-style: none;
+	border-right: 1px solid rgba(0,0,0,0.5);
+}
+
+.wizard .wizard_steps ul li.current {
+	background: #fff;
+	border-left: 1px solid #fff !important;
+	border-right: 1px solid rgba(0,0,0,0.5) !important;
+}
+
+.wizard .wizard_steps ul li.current a {
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	border-right: 1px solid rgba(255,255,255,0.5);
+	color: #000;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+.wizard .wizard_steps ul li:last-child,.wizard .wizard_steps ul li:last-child a {
+	border-right-width: 0px;
+}
+
+.wizard .wizard_steps ul li a {
+	font-weight: normal;
+	color: #fff;
+	display: block;
+	padding: 8px 10px;
+	border-right: 1px solid rgba(255,255,255,0.2);
+	text-shadow: 0px 1px 0px #000;
+}
+
+.wizard .wizard_steps ul li a span {
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+}
+
+.wizard .wizard_steps ul li a small {
+	font-size: 10px;
+	color: #ddd;
+	margin: 5px 0 0 12px;
+	display: inline-block;
+	float: left;
+	clear: both;
+}
+
+.wizard .wizard_steps ul li.current a small {
+	color: #333;
+}
+
+
+/* Formato para Grids*/
+
+
+.mGrid {  
+    width: 100%;  
+    background-color: #fff;  
+    margin: 5px 0 10px 0;  
+    border: solid 1px #525252;  
+    border-collapse: collapse;  
+}  
+  
+    .mGrid td {  
+        padding: 2px;  
+        border: solid 1px #c1c1c1;  
+        color: #717171;  
+    }  
+  
+    .mGrid th {  
+        padding: 4px 2px;  
+        color: #fff;  
+        background: #003d7d url('../grd_head.png') repeat-x 50% top;  
+        border-left: solid 1px #525252;  
+        font-size: 0.9em;  
+    }  
+  
+    .mGrid .alt {  
+        background: #fcfcfc url('../grd_alt.png') repeat-x 50% top;
+}  
+  
+    .mGrid .pgr {  
+        background: #424242 url('../grd_pgr.png') repeat-x 50% top;
+}  
+  
+        .mGrid .pgr table {  
+            margin: 5px 0;  
+        }  
+  
+        .mGrid .pgr td {  
+            border-width: 0;  
+            padding: 0 6px;  
+            border-left: solid 1px #666;  
+            font-weight: bold;  
+            color: #fff;  
+            line-height: 12px;  
+        }  
+  
+        .mGrid .pgr a {  
+            color: #666;  
+            text-decoration: none;  
+        }  
+  
+            .mGrid .pgr a:hover {  
+                color: #000;  
+                text-decoration: none;  
+            }  
+
+.error2{border:solid 1px #f00;color:#f00;background:#ffe8e8}
+
+.navbar-default 
+{
+    color:#1d407b;
+    }
+    
+    .navbar-nav li
+    {
+        color:#1d407b;
+    }
+    
+    li
+    {
+    color:#1d407b;    
+        }
+    
+    
+    .alerts
+    {
+        color:#b94a48;
+       display:none ;
+       font-size:6;
+        }
+        
+        /*visor*/
+        body {
+    /*background-color: #CCCCCC;*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+}
+
+@media screen and (max-width: 3000px)
+{        
+    .wrap{width:996px;}
+    
+    .InicioWelcome{ margin: 3px 0 0;background-color:#e3e3e3; height:30px;}
+    .logo{float:left;width:165px;height:61px;position:static;}
+    
+    .banner1{display:block;}
+    .banner2{display:block;}
+    .banner3{display:block;}
+    .lineagris{width:996px;}
+    
+}
+
+@media screen and (max-width: 990px) 
+{
+    .submenuleft{padding-left:10px;}
+    .wrap{width:100%;padding-right:5px;!important}
+ .wrap2{width:80%;}
+
+    .logo 
+    {   float: left;
+        height: auto;
+        position: absolute;
+        top: 3px;
+        width: 175px;
+    }
+     .InicioWelcome{ margin:64px 0 0;background-color:#e3e3e3; height:35px;}
+    
+    .banner1{display:none;}
+    .banner2{display:none;}
+    .banner3{display:none;}
+
+}
+
+@media screen and (max-width: 768px)
+{
+    .degrade
+{
+    background-color:White;
+    
+    width:100%; border: none; 
+    background: -webkit-linear-gradient(top , #FFFFFF, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #FFFFFF); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #FFFFFF);
+}
+
+.menusplit
+{
+    width:100%;
+    border-left:none;
+    display:block;
+}
+} 
+
+@media screen and (max-width: 480px)
+{
+    
+#wrapper #main #main-content
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    
+}
+
+@media screen and (min-width: 768px)
+{
+    .degrade
+    {
+        height:38px;}
+        
+}

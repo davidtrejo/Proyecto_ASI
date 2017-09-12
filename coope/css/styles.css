@@ -1,0 +1,775 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+
+@font-face {
+
+    font-family: 'franklin_gothic_fsCnIt';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-CdIt-webfont.svg#franklin_gothic_fsCnIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemiCnIt';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiCdIt-webfont.svg#franklin_gothic_fsdemiCnIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'franklin_gothic_fsbook';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Book-webfont.svg#franklin_gothic_fsbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'franklin_gothic_fsbook_italic';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-BookIt-webfont.svg#franklin_gothic_fsbook_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemi';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-Demi-webfont.svg#franklin_gothic_fsdemi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'franklin_gothic_fsdemi_italic';
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.eot');
+    src: url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.woff2') format('woff2'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.woff') format('woff'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.ttf') format('truetype'),
+         url('https://www.acsa.com.sv/buscador2010/css/Webfonts/FranklinGothic-DemiIt-webfont.svg#franklin_gothic_fsdemi_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.wrap{
+    width:996px;
+    margin:0 auto;
+}
+
+.wrapimpre{
+    width:700px;
+    margin:0 auto;
+}
+
+body{margin:0; overflow-y:hidden;}
+
+
+a{
+    color: #1d407b;
+
+    text-decoration: none;}
+.comision{
+    width:116px;
+}
+.reclamo{
+    width:105px;
+}
+
+.consulta_clientes{
+    width:162px;
+}
+
+.cotizaciones{
+    width:128px;
+}
+
+.cartera{
+    width:106px;
+}
+
+.listados{
+    width:106px;
+}
+
+.concursos{
+    width:116px;
+}
+
+.asumedida{
+    width:128px;
+}
+
+.reclamos{
+    width:87px;
+}
+
+.submenuright
+{
+    font-family: 'franklin_gothic_fsbook';
+    float:right;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.submenuleft
+{
+    font-family: 'franklin_gothic_fsbook';
+    float:left;
+    color:#808284;
+    font-size:14px;
+    text-decoration:none;
+}
+
+#menu {
+    font-family: 'franklin_gothic_fsdemiCnIt';
+    font-size: 15px;
+    line-height: 12px;
+
+    /*    text-transform: uppercase;*/
+    text-align: center;
+    padding: 0 0 0 10px;
+    letter-spacing: 0.02em ;
+}
+#menu > ul {
+    width: auto;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: -webkit-linear-gradient(top , #FFFFFF, #CACCCE); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #CACCCE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #CACCCE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #CACCCE); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #CACCCE);
+}
+.degrade{
+    background: -webkit-linear-gradient(top , #FFFFFF, #CACCCE); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #CACCCE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #CACCCE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #CACCCE); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #CACCCE);
+}
+#menu > ul li#responsive-tab {
+    display: none;
+    /* Hide for large screens */
+
+}
+#menu > ul li {
+    display: inline-block;
+    *display: inline;
+
+    zoom: 1;
+
+}
+.cuadro a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #1d407b;
+    margin-top: 4% !important;
+}
+.cuadro:hover{
+    
+}
+.subul{
+    z-index:1000;
+    font-family:'franklin_gothic_fsbook';
+    font-size: 14px;
+    letter-spacing: 0.02em ;
+    background: -webkit-linear-gradient(top , #FFFFFF, #CACCCE); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #CACCCE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #CACCCE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #CACCCE); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #CACCCE);}
+
+#menu > ul li.has-sub ul li a:hover{
+    /*	  border-bottom: 1px solid #fff;
+              border-right: 1px solid #808284;*/
+
+}
+#menu > ul li.right {
+    float: right;
+}
+#menu > ul li.has-sub {
+    position: relative;
+}
+#menu > ul li.has-sub:hover ul {
+    display: block;
+}
+#menu > ul li.has-sub ul {
+    display: none;
+    width: 90px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    /*  border: 1px solid #ece6e8;
+      border-bottom: 1px solid #ece6e8;
+      border-top: 0 none;
+      
+      border-left: 1px solid #808284;
+      border-bottom: 1px solid #808284;*/
+}
+
+#menu > ul li.has-sub ul li 
+{
+    display: block;
+    /*  border-bottom: 1px solid #808284;*/
+}
+
+#menu > ul li.has-sub ul li:hover 
+{
+    display: block;
+    /*  border-bottom: 1px solid #fff;*/
+    border-left: none;
+}
+
+#menu > ul li.has-sub > a {
+
+}
+
+#menu > ul li.has-sub > a.active,
+#menu > ul li.has-sub > a:hover 
+{
+    /*  background: #1d407b  no-repeat;
+      border-right: 1px solid #ece6e8;
+      border-bottom: 1px solid #fff;*/
+    border-left: none;
+
+}
+.menufondo{
+    background: white !important;
+}
+.submenu a {
+    font-weight: normal !important;
+    font-size: 13px;
+    /*    z-index: 1000;*/
+    margin: 0;
+    padding: 0;
+    /*    display: block;*/
+    text-decoration: none;
+    color: #4e4e4e;
+    /*  border-right: 1px solid #808284;*/
+
+}
+.option {
+    font-weight: bold !important;
+    z-index: 1000;
+    display: block;
+    margin: 8px 0px 8px 0px;
+    font-size:17px;
+    color: #1d407b;
+
+}
+.option a{
+    text-decoration: none !important;
+}
+
+.subul li{
+    padding: 10% 10% 10% 10%;
+    border-right: 1px solid #808284 !important;
+    border-left: 1px solid #808284 !important;
+    border-bottom: 1px solid #808284 !important;
+    border-top: 0px !important;
+}
+.subul a{
+    font-style: normal !important;
+}
+#menu > ul li a.pr {
+    z-index: 1000;
+    display: block;
+    padding: 12px 0px 11px 0px;
+    text-decoration: none;
+ width: 102%;
+    color: #1d407b;
+    border-right: 1px solid #808284;
+
+}
+#menu > ul li a.active
+{  
+    /*  border-left: 1px solid #ffffff;*/
+}
+.sesionop{
+    font-weight: bold;
+    font-size: 16px;
+    font-style: normal !important;
+    color: #1d407b;
+    padding: 12px 0px 11px 0px;
+    display: block;
+}
+.sesionop:hover{
+    background: #1d407b;
+    color: #fff;
+    padding: 12px 0px 11px 0px;
+    display: block;
+    text-decoration: none;
+}
+#menu > ul li a.active,
+#menu > ul li a:hover 
+{
+    /*  border-right:  #808284;*/
+    /*    background: #1d407b ;*/
+    /*    color: #fff;*/
+}
+
+#menu > ul li a:hover 
+{
+    /*  border-right: 2px solid #ffffff;*/
+}
+
+
+
+@media (max-width: 600px) {
+    #menu > ul {
+        z-index: 1000;
+        width: 100%;
+    }
+    #menu > ul li#responsive-tab {
+        display: block;
+    }
+    #menu > ul li#responsive-tab a {
+        background: url('images/menu.png') no-repeat;
+        background-position: 95% -35%;
+    }
+    #menu > ul li#responsive-tab a:hover {
+        background-color: #1d407b ;
+        background-position: 95% 135%;
+    }
+    #menu > ul li {
+        display: none;
+        z-index: 1000;
+    }
+    #menu > ul li.right {
+        float: none;
+    }
+    #menu > ul .has-sub {
+
+
+    } 
+
+    #menu > ul li.has-sub {
+        position: relative;
+    }
+    #menu > ul li.has-sub ul {
+        display: block;
+        position: static;
+        width: 100%;
+
+        border: 0 none;
+
+    }
+    #menu > ul li.has-sub ul li {
+        display: block !important;
+
+    }
+    #menu > ul li.has-sub ul li a span {
+        display: block;
+
+    }
+    #menu > ul li.has-sub > a {
+        background-image: none;
+    }
+}
+/* Make sure they show even if hidden in mobile view by JS */
+@media (min-width: 600px) {
+    #menu > ul > li.collapsed {
+        display: inline-block !important;
+        *display: inline;
+        zoom: 1;
+    }
+    #menu > ul ul li.collapsed {
+        display: block !important;
+    }
+}
+.subul{
+    display: none;
+    *display: none;
+    float:left;
+}
+
+#menu > ul li.has-sub ul li:hover{
+    z-index: 1000;
+}
+.footerr{
+    border-top:1px solid #818382;
+    margin: 0 20px;
+}
+.footertext{  font-family: "franklin_gothic_fsbook";
+              font-size: 12px;color:#6c6e6d;display:block;
+              padding:0px 0px 100px 0px;
+}
+.linea1{
+    border-top:1px solid #818383;
+}
+.linea2{
+    border-top:1px solid #818383;
+}
+.lineaazul{
+    border-top:5px solid #003d7d  ;
+}
+.linea1bottom{
+    border-bottom:1px solid #818383;
+}
+.linea1bottomazul{
+    border-bottom:1px solid #003d7d;
+}
+.linea2bottom{
+    border-bottom:1px solid #818383;
+}
+.lineaazulbottom{
+    border-bottom:5px solid #003d7d  ;
+}
+
+.findbutton{   background-image: url("../images/botones.png");
+               background-position: center -263px;
+               display: block;
+               height: 62px;
+               width: 249px;
+}
+.findbutton:hover{
+    background-image: url("../images/botones.png");
+    background-position: center -340px;
+    display: block;
+    height: 62px;
+    width: 249px;
+}
+
+.enviarbutton{   background-image: url("../images/botones.png");
+                 background-position: center -97px;
+                 display: block;
+                 height: 62px;
+                 width: 249px;
+}
+.enviarbutton:hover{
+    background-image: url("../images/botones.png");
+    background-position: center -174px;
+    display: block;
+    height: 62px;
+    width: 249px;
+}
+.btn-primary {
+    color: black;
+}
+.btn-primary:hover {
+    color :none ;
+
+}
+
+.btnsesion{   
+    background-image: url("../images/btnsesion.png");
+    background-position: center ;
+    background-repeat: no-repeat;
+    display: block;
+    height: 40px;
+    width: 193px;
+}
+
+.verbutton{   background-image: url("../images/imagenescabina/botonver.png");
+              background-position: center center;
+              background-repeat: no-repeat;
+              display: block;
+              height: 25px;
+              padding: 8px 0 0;
+              width: 79px;
+}
+.verbutton:hover{   background-image: url("../images/imagenescabina/botonverover.png");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 25px;
+                    padding: 8px 0 0;
+                    width: 79px;
+}
+
+.inicio{   background-image: url("../images/imagenescabina/botonescabina.png");
+           background-position: 0 0;
+           background-repeat: no-repeat;
+           display: block;
+           height: 61px;
+
+}
+.evento{   background-image: url("../images/imagenescabina/botonescabina.png");
+           background-position: -159px 0;
+           background-repeat: no-repeat;
+           display: block;
+           height: 61px;
+
+}
+.ajuste{   background-image: url("../images/imagenescabina/botonescabina.png");
+           background-position: -340px 0;
+           background-repeat: no-repeat;
+           display: block;
+           height: 61px;
+
+}
+.preparacion{   background-image: url("../images/imagenescabina/botonescabina.png");
+                background-position: -516px 0;
+                background-repeat: no-repeat;
+                display: block;
+                height: 61px;
+
+}
+.deducible{   background-image: url("../images/imagenescabina/botonescabina.png");
+              background-position: -712px 0;
+              background-repeat: no-repeat;
+              display: block;
+              height: 61px;
+
+}
+.inicioactive, .inicio:hover{   background-image: url("../images/imagenescabina/botonescabina.png");
+                                background-position: 0 -84px;
+                                background-repeat: no-repeat;
+                                display: block;
+                                height: 61px;
+
+}
+.eventoactive,	.evento:hover{   background-image: url("../images/imagenescabina/botonescabina.png");
+                                background-position: -159px -84px;
+                                background-repeat: no-repeat;
+                                display: block;
+                                height: 61px;
+
+}
+.ajusteactive, .ajuste:hover{   background-image: url("../images/imagenescabina/botonescabina.png");
+                                background-position: -340px -84px;
+                                background-repeat: no-repeat;
+                                display: block;
+                                height: 61px;
+
+}
+.preparacionactive, .preparacion:hover{   background-image: url("../images/imagenescabina/botonescabina.png");
+                                          background-position: -516px -84px;
+                                          background-repeat: no-repeat;
+                                          display: block;
+                                          height: 61px;
+
+}
+.deducibleactive, .deducible:hover{   background-image: url("../images/imagenescabina/botonescabina.png");
+                                      background-position: -712px -84px;
+                                      background-repeat: no-repeat;
+                                      display: block;
+                                      height: 61px;
+
+}
+
+
+.left{float:left;}
+.right{float:right;}
+.clear{clear:both;}
+.widthall{width:100%;}
+.block{display:block;}
+.n960{width:960x;}
+.treecolumn1{width:20%;}
+.treecolumn2{width:40%;}
+.treecolumn3{width:40%;}
+.fivecolumns{margin: 0px 1px 0px 0px;}
+.padding8px{padding: 8px 0;}
+.padding8pxbottom{padding: 0px 0px 8px 0px;}
+.textalingleft{text-align: left;}
+.textalingright{text-align: right;}
+
+.ui-btn-icon-left::after, .ui-btn-icon-right::after, .ui-btn-icon-top::after, .ui-btn-icon-bottom::after, .ui-btn-icon-notext::after {z-index:1;}
+.ui-mobile .ui-page-active {
+
+}
+/*titulares y formularios*/
+
+.cajacampomediana{color:#FFFFFF; width:300px; height:30px;border:1px solid #e6e6e6;}
+.cajacampogrande  {color:#FFFFFF; width:620px; height:30px;border:1px solid #e6e6e6;}
+.cajacampo0 {color:#FFFFFF; height:30px;border:1px solid #e6e6e6;}  
+
+
+.titular1{padding:17px 0px 15px 10px ;font-family:'franklin_gothic_fsdemiCnIt';font-size:38px; color:#003d7d ;line-height: 42px;}
+.titular2{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:30px; color:#000000 ;line-height: 36px;}
+.titular2azul{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+.titular2azul2{padding:0px 0px 0px 0px ;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+
+.titular2azulitalic{padding:10px 0px 10px 10px;font-family:'franklin_gothic_fsdemi_italic';font-size:30px; color:#003d7d ;line-height: 36px;}
+.titular2azulitalicrecuadro{font-family:'franklin_gothic_fsdemi_italic';font-size:22px; color:#FFFFFF ;line-height: 36px;}
+.titular3{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:24px; color:#000000 ;line-height: 28px;}
+.titular4{padding:10px 0px 10px 10px ;font-family:'franklin_gothic_fsdemi';font-size:20px; color:#000000 ;line-height: 24px;}
+
+.subtitulo1Demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#003d7d;}
+.subtitulo1Demi2{padding:15px 0px 0px 0px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#003d7d;}
+.subtitulo1demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:17px; color:#000000;}
+.subtitulo2demi{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemi';font-size:15px; color:#000000 ;line-height: 17px;}
+.subtitulo2demiitalic{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemiCnIt';font-size:15px; color:#000000 ;line-height: 17px;}
+
+.subtitulo2demiitalicazul{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsdemiCnIt';font-size:17px; color:#003d7d ;line-height: 17px;}
+
+.menufooter{font-family:'franklin_gothic_fsdemi';font-size:15px; color:#4f4f4f ;line-height: 17px;}
+
+.subtitulo3Demi{padding:15px 0px 0px 0px;font-family:'franklin_gothic_fsbook';font-size:17px; color:#003d7d;}
+
+.demiazul{padding:0px 0px 0px 10px;font-family:'franklin_gothic_fsdemi';font-size:15px; color:#003d7d ;line-height: 17px;}
+.cuerpoazul{padding:0px 0px 0px 10px;font-family:'franklin_gothic_fsbook';font-size:15px; color:#003d7d ;line-height: 17px;}
+.cuerpo{padding:0px 0px 15px 10px;font-family:'franklin_gothic_fsbook';font-size:14px; color:#000000 ;line-height: 17px; }
+.cuerpogris{padding:0px 0px 15px 10px; font-family: 'franklin_gothic_fsbook';font-size:14px; color:#6d6e70; line-height: 16px;}
+.notificacioneshover:hover,.fotoshover:hover,.documentoshover:hover, .activated{color:#FFFFFF;background-color:#003d7d;}
+
+.contenido { margin: 2px auto;  }
+.menu-textgray{
+line-height: 23px;
+	}
+
+/*actualizado 19/05/2015*/
+
+.resaltado{font-size:20px;}
+
+.okbutton{   background-image: url("../images/imagenescabina/botonok.png");
+             background-position: 0px 3px;
+             background-repeat: no-repeat;
+             display: block;
+             height: 51px;
+             width:51px;
+
+}
+.okbuttonactive{    background-image: url("../images/imagenescabina/botonok.png");
+                    background-position: 0px -55px;
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 51px;
+                    width:51px;
+
+
+}
+.paso1help{   
+    left: 144px;
+    top: 33px;
+}	.paso2help{   
+    left: 318px;
+    top: 33px;
+}	.paso3help{   
+    left: 553px;
+    top: 33px;
+}	.paso4help{   
+    left: 703px;
+    top: 33px;
+}
+.pasoshelp{  font-family: "franklin_gothic_fsbook";
+             font-size: 12px;color:#6c6e6d;display:block;
+
+}
+.pasos{
+    position:relative;
+    padding:0px 0px 100px 0px;
+}
+
+.desactive{display:none;}
+.pasosactive{position:absolute;
+
+}
+
+.standarwidth{width:960px;}	
+
+.gray { background-color: #efefef; padding-top:20px; padding-bottom:20px; }
+
+.gray2 { background-color: #efefef; padding-top:20px; padding-bottom:20px; }
+.gray4 { background-color: #ccd0d3; padding-top:20px; padding-bottom:20px; }
+
+.gray3 { background-color: #efefef;}
+.text-gray { color: #4f4f4f !important;}
+.fondo  { background-color:#FFFFFF !important; }
+.border-blue{
+    border:1px solid #1d407b;
+}
+.wite{ background-color: #FFFFFF; padding-top:20px; padding-bottom:20px;}
+
+label{border:none;}
+		
+		#menu > ul li.has-sub > a.active,
+#menu > ul li.has-sub > a:hover , .menuactivo
+{
+  background: #1d407b  no-repeat;
+  border-right: 1px solid #ece6e8;
+  border-bottom:none;
+  border-left: none;
+ color:#FFFFFF;
+}
+		
+.notsee{display:none;}
+.spases3px{padding: 0 0 3px;}
+b{font-family:'franklin_gothic_fsbook';}
+
+.homeimage{width:204px;height:146px;}
+.ahome{font-size:21px;}
+.padding40{padding:40px 0px 40px 0px;}
+.social1{ background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -64px -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social2{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -128px -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social3{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -196px -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social4{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -259px  -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social5{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -315px  -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social6{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -368px  -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+.social7{background: rgba(0, 0, 0, 0) url("../images/mediaicons.jpg") no-repeat scroll -429px -8px;
+    height: 42px;
+    width: 42px;
+	padding:40px 60px 15px 0px;}
+	
+	
+	/*devexpress*/
+	/* InternalCheckBox */
+.dxeIRBFocused {  border-color: #66afe9!important;
+  outline: 0!important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+
+}
+
+/* -- Focused Style -- */
+.dxeFocused 
+{
+  border-color: #66afe9!important;
+  outline: 0!important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6)!important;
+
+}
+

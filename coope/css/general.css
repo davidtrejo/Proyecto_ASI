@@ -1,0 +1,273 @@
+﻿@media screen and (max-width: 3000px) {    .form_mobile
+            {
+                width :996px;
+ 
+            }
+            .centrar{margin:0 auto;padding-left: 51px;}
+            .logo{float:left;width:165px;height:61px;position:static;}
+           
+            .botonesright{float:right;}
+            .tabla-izquierda{float:none;}
+            .wrap{width:996px;}
+            .wrapWelcome{width:996px;}
+            .MENUBS
+            {
+                display:none;
+            }
+            .n960{width:996px;}
+            
+.slicknav_menu {
+	display:none;
+}
+.banner1{display:block;}
+
+.banner2{display:block;}
+
+.banner3{display:block;}
+
+.lineagris{width:996px;}
+ .botonesListados
+               {
+                   width:125px;
+               }
+               
+               .wrap {
+		margin: 0 auto;
+		width: 996px;
+	}
+    .wrapWelcome
+    {
+        margin: 0 auto;
+		width: 996px;
+    }
+	.slicknav_menu{display:none;}
+	
+	.displaydesktopnone{display:none;}
+                                        
+}
+
+@media screen and (max-width: 800px) 
+{
+    /**/
+    
+    /*Lineas para el menu 
+    */
+    .has-sub {  
+    border-left: 1px solid #808284!important;
+    border-top: 1px solid #1d407b!important;}
+    .slicknav_menu {
+    border-top: 3px solid #1d407b!important;
+    margin-bottom: 3px!important;
+}
+
+    
+    .titular1{font-size:27px;}
+    .titular1a{font-size:24px;}
+    .titular2azul{font-size:24px;}
+    .titular2azulitalic{font-size:24px;}
+    .centrar{margin:0 auto;padding-left: 51px;}
+    .lineagris{width:100%;}
+    .submenuleft{padding-left:10px;}
+    .logo{ height: auto;
+            z-index: -1;
+    position: absolute;
+    top: 0px;
+    width: 175px;}
+    .degrade{display:none;}
+ .slicknav_menu {
+   
+    margin-top: 20px;
+}
+                .form_mobile
+            {
+                width :100%;
+                float:left;
+                padding-right:5px;
+ 
+            }
+            .imagen_ocultar{display:none;}
+ 
+       /* #menu is the original menu */
+       .js #menu {
+             display:none;
+       }
+      
+       .js .slicknav_menu {
+             display:block;
+       }
+      
+       /*para que se pegue la tabla moi*/
+       .graphictables{float:left;}
+       .botonesright{float:none;padding-right:30%;}
+        .tabla-izquierda{float:left;}
+        
+              .wrap{width:100%;padding-right:5px;}
+              .wrapWelcome{width:100%;padding-right:5px;}
+            .n960{width:100%;padding-right:5px;}
+            
+
+	.has-sub img {display:none;}
+	.has-sub .L {float: none;}
+	.has-sub .w100  {width:auto;}
+	.has-sub .w20  {width:auto;}
+	
+	.banner1{display:none;}
+
+.banner2{display:none;}
+
+.banner3{display:none;}
+
+.botonesListados
+   {
+       margin:0 auto;
+       width:100%;
+   
+   }
+   
+   
+   	
+	.slicknav_nav {
+    color: #fff;
+    font-size: 0.875em;
+    list-style: outside none none;
+    margin: 63px 0 0!important;
+    overflow: hidden;
+    padding: 0;
+}
+	
+	
+.col-md-3{width:25%!important;}
+		.n960 {
+    width: 100%!important;
+}
+		.cuerpo{width:100%!important;
+			    margin-bottom: unset!important;
+    margin-left: unset!important;
+    margin-right: unset!important;
+    margin-top: 0!important;
+    padding-top: 15px!important;
+    position: relative!important;}
+	
+	.contenido {
+    margin: 20px auto;
+}
+	.slicknav_nav a {
+    color:#1d407b!important;
+}
+	.slicknav_nav ul{ margin:unset!important;}
+	.slicknav_nav li{ color:#1d407b!important;
+    background: -webkit-linear-gradient(top , #FFFFFF, #CACCCE); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(top , #FFFFFF, #CACCCE); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(top , #FFFFFF, #CACCCE); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top , #FFFFFF, #CACCCE); /* Standard syntax */
+    background: linear-gradient(to bottom , #FFFFFF, #CACCCE);
+}
+.displaynone{display:none;}
+	.slicknav_menu{display:unset;}
+	.slicknav_parent{width:100%!important;}
+	.has-sub{width:100%!important;}
+	.subul li {
+    border-color: unset !important;
+    border-style: unset !important;
+    border-width: unset !important;
+    padding: 0 0 0 3px;
+}
+	
+	 .MENUBS
+            {
+               display:block;
+               margin-top: 50px;
+               margin-bottom: 0px;
+            }
+	
+#cssmenu {
+    display: none;}
+	.slicknav_menu{border-top: 3px solid #1d407b;margin-bottom:15px;}
+	.topmenuabsolute{border-top:unset!important;}
+	.logo{ float: left;
+    height: 61px;
+    position: absolute;
+    top: 1px;
+    width: 165px;
+    z-index: -1;}
+	.bannersarriba{position:absolute;}
+	.menufooter{margin:unset!important;}
+	.menu-textgray{margin:unset!important;}
+.col-xs-6 {
+    margin: 0 37px 10px 34px  !important;
+    padding: unset !important;
+    width: 80% !important;
+}
+	.degrade{background: unset!important;
+    border: unset!important;
+    height: unset!important;
+    width: unset!important;}
+	.col-xs-6 .col-md-12{padding:0px;}
+	.w30 {
+    width: 40%;
+}
+.w70 {
+    margin-left: 18px;
+    width: 52%;
+}
+
+.col-md-3 {
+    width: 32% !important;
+	 margin: 0 73px 10px 0 !important;
+}
+.gray2{  margin: 0px 0px 10px 0px !important;
+    width: 46% !important;}
+
+
+.carouselslide{display:none;}
+	.banner3{display:none;}
+	.banner2{display:none;}
+	.banner1{display:none;}
+	.img-rounded{ margin-right: 17px;}
+	.wrap {
+		margin: 0 auto;
+		width: 100% 	;
+	}
+    .wrapWelcome
+    {
+        margin: 0 auto;
+		width: 100% 	;
+        margin-top:-3px;
+    }
+	.relative{position:relative;}
+	.menulateral{display:none;}
+   
+}
+
+@media screen and (max-width:550px) 
+{
+    .centrar{float:left;padding-left: 0px;}
+  
+    
+ }
+ 
+#ctl00_Principal_chrProduccionAcumuladaAgentes{margin:0 auto;}
+#ctl00_Principal_chrProduccionMensualAgentes{margin:0 auto;}
+ 
+#ctl00_Principal_BtnBuscar{margin:0 auto;}
+ 
+.ImagenInicio
+{
+    float:Right;
+}
+ 
+.overflowx{overflow-x:scroll;}
+
+.left{float:left;}
+
+
+.relative{position:relative;}
+
+
+
+ @media screen and (max-width: 400) 
+{  
+    .botonesListados{width:100%!important;}
+    .solicitarpagomobile{width:300px!important;}
+    #ctl00_MainContent_cmdSolicitar{width:100%!important;}
+    }
