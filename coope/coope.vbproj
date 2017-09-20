@@ -634,6 +634,7 @@
     <Content Include="plugins\zocial\zocial-regular-webfont.svg" />
     <Content Include="plugins\zocial\zocial.css" />
     <Content Include="admin\admin.Master" />
+    <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Resumen.aspx" />
     <Content Include="Scripts\jquery-1.4.1.js" />

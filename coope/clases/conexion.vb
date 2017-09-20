@@ -7,7 +7,10 @@ Public Class conexion
 
     Public Sub Conectar(msjError As String)
         conn = New SqlConnection
-        conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=coope; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        '' cadena de conexion comentarizada para publicar en hosting
+        ''conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=coope; user=cooperativa; password=12345; Integrated Security=SSPI;"
+
+        conn.ConnectionString = "workstation id=dbcoope.mssql.somee.com;packet size=4096;user id=cooperativa;pwd=12345678;data source=dbcoope.mssql.somee.com;persist security info=False;initial catalog=dbcoope"
         conn.Open()
 
     End Sub
