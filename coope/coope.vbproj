@@ -136,6 +136,7 @@
     <Content Include="css\stylesgalery.css" />
     <Content Include="css\table_row_event.css" />
     <Content Include="css\theme.css" />
+    <Content Include="Default.aspx" />
     <Content Include="FrmCerrarSesion.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmLoginAdmin.aspx" />
@@ -719,6 +720,13 @@
     <Compile Include="clases\clusuario.vb" />
     <Compile Include="clases\conexion.vb" />
     <Compile Include="clases\funciones.vb" />
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="FrmCerrarSesion.aspx.designer.vb">
       <DependentUpon>FrmCerrarSesion.aspx</DependentUpon>
     </Compile>
