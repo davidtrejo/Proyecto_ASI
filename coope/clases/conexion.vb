@@ -18,6 +18,7 @@ Public Class conexion
 
         '' comentario  de prueba 
 
+        '' David 
         conn.Open()
 
     End Sub
