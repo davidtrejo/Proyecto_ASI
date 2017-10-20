@@ -640,6 +640,7 @@
     <Content Include="Resumen.aspx" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="SolicitudesRetiro.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -797,6 +798,13 @@
     <Compile Include="Sitio.Master.vb">
       <DependentUpon>Sitio.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SolicitudesRetiro.aspx.designer.vb">
+      <DependentUpon>SolicitudesRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudesRetiro.aspx.vb">
+      <DependentUpon>SolicitudesRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
