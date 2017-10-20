@@ -15,7 +15,7 @@ Public Class conexion
         ''PRUEBA
         ''PRUEBA 
         conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
-        '
+        'prueba atilio
 
         '' comentario  de prueba 
 
