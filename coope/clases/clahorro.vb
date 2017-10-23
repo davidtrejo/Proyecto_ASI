@@ -341,6 +341,57 @@
     Dim c = ","
 
 
+    Public Sub leerAhorroPersona(idAhorro As Integer, ByRef msj As String)
+
+        strSql = " select * from ahorrosPersona where idahorro = " & idAhorro
+
+        Dim ahorro As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
+
+        _idProducto = ahorro("IdProducto")
+        _IdPersona = ahorro("Idpersona")
+        _idCuentaAnterior = IsNull(ahorro("idcuentaanterior"), 0)
+        _tienePrestamo = IsNull(ahorro("tieneprestamo"), False)
+        _montoCubiertoPres = IsNull(ahorro("montocubiertoenprestamo"), 0)
+        _idEstadoAhorro = IsNull(ahorro("idestado"), 1)
+
+        '' ahora leemos la información del historico
+        _idHistoricoAhorro = ObtenerHistoricoActual(_idAhorro, msj)
+        leerHistoricoAhorro(_idHistoricoAhorro, msj)
+
+        _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
+
+
+
+
+
+
+
+    End Sub
+
+    Public Sub leerHistoricoAhorro(idHistorico As Integer, ByRef msj As String)
+
+        strSql = " select * from AhorroHistorico where idHistorico =" & idHistorico
+
+        Dim row As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
+
+        _fechaInicioAhorro = row("fechainicio")
+        _idAhorroDepostio = IsNull(row("idahorrodeposito"), 0)
+        _idtasaHistorico = IsNull(row("idtasa"), 0)
+
+        If Not IsDBNull(row("fechavencimiento")) Then
+            _fechaVencimiento = row("fechavencimiento")
+        End If
+
+        If Not IsDBNull(row("fechacancelacion")) Then
+            _fechaCancelacion = row("fechacancelacion")
+        End If
+
+
+
+
+
+    End Sub
+
     Public Function ObtenerAhorros(msjError As String) As DataTable
 
         strSql = " select * from vis_ahorros"
@@ -594,56 +645,7 @@
 
     End Function
 
-    Public Sub leerAhorroPersona(idAhorro As Integer, ByRef msj As String)
 
-        strSql = " select * from ahorrosPersona where idahorro = " & idAhorro
-
-        Dim ahorro As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
-
-        _idProducto = ahorro("IdProducto")
-        _IdPersona = ahorro("Idpersona")
-        _idCuentaAnterior = IsNull(ahorro("idcuentaanterior"), 0)
-        _tienePrestamo = IsNull(ahorro("tieneprestamo"), False)
-        _montoCubiertoPres = IsNull(ahorro("montocubiertoenprestamo"), 0)
-        _idEstadoAhorro = IsNull(ahorro("idestado"), 1)
-
-        '' ahora leemos la información del historico
-        _idHistoricoAhorro = ObtenerHistoricoActual(_idAhorro, msj)
-        leerHistoricoAhorro(_idtasaHistorico, msj)
-
-        _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
-
-
-
-
-
-
-
-    End Sub
-
-    Public Sub leerHistoricoAhorro(idHistorico As Integer, ByRef msj As String)
-
-        strSql = " select * from AhorroHistorico where idHistorico =" & idHistorico
-
-        Dim row As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
-
-        _fechaInicioAhorro = row("fechainicio")
-        _idAhorroDepostio = IsNull(row("idahorrodeposito"), 0)
-        _idtasaHistorico = IsNull(row("idtasa"), 0)
-
-        If Not IsDBNull(row("fechavencimiento")) Then
-            _fechaVencimiento = row("fechavencimiento")
-        End If
-
-        If Not IsDBNull(row("fechacancelacion")) Then
-            _fechaCancelacion = row("fechacancelacion")
-        End If
-
-
-
-
-
-    End Sub
 
     Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
 
@@ -657,11 +659,48 @@
 
         For i As Integer = 0 To DiasProvision
 
-
-
             '' Obtengo todos los ahorros que voy a provisionar
             '' Primero Correr proceso sobre cuentas que depositen el interes en otras cuentas
             Dim tblAhorro As DataTable
+
+            strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
+            strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
+            strSql &= " idahorro <> (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+
+            tblAhorro = conn.ObtenerTabla(strSql, Msj)
+
+
+            For Each row As DataRow In tblAhorro.Rows
+
+
+                _idAhorro = row("IdAhorro")
+                leerAhorroPersona(_idAhorro, Msj)
+
+
+
+                Dim ValorProvision As Double = CalcularProvision(Msj, fecha, _idAhorro)
+
+                If ValorProvision <> 0 Then
+                    GuardarProvision(Msj, fecha, _idAhorro, ValorProvision)
+                End If
+
+                If fecha.Day = 28 Then
+                    ''Hay que capitalizar la cuenta
+                End If
+
+
+
+
+
+
+
+
+            Next
+
+
+
+            '' Lugeo Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
+
 
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
@@ -688,7 +727,7 @@
                     ''Hay que capitalizar la cuenta
                 End If
 
-                fecha = DateAdd("d", 1, fecha)
+
 
 
 
@@ -698,7 +737,7 @@
             Next
 
 
-
+            fecha = DateAdd("d", 1, fecha)
 
         Next
 
