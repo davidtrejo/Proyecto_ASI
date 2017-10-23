@@ -1,7 +1,15 @@
 ﻿Public Class clahorro
 
-
 #Region "Declaraciones"
+
+#Region "Enumeraciones"
+
+    Private Enum TiposMovimientosAhorro
+        Abono = 1
+        Retiro = 2
+        Capitalizacion = 3
+    End Enum
+#End Region
 
     Private _idAhorro As Integer
     Public Property IdAhorro() As Integer
@@ -10,6 +18,16 @@
         End Get
         Set(ByVal value As Integer)
             _idAhorro = value
+        End Set
+    End Property
+
+    Private _idHistoricoAhorro As Integer
+    Public Property IdHistoricoAhorro() As Integer
+        Get
+            Return _idHistoricoAhorro
+        End Get
+        Set(ByVal value As Integer)
+            _idHistoricoAhorro = value
         End Set
     End Property
 
@@ -50,6 +68,47 @@
         End Get
         Set(ByVal value As Date)
             _fechaInicioAhorro = value
+        End Set
+    End Property
+
+    '' propiedad para definir en que cuenta se guardaran los intereses ganados
+    Private _idAhorroDepostio As Integer
+    Public Property IdAhorroDeposito() As Integer
+        Get
+            Return _idAhorroDepostio
+        End Get
+        Set(ByVal value As Integer)
+            _idAhorroDepostio = value
+        End Set
+    End Property
+
+    Private _idtasaHistorico As Integer
+    Public Property idTasahistorico() As Integer
+        Get
+            Return _idtasaHistorico
+        End Get
+        Set(ByVal value As Integer)
+            _idtasaHistorico = value
+        End Set
+    End Property
+
+    Private _fechaVencimiento As Date
+    Public Property FechaVencimiento() As Date
+        Get
+            Return _fechaVencimiento
+        End Get
+        Set(ByVal value As Date)
+            _fechaVencimiento = value
+        End Set
+    End Property
+
+    Private _fechaCancelacion As String
+    Public Property FechaCancelacion() As String
+        Get
+            Return _fechaCancelacion
+        End Get
+        Set(ByVal value As String)
+            _fechaCancelacion = value
         End Set
     End Property
 
@@ -103,6 +162,26 @@
         End Get
         Set(ByVal value As Double)
             _montoCubiertoPres = value
+        End Set
+    End Property
+
+    Private _idEstadoAhorro As Integer
+    Public Property IdEstado() As Integer
+        Get
+            Return _idEstadoAhorro
+        End Get
+        Set(ByVal value As Integer)
+            _idEstadoAhorro = value
+        End Set
+    End Property
+
+    Private _uFechaProvAhorro As Date
+    Public Property uFechaProvAhorro() As Date
+        Get
+            Return _uFechaProvAhorro
+        End Get
+        Set(ByVal value As Date)
+            _uFechaProvAhorro = value
         End Set
     End Property
 
@@ -177,15 +256,7 @@
         End Set
     End Property
 
-    Private _IdHistoricoMov As Integer
-    Public Property IdHistoricoMOv() As Integer
-        Get
-            Return _IdHistoricoMov
-        End Get
-        Set(ByVal value As Integer)
-            _IdHistoricoMov = value
-        End Set
-    End Property
+
 
     Enum EstadosAhorro
         Ninguno = 0
@@ -346,6 +417,13 @@
 
     End Function
 
+    Public Function ObtenerHistoricoActual(idAhorro As Integer, ByRef msj As String) As Integer
+
+        strSql = " select max(idhistorico) as IdHistorico from AhorroHistorico  where idahorro = " & idAhorro
+
+        Return conn.ObtenerTabla(strSql, msj).Rows(0).Item("IdHistorico")
+
+    End Function
 
     Public Function ObtenerAhorrosMovimientos(msjError As String) As DataTable
 
@@ -516,6 +594,119 @@
 
     End Function
 
+    Public Sub leerAhorroPersona(idAhorro As Integer, ByRef msj As String)
+
+        strSql = " select * from ahorrosPersona where idahorro = " & idAhorro
+
+        Dim ahorro As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
+
+        _idProducto = ahorro("IdProducto")
+        _IdPersona = ahorro("Idpersona")
+        _idCuentaAnterior = IsNull(ahorro("idcuentaanterior"), 0)
+        _tienePrestamo = IsNull(ahorro("tieneprestamo"), False)
+        _montoCubiertoPres = IsNull(ahorro("montocubiertoenprestamo"), 0)
+        _idEstadoAhorro = IsNull(ahorro("idestado"), 1)
+
+        '' ahora leemos la información del historico
+        _idHistoricoAhorro = ObtenerHistoricoActual(_idAhorro, msj)
+        leerHistoricoAhorro(_idtasaHistorico, msj)
+
+        _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
+
+
+
+
+
+
+
+    End Sub
+
+    Public Sub leerHistoricoAhorro(idHistorico As Integer, ByRef msj As String)
+
+        strSql = " select * from AhorroHistorico where idHistorico =" & idHistorico
+
+        Dim row As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
+
+        _fechaInicioAhorro = row("fechainicio")
+        _idAhorroDepostio = IsNull(row("idahorrodeposito"), 0)
+        _idtasaHistorico = IsNull(row("idtasa"), 0)
+
+        If Not IsDBNull(row("fechavencimiento")) Then
+            _fechaVencimiento = row("fechavencimiento")
+        End If
+
+        If Not IsDBNull(row("fechacancelacion")) Then
+            _fechaCancelacion = row("fechacancelacion")
+        End If
+
+
+
+
+
+    End Sub
+
+    Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
+
+        ''Obtener la UltimaFechaPrivision
+        Dim MaxFechaProvision As Date = obtenerUltimaFechaProvision(Msj)
+        Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
+
+        Dim fecha As Date = MaxFechaProvision ''  fecha que ire recorriendo
+
+
+
+        For i As Integer = 0 To DiasProvision
+
+
+
+            '' Obtengo todos los ahorros que voy a provisionar
+            '' Primero Correr proceso sobre cuentas que depositen el interes en otras cuentas
+            Dim tblAhorro As DataTable
+
+            strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
+            strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
+            strSql &= " idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+
+            tblAhorro = conn.ObtenerTabla(strSql, Msj)
+
+
+            For Each row As DataRow In tblAhorro.Rows
+
+
+                _idAhorro = row("IdAhorro")
+                leerAhorroPersona(_idAhorro, Msj)
+
+
+
+                Dim ValorProvision As Double = CalcularProvision(Msj, fecha, _idAhorro)
+
+                If ValorProvision <> 0 Then
+                    GuardarProvision(Msj, fecha, _idAhorro, ValorProvision)
+                End If
+
+                If fecha.Day = 28 Then
+                    ''Hay que capitalizar la cuenta
+                End If
+
+                fecha = DateAdd("d", 1, fecha)
+
+
+
+
+
+
+            Next
+
+
+
+
+        Next
+
+
+
+    End Sub
+
+
     Public Sub provisionar(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
 
         Dim tblAhorro As DataTable
@@ -529,28 +720,25 @@
 
         For Each row As DataRow In tblAhorro.Rows
             _idAhorro = row("IdAhorro")
-            _idProducto = row("IdProducto")
-            _IdPersona = row("Idpersona")
 
-            ''Obtengo la ultima Fecha de Provision del Ahorro
-            Dim UFechaProvision As Date = obtenerUltimaFechaProvision(Msj, _idAhorro)
+            leerAhorroPersona(_idAhorro, Msj)
 
             '' si es primera vez que se provisionara la cuenta de ahorro se tomara la fecha de Inicio de la cuenta
-            If UFechaProvision = Date.MinValue Then
-                UFechaProvision = ObtenerFechaInicioAhorro(Msj, _idAhorro)
+            If uFechaProvAhorro = Date.MinValue Then
+                uFechaProvAhorro = ObtenerFechaInicioAhorro(Msj, _idAhorro)
             End If
 
 
             Dim Numdias As Integer  '' Dias a provisionar
 
-            Numdias = DateDiff(DateInterval.Day, UFechaProvision, fechaProvision)
+            Numdias = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
 
             If Numdias > 0 Then
 
-                If UFechaProvision <> fechaProvision Then
-                    '' Para evitar que repita el insert del mismo dia dos veces
+                If uFechaProvAhorro <> fechaProvision Then '' Para evitar que repita el insert del mismo dia dos veces
+
                     Dim contadorDias As Integer = 0
-                    Dim fecha As DateTime = UFechaProvision  '' fecha a recorrer
+                    Dim fecha As DateTime = uFechaProvAhorro  '' fecha a recorrer
 
                     For i As Integer = 0 To Numdias
 
@@ -644,6 +832,61 @@
         End Try
 
     End Function
+
+    Private Function ObtenerIdCapitalizacion(fecha As Date, ByRef msj As String) As Integer
+        Try
+
+            strSql = " Insert into Capitalizaciones (fechacapitalizacion )"
+            strSql &= " OUTPUT INSERTED.idcapitalizacion "
+            strSql &= "values (" & sef2(fecha) & ")"
+
+            Return conn.ObtenerTabla(strSql, msj).Rows(0).Item("idcapitalizacion")
+
+        Catch ex As Exception
+            msj = ex.Message
+            Return Nothing
+        End Try
+
+    End Function
+
+    Private Sub capitalizarAhorro(idahorro As Integer, idcapitalizacion As Integer, ByRef msj As String)
+
+
+        Try
+            '' obtengo el monto de las provisiones de la cuenta
+            strSql = " select isnull(sum(valor ),0) as valor from ProvisionInteres  "
+            strSql &= " where idahorro = " & idahorro & " and idcapitalizacion is null"
+
+            Dim valor As Double = conn.ObtenerTabla(strSql, msj).Rows(0).Item("valor")
+
+            If valor <> 0 Then
+                ''  guardo la capitalizacion de la cuenta  
+
+
+
+
+
+
+
+
+            End If
+
+
+
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+
+
+
+
+#End Region
+
+
+
 
 
 End Class

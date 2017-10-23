@@ -5,6 +5,12 @@ Public Class conexion
 
     Public conn As SqlConnection
 
+    Public Sub New()
+        Dim msjError As String = ""
+        Conectar(msjError)
+    End Sub
+
+
     Public Sub Conectar(msjError As String)
         conn = New SqlConnection
         '' cadena de conexion comentarizada para publicar en hosting
@@ -22,7 +28,6 @@ Public Class conexion
 
     Public Function ObtenerTabla(strCadena As String, ByRef msjError As String) As DataTable
 
-        Conectar(msjError)
 
 
         Dim da As SqlDataAdapter
@@ -46,7 +51,6 @@ Public Class conexion
 
     Public Sub EjecutarSql(strCadena As String, ByRef msjError As String)
 
-        Conectar(msjError)
 
 
         Dim cmd As New SqlCommand

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="calcularinteres.aspx.vb" Inherits="coope.calcularinteres" %>
+<%@ Register assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -38,9 +39,8 @@
                                                     <td>
                                                       
                                                           
-                                                                <input type='text' runat ="server" id="txtFecha" /><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/calendar.png" />
-
-                                                                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                                                                <dx:ASPxDateEdit ID="txtFecha" runat="server">
+                                                                </dx:ASPxDateEdit>
                                                         
                                                            
 
