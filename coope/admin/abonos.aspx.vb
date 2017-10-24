@@ -15,7 +15,7 @@
 
         Dim msjError As String = ""
 
-        ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, msjError)
+        ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, Me.DateFechaAplicacion.Value, msjError)
 
         Me.grid.DataBind()
 
@@ -28,7 +28,7 @@
         '' combo ahorrantes
         Dim persona As New clpersona
         Me.cmbSocio.DataSource = persona.ObtenerListaPersonas(msjError, True)
-        Me.cmbSocio.DataTextField = "nombre"
+        Me.cmbSocio.DataTextField = "nombreCompleto"
         Me.cmbSocio.DataValueField = "idpersona"
         Me.cmbSocio.DataBind()
 
@@ -63,7 +63,17 @@
 
     Protected Sub grid_DataBinding(sender As Object, e As EventArgs) Handles grid.DataBinding
         Dim msjError As String = ""
-        Me.grid.DataSource = ahorro.ObtenerAhorrosMovimientos(Me.cmbSocio.SelectedValue, Me.cmbProducto.SelectedValue, msjError)
+
+        If Me.cmbSocio.SelectedValue <> "" Then
+            Me.grid.DataSource = ahorro.ObtenerAhorrosMovimientos(Me.cmbSocio.SelectedValue, msjError)
+
+        End If
+
+        If Me.cmbProducto.SelectedValue <> "" Then
+            Me.grid.DataSource = ahorro.ObtenerAhorrosMovimientos(Me.cmbSocio.SelectedValue, Me.cmbProducto.SelectedValue, msjError)
+
+        End If
+
 
     End Sub
     Dim total As Double = 0

@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="abonos.aspx.vb" Inherits="coope.abonos" %>
+
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/jquery.maskedinput.js"></script>
@@ -30,7 +32,7 @@
 
     
     <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Ingresar Abono"></asp:Label><br></span>
+      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Ingresar Movimiento Manual"></asp:Label><br></span>
     </div>  
     
     <div id="main-content">       
@@ -64,7 +66,12 @@
                                                       
                                                      </td>
                                               </tr> 
-                                     
+                                              <tr>
+                                                    <th>Fecha Aplicación:</th>
+                                                    <td>
+                                                        <dx:ASPxDateEdit ID="DateFechaAplicacion" runat="server"></dx:ASPxDateEdit>
+                                                     </td>
+                                              </tr>                                     
                                               <tr>
                                                    <th>Descripci&oacute;n:</th>
                                                     <td>

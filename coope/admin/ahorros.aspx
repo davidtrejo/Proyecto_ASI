@@ -39,11 +39,7 @@
                                                                 <input type='text' runat ="server" id="txtFecha" /><asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/images/calendar.png" />
 
                                                                 <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-                                                        
-                                                           
-
-                                                         
-                                                     </td>
+                                                             </td>
                                               </tr>
                                              
                                               <tr>
@@ -72,7 +68,7 @@
                 <asp:BoundField DataField="idahorro" HeaderText="id">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:BoundField DataField="nombre" HeaderText="Socio">
+                <asp:BoundField DataField="nombreCompleto" HeaderText="Socio">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
                 <asp:BoundField DataField="nombreproducto" HeaderText="Producto">

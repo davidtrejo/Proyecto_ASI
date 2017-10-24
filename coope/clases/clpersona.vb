@@ -169,7 +169,7 @@ Public Class clpersona
 
     Public Function ObtenerListaPersonas(msjError As String, combo As Boolean) As DataTable
 
-        strSql = "select '' as idpersona, '' as nombre union select idpersona,nombre from personas"
+        strSql = "select '' as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from personas"
         Dim tabla As DataTable = New DataTable
 
         Try

@@ -45,7 +45,7 @@
         '' combo ahorrantes
         Dim persona As New clpersona
         Me.cmdahorrante.DataSource = persona.ObtenerListaPersonas(msjError)
-        Me.cmdahorrante.DataTextField = "nombre"
+        Me.cmdahorrante.DataTextField = "nombreCompleto"
         Me.cmdahorrante.DataValueField = "idpersona"
         Me.cmdahorrante.DataBind()
 

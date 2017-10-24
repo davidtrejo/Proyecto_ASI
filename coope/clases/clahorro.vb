@@ -493,27 +493,13 @@
 
     End Function
 
-    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
-
-        strSql = " select * from vis_ahorrosMovimientos where idpersona =" & idpersona
-        Dim tabla As DataTable = New DataTable
-
-        Try
-            tabla = conn.ObtenerTabla(strSql, msjError)
-            Return tabla
-
-        Catch ex As Exception
-            msjError = ex.Message
-            Return Nothing
-        End Try
 
 
-    End Function
 
 
     Public Function ObtenerAhorrosPersona(idpersona As Integer, msjError As String) As DataTable
 
-        strSql = " select '' as idahorro,'' as nombreproducto union  select  idahorro,nombreproducto from  vis_productosPersona  where idpersona =" & idpersona
+        strSql = " select 0 as idahorro,'' as nombreproducto union  select idahorro ,nombreproducto  from ahorrosPersona  as a inner join productos as b on a.idproducto = b.idproducto   where idpersona =" & idpersona
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -529,7 +515,7 @@
     End Function
 
 
-    Public Function GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, ByRef msjError As String)
+    Public Function GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, ByRef msjError As String)
 
         Try
 
@@ -537,7 +523,8 @@
             strSql &= idahorro & c
             strSql &= monto & c
             strSql &= "'" & descripcion & "',"
-            strSql &= " getdate() )"
+            strSql &= sef2(fechaAplicacion)
+            strSql &= ")"
 
             conn.EjecutarSql(strSql, msjError)
 
@@ -549,11 +536,26 @@
     End Function
 
 
+    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
+
+        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona
+        strSql &= " order by  idmovimiento desc"
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+            Return tabla
+
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
+    End Function
 
 
     Public Function ObtenerAhorrosMovimientos(idpersona As Integer, idahorro As Integer, msjError As String) As DataTable
 
-        strSql = " select * from vis_ahorrosMovimientos where idpersona =" & idpersona & " and idahorro =" & idahorro
+        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona & " and idahorro =" & idahorro
         strSql &= " order by  idmovimiento desc"
         Dim tabla As DataTable = New DataTable
 
