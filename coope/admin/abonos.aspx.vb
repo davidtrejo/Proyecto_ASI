@@ -15,7 +15,7 @@
 
         Dim msjError As String = ""
 
-        ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, Me.DateFechaAplicacion.Value, msjError)
+        ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, Me.DateFechaAplicacion.Value, clahorro.TiposMOvimientos.Abono, msjError)
 
         Me.grid.DataBind()
 
