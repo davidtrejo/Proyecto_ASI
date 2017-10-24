@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,6 +113,7 @@
     <Content Include="admin\inicio.aspx" />
     <Content Include="admin\listapersonas.aspx" />
     <Content Include="admin\manatenimientoproductos.aspx" />
+    <Content Include="admin\MantoConsultaSocios.aspx" />
     <Content Include="admin\Productos.aspx" />
     <Content Include="bootstrap\css\bootstrap.css" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
@@ -709,6 +711,13 @@
       <DependentUpon>manatenimientoproductos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\MantoConsultaSocios.aspx.designer.vb">
+      <DependentUpon>MantoConsultaSocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MantoConsultaSocios.aspx.vb">
+      <DependentUpon>MantoConsultaSocios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="admin\Productos.aspx.designer.vb">
       <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
@@ -719,6 +728,7 @@
     <Compile Include="clases\clahorro.vb" />
     <Compile Include="clases\clpersona.vb" />
     <Compile Include="clases\clproducto.vb" />
+    <Compile Include="clases\cltransacciones.vb" />
     <Compile Include="clases\clusuario.vb" />
     <Compile Include="clases\conexion.vb" />
     <Compile Include="clases\funciones.vb" />

@@ -203,6 +203,15 @@
                             </ul>
 
                           </li>
+                          <li class='has-sub comision order' style="width: 160px;">
+                             <a href="#" class="pr"><span>Listados</span> </a>
+                               <ul class="dropdown-menu ">
+                                <li><a href="MantoConsultaSocios.aspx" >Consulta Socios</a></li>
+                                <li><a href="#" >Provsiones</a></li>
+
+                            </ul>
+
+                        </li>
 
                         <!-- <li class='has-sub comision order' style="width: 160px;">
                                  <a href='frmCerrarSesion.aspx' class="pr"><span>Cerrar Sesion</span></a>                                
