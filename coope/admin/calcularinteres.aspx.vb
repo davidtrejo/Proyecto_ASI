@@ -30,7 +30,10 @@
 
 
 
-        ahorro.provisionar(msj, txtFecha.Value)
+        ahorro.Provisionar1(msj, txtFecha.Value)
 
     End Sub
+
+
+
 End Class

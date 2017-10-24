@@ -172,31 +172,25 @@
                         <!-- ejemplo li-->
                         <li class='has-sub comision order' style="width: 160px; border-left: 1px solid #808284;">
                             <a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>
-                           <%-- <ul class="dropdown-menu ">
-                                <li><a href="productos.aspx">Buscar Productos</a></li>
-                                <li><a href="manatenimientoproductos.aspx?">Agregar Productos</a></li>
-
-                            </ul>--%>
                         </li>
-                        <!-- termina ejemplo li -->
+                     
 
                         <li class='has-sub comision order' style="width: 160px;">
-                            <a href='ahorros.aspx' class="pr"><span>Ahorros</span></a>
+                             <a href='#' class="pr"><span>Socios</span></a>
                             <ul class="dropdown-menu ">
+                               <li> <a href='listapersonas.aspx' class="pr"><span>Lista de Socios</span></a></li>
                                 <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
-                                <li><a href="abonos.aspx?" >Ingresar Abono</a></li>
+                             
 
                             </ul>
-                        </li>
-
-                        <li class='has-sub comision order' style="width: 160px;">
-                            <a href='listapersonas.aspx' class="pr"><span>Personas</span></a>
+                          
 
                         </li>
 
                           <li class='has-sub comision order' style="width: 160px;">
                               <a href="gestionar.aspx" class="pr"><span>Gestionar</span> </a>
                                <ul class="dropdown-menu ">
+                                    <li><a href="abonos.aspx?" >Ingresar Abono</a></li>
                                 <li><a href="calcularinteres.aspx" >Gesti&oacute;n de Intereses</a></li>
                                 <li><a href="capitalizar.aspx?" >Capitalizar</a></li>
 
@@ -213,9 +207,7 @@
 
                         </li>
 
-                        <!-- <li class='has-sub comision order' style="width: 160px;">
-                                 <a href='frmCerrarSesion.aspx' class="pr"><span>Cerrar Sesion</span></a>                                
-                               </li>-->
+                      
                     </ul>
                     <!--Termina el menu -->
                 </div>

@@ -649,6 +649,19 @@
 
     Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
 
+
+        '' Primero provisionamos  las cuentas que han sido reprocesadas y que la fecha de provision este anterior a la fecha de provision de las demas cuentas
+
+
+
+
+
+
+
+
+
+
+
         ''Obtener la UltimaFechaPrivision
         Dim MaxFechaProvision As Date = obtenerUltimaFechaProvision(Msj)
         Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)

@@ -56,13 +56,13 @@
         <asp:GridView width="100%" ID="gridPersonas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="idpersona" HeaderText="Id">
+             <%--   <asp:BoundField DataField="idpersona" HeaderText="Id">
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>--%>
+                <asp:BoundField DataField="nombreCompleto" HeaderText="Nombre">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:BoundField DataField="nombre" HeaderText="Nombre">
-                <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
-                <asp:BoundField DataField="dui" HeaderText="Dui">
+              <%--  <asp:BoundField DataField="dui" HeaderText="Dui">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
                 <asp:BoundField DataField="nit" HeaderText="Nit">
@@ -70,7 +70,7 @@
                 </asp:BoundField>
                 <asp:BoundField DataField="email" HeaderText="Email">
                 <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
+                </asp:BoundField>--%>
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
