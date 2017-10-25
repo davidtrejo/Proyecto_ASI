@@ -539,16 +539,26 @@
     End Enum
 
 
-    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String)
+    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String, Optional IdCapitalizacion As Integer = 0)
 
         Try
 
-            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento) values ("
+            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento "
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= ",idcapitalizacion"
+            End If
+
+            strSql &= ") values ("
             strSql &= idahorro & c
             strSql &= monto & c
             strSql &= "'" & descripcion & "',"
             strSql &= sef2(fechaAplicacion) & c
             strSql &= IdTipoMovimiento
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= c & IdCapitalizacion
+            End If
             strSql &= ")"
 
             conn.EjecutarSql(strSql, msjError)
@@ -680,13 +690,22 @@
 
         IgualarProvisionCuentas(Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
 
+        uFechaProvAhorro = obtenerUltimaFechaProvision(Msj)
+
 
         Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
         Dim fecha As Date  ''  fecha que ire recorriendo
 
         Dim tblAhorro As DataTable
 
+
         DiasProvision = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
+
+        If DiasProvision = 0 Then
+            Exit Sub
+        End If
+
+        fecha = DateAdd(DateInterval.Day, 1, uFechaProvAhorro)
 
         For i As Integer = 0 To DiasProvision
 
@@ -726,13 +745,15 @@
 
             Next
 
-            '' Lugeo Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
+            '' Luego Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
 
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
             strSql &= " idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
+
+            ' fecha = DateAdd(DateInterval.Day, 1, uFechaProvAhorro)
 
             For Each row As DataRow In tblAhorro.Rows
 
@@ -882,7 +903,7 @@
             ''  guardo la capitalizacion de la cuenta  
 
 
-            GuardarAbono(IdAhorro, MontoCapitalizacion, "Capitalizacion Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj)
+            GuardarAbono(IdCuentaAbonar, MontoCapitalizacion, "Capitalización de Interes Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj, IdCapitalizacion)
 
             '' colocar el IdCapitalización a las provisiones
 
@@ -903,12 +924,14 @@
 
     Private Function ObtenerIdCapitalizacion(fechaCapitalizacion As Date, ByRef msj As String) As Integer
         '' Capitalizara la cuenta
-
+        Dim IdCapitalizacion As Integer = 0
         strSql = "select idcapitalizacion from Capitalizaciones  where fechacapitalizacion = " & sef2(fechaCapitalizacion)
 
+        Dim tabla As DataTable = conn.ObtenerTabla(strSql, msj)
+        If tabla.Rows.Count = 1 Then
+            IdCapitalizacion = IsNull(tabla.Rows(0).Item("idcapitalizacion"), 0)
+        End If
 
-
-        Dim IdCapitalizacion As Integer = IsNull(conn.ObtenerTabla(strSql, msj).Rows(0).Item("idcapitalizacion"), 0)
 
         If IdCapitalizacion = 0 Then
             IdCapitalizacion = InsertarIdCapitalizacion(fechaCapitalizacion, msj)
@@ -992,7 +1015,7 @@
 
             If MontoAhorrado <> 0 Then
                 _tasaInteres = obtenertasa(msj, idahorro, Fecha)
-                valorProvision = System.Math.Round(MontoAhorrado * _tasaInteres / 365, 2)
+                valorProvision = System.Math.Round((MontoAhorrado * (_tasaInteres / 100)) / 365, 2)
             End If
 
         Catch ex As Exception

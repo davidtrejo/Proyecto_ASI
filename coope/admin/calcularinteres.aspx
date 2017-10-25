@@ -39,7 +39,10 @@
                                                     <td>
                                                       
                                                           
-                                                                <dx:ASPxDateEdit ID="txtFecha" runat="server">
+                                                                <dx:ASPxDateEdit ID="txtFecha" runat="server" UseMaskBehavior="True" EnableTheming="True" Theme="Moderno">
+                                                                    <ValidationSettings>
+                                                                        <RequiredField ErrorText="* Ingrese una Fecha" IsRequired="True" />
+                                                                    </ValidationSettings>
                                                                 </dx:ASPxDateEdit>
                                                         
                                                            
@@ -58,11 +61,11 @@
                                                      
                                                      </td>
                                               </tr>
-                                              <tr><td>
-                                                  <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label></td></tr>
+                                              
                                                                                             
                                  </tbody> 
                         </table> 
+                               <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
                     </div>
                 </div> 
             </div>

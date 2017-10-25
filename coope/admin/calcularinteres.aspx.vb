@@ -9,6 +9,16 @@
 
 
     Protected Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
+
+        If Me.txtFecha.Text = "" Then
+            Me.lblErrror.Visible = True
+            Me.lblErrror.Text = "Seleccione una fecha "
+            Exit Sub
+        Else
+            Me.lblErrror.Visible = False
+        End If
+
+
         Dim ahorro As New clahorro
 
         Dim msj As String = ""
