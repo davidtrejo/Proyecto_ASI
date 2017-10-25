@@ -115,6 +115,7 @@
     <Content Include="admin\manatenimientoproductos.aspx" />
     <Content Include="admin\MantoConsultaSocios.aspx" />
     <Content Include="admin\Productos.aspx" />
+    <Content Include="admin\ReprocesarCierre.aspx" />
     <Content Include="bootstrap\css\bootstrap.css" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.js" />
@@ -723,6 +724,13 @@
     </Compile>
     <Compile Include="admin\Productos.aspx.vb">
       <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\ReprocesarCierre.aspx.designer.vb">
+      <DependentUpon>ReprocesarCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ReprocesarCierre.aspx.vb">
+      <DependentUpon>ReprocesarCierre.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="clases\clahorro.vb" />
