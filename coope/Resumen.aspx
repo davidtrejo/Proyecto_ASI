@@ -3,7 +3,7 @@
 
     
     <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Resumen de Cuentas"></asp:Label><br></span>
+      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Resumen de Cuentas"></asp:Label><br/></span>
     </div>  
     
     <div id="main-content">       

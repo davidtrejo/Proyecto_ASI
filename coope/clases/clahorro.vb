@@ -92,6 +92,16 @@
         End Set
     End Property
 
+    Private _idCuentaAbonar As Integer
+    Public Property IdCuentaAbonar() As Integer
+        Get
+            Return _idCuentaAbonar
+        End Get
+        Set(ByVal value As Integer)
+            _idCuentaAbonar = value
+        End Set
+    End Property
+
     Private _fechaVencimiento As Date
     Public Property FechaVencimiento() As Date
         Get
@@ -388,6 +398,7 @@
         _idAhorroDepostio = IsNull(row("idahorrodeposito"), 0)
         _idtasaHistorico = IsNull(row("idtasa"), 0)
 
+
         If Not IsDBNull(row("fechavencimiento")) Then
             _fechaVencimiento = row("fechavencimiento")
         End If
@@ -395,10 +406,6 @@
         If Not IsDBNull(row("fechacancelacion")) Then
             _fechaCancelacion = row("fechacancelacion")
         End If
-
-
-
-
 
     End Sub
 
@@ -532,7 +539,7 @@
     End Enum
 
 
-    Public Function GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String)
+    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String)
 
         Try
 
@@ -551,7 +558,7 @@
 
         End Try
 
-    End Function
+    End Sub
 
 
     Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
@@ -671,16 +678,13 @@
 
 
 
-        IgualarProvisionCuentas(Msj)
+        IgualarProvisionCuentas(Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
+
 
         Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
         Dim fecha As Date  ''  fecha que ire recorriendo
 
         Dim tblAhorro As DataTable
-
-
-
-
 
         DiasProvision = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
 
@@ -713,21 +717,16 @@
 
                 If fecha.Day = 28 Then
                     ''Hay que capitalizar la cuenta
+                    Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
+
+                    CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
+
+
                 End If
-
-
-
-
-
-
-
 
             Next
 
-
-
             '' Lugeo Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
-
 
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
@@ -735,14 +734,10 @@
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
-
             For Each row As DataRow In tblAhorro.Rows
-
 
                 _idAhorro = row("IdAhorro")
                 leerAhorroPersona(_idAhorro, Msj)
-
-
 
                 Dim ValorProvision As Double = CalcularProvision(Msj, fecha, _idAhorro)
 
@@ -752,14 +747,12 @@
 
                 If fecha.Day = 28 Then
                     ''Hay que capitalizar la cuenta
+                    ''Hay que capitalizar la cuenta
+                    Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
+
+                    CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
+
                 End If
-
-
-
-
-
-
-
 
             Next
 
@@ -856,6 +849,7 @@
                     ''Capitalizar Cuenta
 
                     Dim idCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
+                    CapitalizarCuenta(IdAhorro, IdAhorroDeposito, idCapitalizacion, fecha, Msj)
 
 
 
@@ -878,16 +872,33 @@
 
         Dim MontoCapitalizacion As Double
 
-        GuardarAbono(IdAhorro, MontoCapitalizacion, "Capitalizacion Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj)
+        '' obtengo el monto de las provisiones de la cuenta
+        strSql = " select isnull(sum(valor ),0) as valor from ProvisionInteres  "
+        strSql &= " where idahorro = " & IdAhorro & " and idcapitalizacion is null"
+
+        MontoCapitalizacion = conn.ObtenerTabla(strSql, Msj).Rows(0).Item("valor")
+
+        If MontoCapitalizacion <> 0 Then
+            ''  guardo la capitalizacion de la cuenta  
+
+
+            GuardarAbono(IdAhorro, MontoCapitalizacion, "Capitalizacion Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj)
+
+            '' colocar el IdCapitalización a las provisiones
+
+            strSql = " Update provisionInteres set idcapitalizacion =   " & IdCapitalizacion
+            strSql &= " where idahorro = " & IdAhorro & " and idcapitalizacion is null"
+
+            conn.EjecutarSql(strSql, Msj)
 
 
 
-
-
-
+        End If
 
 
     End Sub
+
+
 
 
     Private Function ObtenerIdCapitalizacion(fechaCapitalizacion As Date, ByRef msj As String) As Integer
@@ -903,7 +914,7 @@
             IdCapitalizacion = InsertarIdCapitalizacion(fechaCapitalizacion, msj)
         End If
 
-
+        Return IdCapitalizacion
 
 
 
@@ -1002,7 +1013,8 @@
             Return conn.ObtenerTabla(strSql, msj).Rows(0).Item("tasa")
 
         Catch ex As Exception
-
+            msj = ex.Message
+            Return Nothing
         End Try
     End Function
 
@@ -1052,36 +1064,14 @@
 
     End Function
 
-    Private Sub capitalizarAhorro(idahorro As Integer, idcapitalizacion As Integer, ByRef msj As String)
 
+    Public Sub reprocesasar(fecha As Date, ByRef msj As String, Optional IdProducto As Integer = 0, Optional Idpersona As Integer = 0, Optional idahorropersona As Integer = 0)
 
-        Try
-            '' obtengo el monto de las provisiones de la cuenta
-            strSql = " select isnull(sum(valor ),0) as valor from ProvisionInteres  "
-            strSql &= " where idahorro = " & idahorro & " and idcapitalizacion is null"
-
-            Dim valor As Double = conn.ObtenerTabla(strSql, msj).Rows(0).Item("valor")
-
-            If valor <> 0 Then
-                ''  guardo la capitalizacion de la cuenta  
-
-
-
-
-
-
-
-
-            End If
-
-
-
-        Catch ex As Exception
-
-        End Try
-
+        strSql = " Delete from "
 
     End Sub
+
+
 
 
 
