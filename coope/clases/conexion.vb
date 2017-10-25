@@ -12,17 +12,24 @@ Public Class conexion
 
 
     Public Sub Conectar(msjError As String)
-        conn = New SqlConnection
-        '' cadena de conexion comentarizada para publicar en hosting
 
-        conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
+        Try
 
-        '' cadena de conexion de maquina 
-        conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
-        '' cadena conexion maquina virtual
-        ' conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+            conn = New SqlConnection
+            '' cadena de conexion comentarizada para publicar en hosting
 
-        conn.Open()
+            conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
+
+            '' cadena de conexion de maquina 
+            conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+            '' cadena conexion maquina virtual
+            conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+
+            conn.Open()
+        Catch ex As Exception
+            msjError = ex.Message
+        End Try
+
 
     End Sub
 

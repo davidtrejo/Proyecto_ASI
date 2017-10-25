@@ -23,22 +23,22 @@ Partial Public Class ReprocesarCierre
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control cmdahorrante.
+    '''Control cmbSocio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmdahorrante As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cmbSocio As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control cmdProducto.
+    '''Control cmbProducto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmdProducto As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cmbProducto As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''Control txtFecha.
@@ -50,13 +50,13 @@ Partial Public Class ReprocesarCierre
     Protected WithEvents txtFecha As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control btnAceptar.
+    '''Control btnReprocesar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAceptar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnReprocesar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control lblErrror.

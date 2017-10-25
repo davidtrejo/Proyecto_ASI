@@ -8,7 +8,7 @@
       <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Reprocesar Cierre"></asp:Label><br/></span>
     </div>  
     
-    <div id="main-content">       
+  <div id="main-content">       
         </div>
            <div class="row-fluid">
                <div class="span12 widget">
@@ -22,13 +22,13 @@
                                        <tr>
                                                    <th>Socio:</th>
                                                     <td>                                                        
-                                                        <asp:DropDownList ID="cmdahorrante" runat="server"  CssClass="span6"></asp:DropDownList>
+                                                        <asp:DropDownList ID="cmbSocio" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
                                                      </td>
                                               </tr> 
                                       <tr>
                                                    <th>Producto:</th>
                                                     <td>
-                                                         <asp:DropDownList ID="cmdProducto" runat="server"  CssClass="span6"></asp:DropDownList>
+                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
                                                      
                                                      </td>
                                               </tr> 
@@ -43,7 +43,9 @@
                                                                     <ValidationSettings>
                                                                         <RequiredField ErrorText="* Ingrese una Fecha" IsRequired="True" />
                                                                     </ValidationSettings>
-                                                                </dx:ASPxDateEdit>                                                                                               
+                                                                </dx:ASPxDateEdit>
+                                                        
+                                                           
 
                                                          
                                                      </td>
@@ -54,7 +56,7 @@
                                                     <td>
                                                     &nbsp;
                                                        
-                                                    <asp:Button ID="btnAceptar" runat="server" Text="Calcular Interés" CssClass="btn" />
+                                                    <asp:Button ID="btnReprocesar" runat="server" Text="Reprocesar Cierre" CssClass="btn" />
                                                      
                                                      
                                                      </td>
@@ -67,4 +69,5 @@
                     </div>
                 </div> 
             </div>
+    
 </asp:Content>

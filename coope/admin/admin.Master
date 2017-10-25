@@ -192,7 +192,7 @@
                                <ul class="dropdown-menu ">
                                     <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
                                 <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
-                                
+                                <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
 
                             </ul>
 

@@ -20,19 +20,20 @@
                    	<div class="widget-content form-container">
                           <table class="table table-striped table-detail-view">
                                  <tbody> 
+                                       <tr>
+                                                   <th>Socio:</th>
+                                                    <td>                                                        
+                                                        <asp:DropDownList ID="cmbSocio" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
+                                                     </td>
+                                              </tr> 
                                       <tr>
                                                    <th>Producto:</th>
                                                     <td>
-                                                         <asp:DropDownList ID="cmdProducto" runat="server"  CssClass="span6"></asp:DropDownList>
+                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
                                                      
                                                      </td>
                                               </tr> 
-                                      <tr>
-                                                   <th>Socio:</th>
-                                                    <td>                                                        
-                                                        <asp:DropDownList ID="cmdahorrante" runat="server"  CssClass="span6"></asp:DropDownList>
-                                                     </td>
-                                              </tr> 
+                                    
                                        
                                       <tr>
                                                    <th>Fecha Hasta:</th>
@@ -56,7 +57,7 @@
                                                     <td>
                                                     &nbsp;
                                                        
-                                                    <asp:Button ID="btnAceptar" runat="server" Text="Calcular Interés" CssClass="btn" />
+                                                    <asp:Button ID="btnAceptar" runat="server" Text="Cierre Diario" CssClass="btn" />
                                                      
                                                      
                                                      </td>
