@@ -41,5 +41,15 @@
 
     End Sub
 
+    Protected Sub btnReprocesar_Click(sender As Object, e As EventArgs) Handles btnReprocesar.Click
 
+        Dim ahorro As New clahorro
+        Dim msj As String = ""
+
+        If Me.cmbSocio.Text <> "" And Me.cmbProducto.Text <> "" Then
+            ahorro.reprocesasar(Me.txtFecha.Value, msj, cmbProducto.SelectedValue, cmbSocio.SelectedValue)
+        End If
+
+
+    End Sub
 End Class

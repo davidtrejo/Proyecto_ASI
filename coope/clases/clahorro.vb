@@ -571,27 +571,27 @@
     End Sub
 
 
-    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
+    'Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
 
-        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona
-        strSql &= " order by  idmovimiento desc"
-        Dim tabla As DataTable = New DataTable
+    '    strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona
+    '    strSql &= " order by  idmovimiento desc"
+    '    Dim tabla As DataTable = New DataTable
 
-        Try
-            tabla = conn.ObtenerTabla(strSql, msjError)
-            Return tabla
+    '    Try
+    '        tabla = conn.ObtenerTabla(strSql, msjError)
+    '        Return tabla
 
-        Catch ex As Exception
-            msjError = ex.Message
-            Return Nothing
-        End Try
-    End Function
+    '    Catch ex As Exception
+    '        msjError = ex.Message
+    '        Return Nothing
+    '    End Try
+    'End Function
 
 
-    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, idahorro As Integer, msjError As String) As DataTable
+    Public Function ObtenerAhorrosMovimientos(idahorro As Integer, msjError As String) As DataTable
 
-        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona & " and idahorro =" & idahorro
-        strSql &= " order by  idmovimiento desc"
+        strSql = " select * from ahorrosPersonaMovimientos where  idahorro =" & idahorro
+        'strSql &= " order by  idmovimiento desc"
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -1089,8 +1089,34 @@
 
 
     Public Sub reprocesasar(fecha As Date, ByRef msj As String, Optional IdProducto As Integer = 0, Optional Idpersona As Integer = 0, Optional idahorropersona As Integer = 0)
+        ''Borro las capitalizaciones
+        strSql = " delete from ahorrosPersonaMovimientos where idtipomovimiento = 3 and fechamovimiento >= " & sef2(fecha)
+        If IdProducto <> 0 Then
+            strSql &= " and ( select p.idproducto from ahorrosPersona as b  inner join productos as p on p.idproducto = b.idproducto "
+            strSql &= " where a.idahorro = b.idahorro ) = " & IdProducto
+        End If
+        If Idpersona <> 0 Then
+            strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  1"
+        End If
 
-        strSql = " Delete from "
+        conn.EjecutarSql(strSql, msj)
+
+
+        ''Borro las provisiones
+        strSql = " delete from ProvisionInteres where fechaprovision >= " & sef2(fecha)
+
+        If IdProducto <> 0 Then
+            strSql &= " and ( select p.idproducto from ahorrosPersona as b  inner join productos as p on p.idproducto = b.idproducto "
+            strSql &= " where a.idahorro = b.idahorro ) = " & IdProducto
+        End If
+        If Idpersona <> 0 Then
+            strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  1"
+        End If
+
+
+        conn.EjecutarSql(strSql, msj)
+
+
 
     End Sub
 

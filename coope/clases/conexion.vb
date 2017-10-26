@@ -23,7 +23,7 @@ Public Class conexion
             '' cadena de conexion de maquina 
             conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
             '' cadena conexion maquina virtual
-            conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+            'conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
 
             conn.Open()
         Catch ex As Exception
