@@ -20,12 +20,12 @@
                                       <tr>
                                                    <th>Producto:</th>
                                                     <td>
-                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6"></asp:DropDownList>
+                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
                                                      
                                                      </td>
                                               </tr> 
                                                           
-                                              <tr>
+                                          <%--    <tr>
                                                     <th></th>
                                                     <td>
                                                     &nbsp;
@@ -34,7 +34,7 @@
                                                      
                                                      
                                                      </td>
-                                              </tr>
+                                              </tr>--%>
                                               <tr><td>
                                                   <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label></td></tr>
                                                                                             

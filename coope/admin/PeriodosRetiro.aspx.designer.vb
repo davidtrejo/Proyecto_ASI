@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Resumen
+Partial Public Class PeriodosRetiro
     
     '''<summary>
     '''Control lbltitulo.
@@ -23,29 +23,20 @@ Partial Public Class Resumen
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control cmbProducto.
+    '''Control ASPxGridView1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbProducto As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ASPxGridView1 As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control lblErrror.
+    '''Control SqlDataSource1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblErrror As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control grid.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents grid As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

@@ -38,11 +38,8 @@
 
     End Sub
 
-    Protected Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
-        Me.grid.DataBind()
-
-    End Sub
     Dim total As Double = 0
+
     Protected Sub grid_RowDataBonud(sender As Object, e As GridViewRowEventArgs) Handles grid.RowDataBound
         If e.Row.RowType = DataControlRowType.DataRow Then
             total += Convert.ToDouble(DataBinder.Eval(e.Row.DataItem, "valormovimiento"))
@@ -55,5 +52,9 @@
             e.Row.Cells(3).HorizontalAlign = HorizontalAlign.Right
 
         End If
+    End Sub
+
+    Protected Sub cmbProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProducto.SelectedIndexChanged
+        Me.grid.DataBind()
     End Sub
 End Class

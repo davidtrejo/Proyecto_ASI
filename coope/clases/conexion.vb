@@ -10,7 +10,15 @@ Public Class conexion
         Conectar(msjError)
     End Sub
 
-
+    Private _conexionString As String
+    Public Property ConexionString() As String
+        Get
+            Return _conexionString
+        End Get
+        Set(ByVal value As String)
+            _conexionString = value
+        End Set
+    End Property
     Public Sub Conectar(msjError As String)
 
         Try
@@ -20,11 +28,13 @@ Public Class conexion
 
             conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
 
+
+
             '' cadena de conexion de maquina 
             conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
             '' cadena conexion maquina virtual
-            'conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
-
+            conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+            _conexionString = conn.ConnectionString
             conn.Open()
         Catch ex As Exception
             msjError = ex.Message

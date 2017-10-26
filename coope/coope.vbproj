@@ -114,6 +114,7 @@
     <Content Include="admin\listapersonas.aspx" />
     <Content Include="admin\manatenimientoproductos.aspx" />
     <Content Include="admin\MantoConsultaSocios.aspx" />
+    <Content Include="admin\PeriodosRetiro.aspx" />
     <Content Include="admin\Productos.aspx" />
     <Content Include="admin\ReprocesarCierre.aspx" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -718,6 +719,13 @@
     <Compile Include="admin\MantoConsultaSocios.aspx.vb">
       <DependentUpon>MantoConsultaSocios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\PeriodosRetiro.aspx.designer.vb">
+      <DependentUpon>PeriodosRetiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\PeriodosRetiro.aspx.vb">
+      <DependentUpon>PeriodosRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\Productos.aspx.designer.vb">
       <DependentUpon>Productos.aspx</DependentUpon>

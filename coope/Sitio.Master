@@ -99,7 +99,7 @@
 		<div class="banner2" style="float:left;width:202px;height:61px;">
 			<%--<img src="images/banner_chatenlinea.jpg">--%>
             <!-- This code must be installed within the body tags -->
-            <script src="//www.livehelpnow.net/lhn/widgets/chatbutton/lhnchatbutton-current.min.js" type="text/javascript" id="lhnscript"></script>
+         <%--   <script src="//www.livehelpnow.net/lhn/widgets/chatbutton/lhnchatbutton-current.min.js" type="text/javascript" id="lhnscript"></script>--%>
                
                 
 		</div>
