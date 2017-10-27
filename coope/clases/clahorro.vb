@@ -539,16 +539,26 @@
     End Enum
 
 
-    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String)
+    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String, Optional IdCapitalizacion As Integer = 0)
 
         Try
 
-            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento) values ("
+            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento "
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= ",idcapitalizacion"
+            End If
+
+            strSql &= ") values ("
             strSql &= idahorro & c
             strSql &= monto & c
             strSql &= "'" & descripcion & "',"
             strSql &= sef2(fechaAplicacion) & c
             strSql &= IdTipoMovimiento
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= c & IdCapitalizacion
+            End If
             strSql &= ")"
 
             conn.EjecutarSql(strSql, msjError)
@@ -561,27 +571,27 @@
     End Sub
 
 
-    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
+    'Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
 
-        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona
-        strSql &= " order by  idmovimiento desc"
-        Dim tabla As DataTable = New DataTable
+    '    strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona
+    '    strSql &= " order by  idmovimiento desc"
+    '    Dim tabla As DataTable = New DataTable
 
-        Try
-            tabla = conn.ObtenerTabla(strSql, msjError)
-            Return tabla
+    '    Try
+    '        tabla = conn.ObtenerTabla(strSql, msjError)
+    '        Return tabla
 
-        Catch ex As Exception
-            msjError = ex.Message
-            Return Nothing
-        End Try
-    End Function
+    '    Catch ex As Exception
+    '        msjError = ex.Message
+    '        Return Nothing
+    '    End Try
+    'End Function
 
 
-    Public Function ObtenerAhorrosMovimientos(idpersona As Integer, idahorro As Integer, msjError As String) As DataTable
+    Public Function ObtenerAhorrosMovimientos(idahorro As Integer, msjError As String) As DataTable
 
-        strSql = " select * from ahorrosPersonaMovimientos where idpersona =" & idpersona & " and idahorro =" & idahorro
-        strSql &= " order by  idmovimiento desc"
+        strSql = " select * from ahorrosPersonaMovimientos where  idahorro =" & idahorro
+        'strSql &= " order by  idmovimiento desc"
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -680,13 +690,22 @@
 
         IgualarProvisionCuentas(Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
 
+        uFechaProvAhorro = obtenerUltimaFechaProvision(Msj)
+
 
         Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
         Dim fecha As Date  ''  fecha que ire recorriendo
 
         Dim tblAhorro As DataTable
 
+
         DiasProvision = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
+
+        If DiasProvision = 0 Then
+            Exit Sub
+        End If
+
+        fecha = DateAdd(DateInterval.Day, 1, uFechaProvAhorro)
 
         For i As Integer = 0 To DiasProvision
 
@@ -726,13 +745,15 @@
 
             Next
 
-            '' Lugeo Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
+            '' Luego Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
 
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
             strSql &= " idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
+
+            ' fecha = DateAdd(DateInterval.Day, 1, uFechaProvAhorro)
 
             For Each row As DataRow In tblAhorro.Rows
 
@@ -882,7 +903,7 @@
             ''  guardo la capitalizacion de la cuenta  
 
 
-            GuardarAbono(IdAhorro, MontoCapitalizacion, "Capitalizacion Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj)
+            GuardarAbono(IdCuentaAbonar, MontoCapitalizacion, "Capitalización de Interes Ref:" & IdAhorro, FechaCapitalizacion, TiposMOvimientos.Capitalizacion, Msj, IdCapitalizacion)
 
             '' colocar el IdCapitalización a las provisiones
 
@@ -903,12 +924,14 @@
 
     Private Function ObtenerIdCapitalizacion(fechaCapitalizacion As Date, ByRef msj As String) As Integer
         '' Capitalizara la cuenta
-
+        Dim IdCapitalizacion As Integer = 0
         strSql = "select idcapitalizacion from Capitalizaciones  where fechacapitalizacion = " & sef2(fechaCapitalizacion)
 
+        Dim tabla As DataTable = conn.ObtenerTabla(strSql, msj)
+        If tabla.Rows.Count = 1 Then
+            IdCapitalizacion = IsNull(tabla.Rows(0).Item("idcapitalizacion"), 0)
+        End If
 
-
-        Dim IdCapitalizacion As Integer = IsNull(conn.ObtenerTabla(strSql, msj).Rows(0).Item("idcapitalizacion"), 0)
 
         If IdCapitalizacion = 0 Then
             IdCapitalizacion = InsertarIdCapitalizacion(fechaCapitalizacion, msj)
@@ -992,7 +1015,7 @@
 
             If MontoAhorrado <> 0 Then
                 _tasaInteres = obtenertasa(msj, idahorro, Fecha)
-                valorProvision = System.Math.Round(MontoAhorrado * _tasaInteres / 365, 2)
+                valorProvision = System.Math.Round((MontoAhorrado * (_tasaInteres / 100)) / 365, 2)
             End If
 
         Catch ex As Exception
@@ -1066,8 +1089,34 @@
 
 
     Public Sub reprocesasar(fecha As Date, ByRef msj As String, Optional IdProducto As Integer = 0, Optional Idpersona As Integer = 0, Optional idahorropersona As Integer = 0)
+        ''Borro las capitalizaciones
+        strSql = " delete from ahorrosPersonaMovimientos where idtipomovimiento = 3 and fechamovimiento >= " & sef2(fecha)
+        If IdProducto <> 0 Then
+            strSql &= " and ( select p.idproducto from ahorrosPersona as b  inner join productos as p on p.idproducto = b.idproducto "
+            strSql &= " where a.idahorro = b.idahorro ) = " & IdProducto
+        End If
+        If Idpersona <> 0 Then
+            strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  1"
+        End If
 
-        strSql = " Delete from "
+        conn.EjecutarSql(strSql, msj)
+
+
+        ''Borro las provisiones
+        strSql = " delete from ProvisionInteres where fechaprovision >= " & sef2(fecha)
+
+        If IdProducto <> 0 Then
+            strSql &= " and ( select p.idproducto from ahorrosPersona as b  inner join productos as p on p.idproducto = b.idproducto "
+            strSql &= " where a.idahorro = b.idahorro ) = " & IdProducto
+        End If
+        If Idpersona <> 0 Then
+            strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  1"
+        End If
+
+
+        conn.EjecutarSql(strSql, msj)
+
+
 
     End Sub
 

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class calcularinteres
+Partial Public Class PeriodosRetiro
     
     '''<summary>
     '''Control lbltitulo.
@@ -23,47 +23,20 @@ Partial Public Class calcularinteres
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control cmbSocio.
+    '''Control ASPxGridView1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbSocio As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ASPxGridView1 As Global.DevExpress.Web.ASPxGridView
     
     '''<summary>
-    '''Control cmbProducto.
+    '''Control SqlDataSource1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbProducto As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control txtFecha.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtFecha As Global.DevExpress.Web.ASPxDateEdit
-    
-    '''<summary>
-    '''Control btnAceptar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAceptar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''Control lblErrror.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblErrror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

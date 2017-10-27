@@ -34,6 +34,25 @@ Public Class clproducto
     End Function
 
 
+    Public Function ObtenerPeriodosRetiro(idproducto As Integer, ByRef msj As String) As DataTable
+
+        strSql = " select IdPeriodoRetiro , nombreproducto , FechaDesde , FechaHasta  from PeriodosRetiro  as a inner join productos as b on a.idproducto = b.idproducto 
+"
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msj)
+            Return tabla
+
+        Catch ex As Exception
+            msj = ex.Message
+            Return Nothing
+        End Try
+
+
+    End Function
+
+
     Public Function ObtenerTiposProductos(msjError As String) As DataTable
 
         strSql = " select * from tipoproductos"

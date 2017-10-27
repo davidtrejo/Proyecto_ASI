@@ -70,7 +70,7 @@
         End If
 
         If Me.cmbProducto.SelectedValue <> "" Then
-            Me.grid.DataSource = ahorro.ObtenerAhorrosMovimientos(Me.cmbSocio.SelectedValue, Me.cmbProducto.SelectedValue, msjError)
+            Me.grid.DataSource = ahorro.ObtenerAhorrosMovimientos(Me.cmbProducto.SelectedValue, msjError)
 
         End If
 

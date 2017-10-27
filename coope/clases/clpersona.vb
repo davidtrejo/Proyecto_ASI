@@ -134,7 +134,7 @@ Public Class clpersona
 
         Try
 
-            Dim strCadena As String = " select * from personas where nit = '" & nit & "' and password = '" & password & "'"
+            Dim strCadena As String = " select top 1 * from personas where nit = '" & nit & "' and password = '" & password & "'"
 
 
             Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)

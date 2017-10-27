@@ -32,15 +32,6 @@ Partial Public Class Resumen
     Protected WithEvents cmbProducto As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control btnMostrar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnMostrar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control lblErrror.
     '''</summary>
     '''<remarks>

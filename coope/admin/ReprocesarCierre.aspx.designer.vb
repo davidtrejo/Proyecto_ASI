@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class calcularinteres
+Partial Public Class ReprocesarCierre
     
     '''<summary>
     '''Control lbltitulo.
@@ -50,13 +50,13 @@ Partial Public Class calcularinteres
     Protected WithEvents txtFecha As Global.DevExpress.Web.ASPxDateEdit
     
     '''<summary>
-    '''Control btnAceptar.
+    '''Control btnReprocesar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAceptar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnReprocesar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control lblErrror.
