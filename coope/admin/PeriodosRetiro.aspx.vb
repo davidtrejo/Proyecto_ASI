@@ -10,7 +10,7 @@
             Dim conn As New conexion
 
 
-            Me.SqlDataSource1.ConnectionString = conn.ConexionString
+            Me.SqlDataSource1.ConnectionString = conn.CadenaConexion
 
             'Me.cmbProducto.DataSource = producto.ObtenerListaProductos(msj)
             'Me.cmbProducto.DataTextField = "nombreproducto"

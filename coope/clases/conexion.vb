@@ -5,6 +5,17 @@ Public Class conexion
 
     Public conn As SqlConnection
 
+    Private _cadenaConexion As String
+    Public Property CadenaConexion() As String
+        Get
+            Return _cadenaConexion
+        End Get
+        Set(ByVal value As String)
+            _cadenaConexion = value
+        End Set
+    End Property
+
+
     Public Sub New()
         Dim msjError As String = ""
         Conectar(msjError)
@@ -23,6 +34,8 @@ Public Class conexion
         'conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
         ''' cadena conexion maquina virtual
         'conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+
+        CadenaConexion = conn.ConnectionString
 
         conn.Open()
 
