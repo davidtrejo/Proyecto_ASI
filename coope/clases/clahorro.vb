@@ -514,9 +514,21 @@
 
 
 
-    Public Function ObtenerAhorrosPersona(idpersona As Integer, msjError As String) As DataTable
+    Public Function ObtenerAhorrosPersona(idpersona As Integer, msjError As String, Optional DepositarEnEllaMIsma As Boolean = False) As DataTable
 
-        strSql = " select 0 as idahorro,'' as nombreproducto union  select idahorro ,nombreproducto  from ahorrosPersona  as a inner join productos as b on a.idproducto = b.idproducto   where idpersona =" & idpersona
+        Dim condicion As String = ""
+
+        If DepositarEnEllaMIsma <> 0 Then
+            strSql = " select 0 as idahorro,' La misma Cuenta' as nombreproducto "
+            condicion = " and b.idtipoproducto not in (1,2) "
+        Else
+            strSql = " select 0 as idahorro,'' as nombreproducto "
+        End If
+
+        strSql &= "union  select idahorro , cast( a.idahorro as varchar(50) )+ ' - ' + nombreproducto  as nombreproducto from ahorrosPersona  as a inner join productos as b on a.idproducto = b.idproducto   where idpersona =" & idpersona
+        strSql &= condicion
+
+
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -605,19 +617,52 @@
     End Function
 
 
-    Public Sub GuardarAhorro(tipoproducto As Integer, idpersona As Integer, fechainicio As String, ByRef msjError As String)
-
+    Public Function GuardarAhorro(IdProducto As Integer, idpersona As Integer, fechainicio As Date, IdAhorroDeposito As Integer, ByRef msjError As String) As Integer
 
         Try
-            strSql = " Insert into ahorrosPersona (idproducto,idpersona) values ( "
-            strSql &= tipoproducto & c
+            strSql = " Insert into ahorrosPersona (idproducto,idpersona,idestado) output inserted.idahorro values ( "
+            strSql &= IdProducto & c
             strSql &= idpersona & c
-            strSql &= "'" & fechainicio & "' )"
+            strSql &= 1 & ")"
 
-            conn.EjecutarSql(strSql, msjError)
+            _idAhorro = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idahorro")
+
+            '' obtenemos la tasa actual para ese ahorro
+
+            strSql = " select isnull( max(idtasa) ,0)as idtasa from tasasInteres  where idproducto =   " & IdProducto
+
+            _tasaInteres = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idtasa")
+
+            If IdAhorroDeposito = 0 Then
+                IdAhorroDeposito = _idAhorro
+            End If
+
+            GuardarHistorico(_idAhorro, "Creación de Cuenta", fechainicio, IdAhorroDeposito, _tasaInteres, msjError)
+
+
 
         Catch ex As Exception
             msjError = ex.Message
+        End Try
+
+        Return _idAhorro
+
+    End Function
+
+    Public Sub GuardarHistorico(idahorro As Integer, comentario As String, fechainicio As Date, idahorroDeposito As Integer, idtasa As Integer, msjError As String)
+
+        strSql = " Insert into ahorroHistorico (comentarioHistorico,idahorro,fechaInicio,idahorroDeposito,idtasa) values   ('"
+        strSql &= comentario & "',"
+        strSql &= idahorro & c
+        strSql &= sef2(fechainicio) & c
+        strSql &= idahorroDeposito & c
+        strSql &= idtasa & ")"
+
+        Try
+
+            conn.EjecutarSql(strSql, msjError)
+        Catch ex As Exception
+
         End Try
 
     End Sub

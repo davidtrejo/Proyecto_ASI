@@ -73,7 +73,7 @@
         Dim msjError As String = ""
         Try
             ' ahorro.GuardarAhorro(Me.cmdProducto.SelectedValue, Me.cmdahorrante.SelectedValue, Sef(Me.Calendar1.SelectedDate.Date, "dd/mm/yyyy", False), msjError)
-            ahorro.GuardarAhorro(Me.cmdProducto.SelectedValue, Me.cmdahorrante.SelectedValue, String.Format("{0:yyyyMMdd}", Me.Calendar1.SelectedDate.Date), msjError)
+            'ahorro.GuardarAhorro(Me.cmdProducto.SelectedValue, Me.cmdahorrante.SelectedValue, String.Format("{0:yyyyMMdd}", Me.Calendar1.SelectedDate.Date), msjError)
 
             If msjError = "" Then
                 Me.grid.DataBind()
