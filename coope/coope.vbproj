@@ -109,11 +109,13 @@
     <Content Include="admin\ahorros.aspx" />
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
+    <Content Include="admin\frmSocios.aspx" />
     <Content Include="admin\gestionar.aspx" />
     <Content Include="admin\inicio.aspx" />
     <Content Include="admin\listapersonas.aspx" />
     <Content Include="admin\manatenimientoproductos.aspx" />
-    <Content Include="admin\MantoConsultaSocios.aspx" />
+    <Content Include="admin\MantoTransaccionesSocios.aspx" />
+    <Content Include="admin\MantoSocios.aspx" />
     <Content Include="admin\Productos.aspx" />
     <Content Include="bootstrap\css\bootstrap.css" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
@@ -683,6 +685,13 @@
       <DependentUpon>Capitalizar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmSocios.aspx.designer.vb">
+      <DependentUpon>frmSocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmSocios.aspx.vb">
+      <DependentUpon>frmSocios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\gestionar.aspx.designer.vb">
       <DependentUpon>gestionar.aspx</DependentUpon>
     </Compile>
@@ -711,12 +720,19 @@
       <DependentUpon>manatenimientoproductos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="admin\MantoConsultaSocios.aspx.designer.vb">
-      <DependentUpon>MantoConsultaSocios.aspx</DependentUpon>
+    <Compile Include="admin\MantoTransaccionesSocios.aspx.designer.vb">
+      <DependentUpon>MantoTransaccionesSocios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\MantoConsultaSocios.aspx.vb">
-      <DependentUpon>MantoConsultaSocios.aspx</DependentUpon>
+    <Compile Include="admin\MantoTransaccionesSocios.aspx.vb">
+      <DependentUpon>MantoTransaccionesSocios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\MantoSocios.aspx.designer.vb">
+      <DependentUpon>MantoSocios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MantoSocios.aspx.vb">
+      <DependentUpon>MantoSocios.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\Productos.aspx.designer.vb">
       <DependentUpon>Productos.aspx</DependentUpon>

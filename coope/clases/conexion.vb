@@ -14,13 +14,15 @@ Public Class conexion
     Public Sub Conectar(msjError As String)
         conn = New SqlConnection
         '' cadena de conexion comentarizada para publicar en hosting
+        ''Conexion produccion
+        'conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
+        ''Conexion desarrollo
+        conn.ConnectionString = "Data Source=SQL5031.smarterasp.net;Initial Catalog=DB_A2BDCF_coopeprueba;User Id=DB_A2BDCF_coopeprueba_admin;Password=Abc12345;"
 
-        conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
-
-        '' cadena de conexion de maquina 
-        conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
-        '' cadena conexion maquina virtual
-        conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        ''' cadena de conexion de maquina 
+        'conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        ''' cadena conexion maquina virtual
+        'conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
 
         conn.Open()
 
@@ -54,13 +56,16 @@ Public Class conexion
 
 
         Dim cmd As New SqlCommand
-
+        Dim transSql As SqlTransaction
+        transSql = cmd.Connection.BeginTransaction(IsolationLevel.ReadCommitted)
         Try
             cmd = New SqlCommand(strCadena, conn)
             cmd.ExecuteNonQuery()
+            transSql.Commit()
 
         Catch ex As Exception
             msjError = ex.Message
+            transSql.Rollback()
         End Try
 
     End Sub

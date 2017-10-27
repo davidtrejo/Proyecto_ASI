@@ -1,37 +1,11 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="MantoSocios.aspx.vb" Inherits="coope.MantoSocios" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="frmSocios.aspx.vb" Inherits="coope.frmSocios" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-    <style type="text/css">
-        .auto-style2 {
-        display: inline;
-        zoom: 1;
-        font-size: 12px;
-        line-height: 18px;
-        text-align: center;
-        vertical-align: middle;
-        cursor: pointer;
-        color: #333333;
-        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
-        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
-        border: 0 none #c5c5c5;
-        margin-left: .3em;
-        padding: 4px 12px;
-        background-color: #f5f5f5;
-        background-image: url('linear-gradient(to%20bottom,%20#ffffff, #e6e6e6)');
-        background-repeat: repeat-x;
-    }
-    </style>
-    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom">Mantenimiento de socios <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
+      <span class="titular1 block linea1bottom">Información del socio <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
           <br/></span>
     </div>
     
@@ -46,16 +20,49 @@
                 <table class="table table-striped table-detail-view">
                     <tbody>
                         <tr>
-                            <th>Nombre socio:</th>
+                            <th>Primer nombre :</th>
                             <td>
-                                <asp:TextBox ID="txtNombre" runat="server" Width="300px"></asp:TextBox>
+                                <asp:TextBox ID="txtPrimerNombre" runat="server" Width="300px"></asp:TextBox>
                             </td>
-                           
+                            <th>Segundo nombre :</th>
                             <td>
-                                &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" OnClick="btnBuscar_Click"></asp:Button>
-                                &nbsp;<asp:Button ID="btnAgregar" runat="server" Text="Agregar socio" CssClass="auto-style2" OnClick="btnAgregar_Click" Width="110px"></asp:Button>
-                            </td>
+                                <asp:TextBox ID="txtSegundoNombre" runat="server" Width="300px"></asp:TextBox>
+                            </td> 
                         </tr>
+                        <tr>
+                            <th>Primer apellido :</th>
+                            <td>
+                                <asp:TextBox ID="txtPrimerApe" runat="server" Width="300px"></asp:TextBox>
+                            </td>
+                            <th>Segundo apellido :</th>
+                            <td>
+                                <asp:TextBox ID="txtSegundoApe" runat="server" Width="300px"></asp:TextBox>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <th>Número de DUI:</th>
+                            <td>
+                                <asp:TextBox ID="txtDUI" runat="server" Width="100px"></asp:TextBox>
+                            </td>
+                            <th>NIT:</th>
+                            <td>
+                                <asp:TextBox ID="txtNit" runat="server" Width="100px"></asp:TextBox>
+                            </td>                            
+                        </tr>
+                         <tr>
+                            <th>Dirección:</th>
+                            <td colspan="4">
+                                <asp:TextBox ID="txtDireccion" runat="server" Width="600px"></asp:TextBox>
+                            </td>                             
+                        </tr>
+                        <tr>
+                            <th>F.Nacimiento:</th>
+                            <td>
+                                <asp:TextBox ID="txtFNacimiento" runat="server" Width="100px" ></asp:TextBox>
+                            </td>                        
+                        </tr>
+
+
                         <tr>
                             <td>
                                 <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
