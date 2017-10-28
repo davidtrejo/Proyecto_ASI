@@ -6,6 +6,47 @@ Public Class clproducto
     Dim conn As New conexion
     Dim c = ","
 
+
+    Private _idTasa As Integer
+    Public Property Idtasa() As Integer
+        Get
+            Return _idTasa
+        End Get
+        Set(ByVal value As Integer)
+            _idTasa = value
+        End Set
+    End Property
+
+    Private _tasa As Decimal
+    Public Property tasa() As Decimal
+        Get
+            Return _tasa
+        End Get
+        Set(ByVal value As Decimal)
+            _tasa = value
+        End Set
+    End Property
+
+    Private _DuracionEnDias As Integer
+    Public Property DuracionEndias() As Integer
+        Get
+            Return _DuracionEnDias
+        End Get
+        Set(ByVal value As Integer)
+            _DuracionEnDias = value
+        End Set
+    End Property
+
+    Private _nombreProduto As String
+    Public Property NombreProducto() As String
+        Get
+            Return _nombreProduto
+        End Get
+        Set(ByVal value As String)
+            _nombreProduto = value
+        End Set
+    End Property
+
     Private _idProducto As Integer
     Public Property IdProducto() As Integer
         Get
@@ -13,6 +54,27 @@ Public Class clproducto
         End Get
         Set(ByVal value As Integer)
             _idProducto = value
+        End Set
+    End Property
+
+
+    Private _IdtipoPRoducto As Integer
+    Public Property IdTipoProducto() As Integer
+        Get
+            Return _IdtipoPRoducto
+        End Get
+        Set(ByVal value As Integer)
+            _IdtipoPRoducto = value
+        End Set
+    End Property
+
+    Private _NombreTipoProducto As String
+    Public Property NombreTipoProducto() As String
+        Get
+            Return _NombreTipoProducto
+        End Get
+        Set(ByVal value As String)
+            _NombreTipoProducto = value
         End Set
     End Property
 
@@ -85,6 +147,43 @@ Public Class clproducto
         Catch ex As Exception
             msjError = ex.Message
         End Try
+
+    End Sub
+
+    Public Sub leerProducto(idproducto As Integer, msjError As String)
+
+        strSql = " select * from productos where idproducto =" & idproducto
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+
+            If tabla.Rows.Count = 1 Then
+                Dim row As DataRow = tabla.Rows(0)
+                _idProducto = row("idproducto")
+                _nombreProduto = row("nombreproducto")
+                _DuracionEnDias = row("DuracionenDias")
+                _IdtipoPRoducto = row("idtipoproducto")
+
+                '' obtenemos el nombre del tipo de producto
+
+                strSql = " select nombretipoproducto from tipoproductos  where idtipoproducto =   " & _IdtipoPRoducto
+                _NombreTipoProducto = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("nombretipoproducto")
+
+                '' obtenemos la tasa actual de este producto
+
+                strSql = " select isnull( max(idtasa) ,0)as idtasa from tasasInteres  where idproducto =   " & idproducto
+                _idTasa = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idtasa")
+
+
+
+            End If
+
+        Catch ex As Exception
+            msjError = ex.Message
+
+        End Try
+
 
     End Sub
 

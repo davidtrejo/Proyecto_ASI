@@ -333,6 +333,8 @@
         End Set
     End Property
 
+
+
     Private _idTasa As Decimal
     Public Property IdTasa() As Decimal
         Get
@@ -627,17 +629,8 @@
 
             _idAhorro = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idahorro")
 
-            '' obtenemos la tasa actual para ese ahorro
 
-            strSql = " select isnull( max(idtasa) ,0)as idtasa from tasasInteres  where idproducto =   " & IdProducto
-
-            _tasaInteres = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idtasa")
-
-            If IdAhorroDeposito = 0 Then
-                IdAhorroDeposito = _idAhorro
-            End If
-
-            GuardarHistorico(_idAhorro, "Creación de Cuenta", fechainicio, IdAhorroDeposito, _tasaInteres, msjError)
+            GuardarHistorico(_idAhorro, IdProducto, "Creación de Cuenta", fechainicio, IdAhorroDeposito, msjError)
 
 
 
@@ -649,20 +642,45 @@
 
     End Function
 
-    Public Sub GuardarHistorico(idahorro As Integer, comentario As String, fechainicio As Date, idahorroDeposito As Integer, idtasa As Integer, msjError As String)
+    Public Sub GuardarHistorico(idahorro As Integer, idProducto As Integer, comentario As String, fechainicio As Date, idahorroDeposito As Integer, ByRef msjError As String)
 
-        strSql = " Insert into ahorroHistorico (comentarioHistorico,idahorro,fechaInicio,idahorroDeposito,idtasa) values   ('"
+        '' obtenemos los datos actuales del producto
+
+        Dim producto As New clproducto
+        producto.leerProducto(idProducto, msjError)
+
+        If idahorroDeposito = 0 Then
+            idahorroDeposito = _idAhorro
+        End If
+
+
+
+
+        strSql = " Insert into ahorroHistorico (comentarioHistorico,idahorro,fechaInicio,idahorroDeposito,idtasa"
+
+        If producto.IdTipoProducto = 2 Then ''Depositos
+            strSql &= " ,fechaVencimiento "
+        End If
+
+        strSql &= ") values   ('"
         strSql &= comentario & "',"
         strSql &= idahorro & c
         strSql &= sef2(fechainicio) & c
         strSql &= idahorroDeposito & c
-        strSql &= idtasa & ")"
+        strSql &= producto.Idtasa
+
+        If producto.IdTipoProducto = 2 Then ''Depositos
+
+            strSql &= " ,dateadd(d," & producto.DuracionEndias & "," & sef2(fechainicio) & ") "
+        End If
+
+        strSql &= ")"
 
         Try
 
             conn.EjecutarSql(strSql, msjError)
         Catch ex As Exception
-
+            msjError = ex.Message
         End Try
 
     End Sub

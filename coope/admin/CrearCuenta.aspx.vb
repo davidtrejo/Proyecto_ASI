@@ -89,7 +89,7 @@
 
         ahorro.GuardarAhorro(Me.cmbProducto.SelectedValue, Me.cmbSocio.SelectedValue, Me.txtFecha.Value, Me.cmbInteres.SelectedValue, msjError)
 
-        If msjError <> "" Then
+        If msjError = "" Then
             Me.lblErrror.Visible = False
         Else
             Me.lblErrror.Text = "Ocurrio un error al guardar la cuenta "

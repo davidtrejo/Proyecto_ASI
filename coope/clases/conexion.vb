@@ -69,16 +69,16 @@ Public Class conexion
 
 
         Dim cmd As New SqlCommand
-        Dim transSql As SqlTransaction
-        transSql = cmd.Connection.BeginTransaction(IsolationLevel.ReadCommitted)
+        'Dim transSql As SqlTransaction
+        'transSql = cmd.Connection.BeginTransaction(IsolationLevel.ReadCommitted)
         Try
             cmd = New SqlCommand(strCadena, conn)
             cmd.ExecuteNonQuery()
-            transSql.Commit()
+            'transSql.Commit()
 
         Catch ex As Exception
             msjError = ex.Message
-            transSql.Rollback()
+            'transSql.Rollback()
         End Try
 
     End Sub
