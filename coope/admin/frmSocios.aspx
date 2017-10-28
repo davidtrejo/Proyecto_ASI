@@ -52,16 +52,30 @@
                          <tr>
                             <th>Dirección:</th>
                             <td colspan="4">
-                                <asp:TextBox ID="txtDireccion" runat="server" Width="600px"></asp:TextBox>
+                                <asp:TextBox ID="txtDireccion" runat="server" Width="600px" Height="59px" TextMode="MultiLine"></asp:TextBox>
                             </td>                             
                         </tr>
                         <tr>
                             <th>F.Nacimiento:</th>
                             <td>
                                 <asp:TextBox ID="txtFNacimiento" runat="server" Width="100px" ></asp:TextBox>
-                            </td>                        
+                            </td>
+                            <th>Telefono:</th>
+                            <td>
+                                <asp:TextBox ID="txtTelefono" runat="server" Width="100px" ></asp:TextBox>
+                            </td>            
                         </tr>
-
+                        <tr>
+                            <th>Email:</th>
+                            <td>
+                                <asp:TextBox ID="txtEnail" runat="server" Width="100px" ></asp:TextBox>
+                            </td>
+                            <th>Sexo:</th>
+                            <td>
+                                <asp:DropDownList ID="ddSexo" runat="server" Width="100px" ></asp:DropDownList>
+                            </td>            
+                        </tr>
+                        
 
                         <tr>
                             <td>
