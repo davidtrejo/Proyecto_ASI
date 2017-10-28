@@ -354,13 +354,15 @@
             _fechaDesdeTasa = value
         End Set
     End Property
+
+    Public Property TotalAhorroalaFecha As Double
+
 #End Region
 
 
 
-    Dim strSql As String = ""
+
     Dim conn As New conexion
-    Dim c = ","
 
 
     Public Sub leerAhorroPersona(idAhorro As Integer, ByRef msj As String)
@@ -369,6 +371,7 @@
 
         Dim ahorro As DataRow = conn.ObtenerTabla(strSql, msj).Rows(0)
 
+        _idAhorro = ahorro("idahorro")
         _idProducto = ahorro("IdProducto")
         _IdPersona = ahorro("Idpersona")
         _idCuentaAnterior = IsNull(ahorro("idcuentaanterior"), 0)
@@ -383,11 +386,6 @@
         _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
 
 
-
-
-
-
-
     End Sub
 
     Public Sub leerHistoricoAhorro(idHistorico As Integer, ByRef msj As String)
@@ -399,7 +397,7 @@
         _fechaInicioAhorro = row("fechainicio")
         _idAhorroDepostio = IsNull(row("idahorrodeposito"), 0)
         _idtasaHistorico = IsNull(row("idtasa"), 0)
-
+        _idCuentaAbonar = IsNull(row("idahorroDeposito"), 0)
 
         If Not IsDBNull(row("fechavencimiento")) Then
             _fechaVencimiento = row("fechavencimiento")
@@ -553,36 +551,7 @@
     End Enum
 
 
-    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String, Optional IdCapitalizacion As Integer = 0)
 
-        Try
-
-            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento "
-
-            If IdCapitalizacion <> 0 Then
-                strSql &= ",idcapitalizacion"
-            End If
-
-            strSql &= ") values ("
-            strSql &= idahorro & c
-            strSql &= monto & c
-            strSql &= "'" & descripcion & "',"
-            strSql &= sef2(fechaAplicacion) & c
-            strSql &= IdTipoMovimiento
-
-            If IdCapitalizacion <> 0 Then
-                strSql &= c & IdCapitalizacion
-            End If
-            strSql &= ")"
-
-            conn.EjecutarSql(strSql, msjError)
-
-
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
 
 
     'Public Function ObtenerAhorrosMovimientos(idpersona As Integer, msjError As String) As DataTable
@@ -687,6 +656,9 @@
 
 #Region "Capitalizacion"
 
+
+
+
     Public Function obtenerUltimaFechaCapitalizacion(ByRef msj As String, Optional idahorro As Integer = 0) As Date
 
 
@@ -745,13 +717,42 @@
 
     End Function
 
+    Public Sub GuardarAbono(idahorro As Integer, monto As Double, descripcion As String, fechaAplicacion As Date, IdTipoMovimiento As TiposMOvimientos, ByRef msjError As String, Optional IdCapitalizacion As Integer = 0)
 
+        Try
+
+            strSql = " Insert into ahorrosPersonaMovimientos (idahorro,valormovimiento,descripcion,fechamovimiento,idtipomovimiento "
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= ",idcapitalizacion"
+            End If
+
+            strSql &= ") values ("
+            strSql &= idahorro & c
+            strSql &= monto & c
+            strSql &= "'" & descripcion & "',"
+            strSql &= sef2(fechaAplicacion) & c
+            strSql &= IdTipoMovimiento
+
+            If IdCapitalizacion <> 0 Then
+                strSql &= c & IdCapitalizacion
+            End If
+            strSql &= ")"
+
+            conn.EjecutarSql(strSql, msjError)
+
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 
     Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
 
 
 
-        IgualarProvisionCuentas(Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
+        IgualarProvisionCuentas(fechaProvision, Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
 
         uFechaProvAhorro = obtenerUltimaFechaProvision(Msj)
 
@@ -795,17 +796,17 @@
 
                 If ValorProvision <> 0 Then
                     GuardarProvision(Msj, fecha, _idAhorro, ValorProvision)
+
+
+                    If fecha.Day = 28 Then
+                        ''Hay que capitalizar la cuenta
+                        Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
+
+                        CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
+
+
+                    End If
                 End If
-
-                If fecha.Day = 28 Then
-                    ''Hay que capitalizar la cuenta
-                    Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
-
-                    CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
-
-
-                End If
-
             Next
 
             '' Luego Correr proceso sobre cuentas que depositen el interes en las mismas cuentas
@@ -827,17 +828,17 @@
 
                 If ValorProvision <> 0 Then
                     GuardarProvision(Msj, fecha, _idAhorro, ValorProvision)
+
+
+                    If fecha.Day = 28 Then
+                        ''Hay que capitalizar la cuenta
+                        ''Hay que capitalizar la cuenta
+                        Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
+
+                        CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
+
+                    End If
                 End If
-
-                If fecha.Day = 28 Then
-                    ''Hay que capitalizar la cuenta
-                    ''Hay que capitalizar la cuenta
-                    Dim IdCapitalizacion As Integer = ObtenerIdCapitalizacion(fecha, Msj)
-
-                    CapitalizarCuenta(_idAhorro, _idCuentaAbonar, IdCapitalizacion, fecha, Msj)
-
-                End If
-
             Next
 
 
@@ -849,7 +850,7 @@
 
     End Sub
 
-    Private Sub IgualarProvisionCuentas(ByRef Msj As String)
+    Private Sub IgualarProvisionCuentas(fechaProvision As Date, ByRef Msj As String)
         ''  Todas las cuentas deben de tener la misma fecha de Provision
 
         Dim tblAhorro As DataTable
@@ -859,7 +860,9 @@
 
         UFechaProvison = obtenerUltimaFechaProvision(Msj)
 
-
+        If UFechaProvison = Date.MinValue Then
+            UFechaProvison = fechaProvision
+        End If
 
 
         '' Primero provisionamos  las cuentas que nunca han sido provisionadas o han sido reprocesadas  y que aplican intereses a otras cuentas
@@ -872,6 +875,9 @@
         tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
         For Each row As DataRow In tblAhorro.Rows
+
+
+
 
             ProvisionarCuenta(row("IdAhorro"), UFechaProvison, Msj)
 
@@ -1169,19 +1175,28 @@
         strSql = " delete from ProvisionInteres where fechaprovision >= " & sef2(fecha)
 
         If IdProducto <> 0 Then
-            strSql &= " and ( select p.idproducto from ahorrosPersona as b  inner join productos as p on p.idproducto = b.idproducto "
-            strSql &= " where a.idahorro = b.idahorro ) = " & IdProducto
+            strSql &= " and  idahorro  = " & IdProducto
         End If
-        If Idpersona <> 0 Then
-            strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  1"
-        End If
+        'If Idpersona <> 0 Then
+        '    strSql &= " and ( select b.idpersona  from ahorrosPersona as b  where a.idahorro = b.idahorro ) =  " & Idpersona
+        'End If
+        conn.EjecutarSql(strSql, msj)
 
+
+
+        strSql = "  Update provisionInteres set idcapitalizacion = null "
+        strSql &= " where idcapitalizacion in (select idcapitalizacion from capitalizaciones where fechacapitalizacion >= " & sef2(fecha) & ")" '20170122') "
+        If IdProducto <> 0 Then
+            strSql &= " and  idahorro  = " & IdProducto
+        End If
 
         conn.EjecutarSql(strSql, msj)
 
 
 
     End Sub
+
+
 
 
 

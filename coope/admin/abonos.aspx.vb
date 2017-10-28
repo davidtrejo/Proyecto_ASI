@@ -15,6 +15,15 @@
 
         Dim msjError As String = ""
 
+        ahorro.leerAhorroPersona(Me.cmbProducto.SelectedValue, msjError)
+
+        If ahorro.uFechaProvAhorro > Me.DateFechaAplicacion.Date Then
+            Me.lblErrror.Text = "No puede Ingresar el movimiento, debe reprocesar la cuenta hasta el dia que desea aplicar el movimiento"
+            Me.lblErrror.Visible = True
+            Exit Sub
+        End If
+
+
         ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, Me.DateFechaAplicacion.Value, clahorro.TiposMOvimientos.Abono, msjError)
 
         Me.grid.DataBind()

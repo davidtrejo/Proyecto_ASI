@@ -48,6 +48,8 @@
 
         ahorro.Provisionar1(msj, txtFecha.Value)
 
+        Response.Redirect("FrmRptProvisiones.aspx")
+
     End Sub
 
     Private Sub llenarcombos()
