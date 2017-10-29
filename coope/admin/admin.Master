@@ -203,6 +203,7 @@
                                <ul class="dropdown-menu ">
                                 <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>
                                 <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
+                                <li><a href="frmSocioProductos.aspx" >kkkk Socios</a></li>
                                 <li><a href="#" >Provsiones</a></li>
 
                             </ul>

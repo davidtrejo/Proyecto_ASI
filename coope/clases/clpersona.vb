@@ -197,57 +197,43 @@ Public Class clpersona
         End Try
     End Function
 
-    Public Sub InsertarPersona(_primerNombre As String,
-                              _dui As String,
-                              _Nit As String,
-                              _fechaNacimiento As DateTime,
-                              _direccion As String,
-                              _Telefono As String,
-                              _email As String,
-                              _SegundoNombre As String,
-                              _PrimerApellido As String,
-                              _SegundoApellido As String,
-                              _sexo As String,
-                              _estado As Boolean,
-                              _nombreCompleto As String,
-                              ByRef msjError As String)
+    'Public Sub InsertarPersona(ByVal _dt As DataTable, ByRef msjError As String)
 
-        Try
-            strSql = " Insert into personas (primerNombre," &
-            "dui," &
-            "nit," &
-            "fechanacimiento," &
-            "direccion," &
-            "telefono," &
-            "email," &
-            "SegundoNombre," &
-            "PrimerApellido," &
-            "SegundoApellido," &
-            "sexo," &
-            "estado," &
-            "nombreCompleto) values (" &
-            "'" & _primerNombre & "'," &
-            "'" & _dui & "'," &
-            "'" & _Nit & "'," &
-            "'" & _fechaNacimiento & "'," &
-            "'" & _direccion & "'," &
-            "'" & _Telefono & "'," &
-            "'" & _email & "'," &
-            "'" & _SegundoNombre & "'," &
-            "'" & _PrimerApellido & "'," &
-            "'" & _SegundoApellido & "'," &
-            "'" & _sexo & "'," &
-            _estado & "," &
-            "'" & _nombreCompleto & "')"
+    '    Try
+    '        With _dt.Rows(0)
+    '            strSql = " Insert into personas (primerNombre," &
+    '        "dui," &
+    '        "nit," &
+    '        "fechanacimiento," &
+    '        "direccion," &
+    '        "telefono," &
+    '        "email," &
+    '        "SegundoNombre," &
+    '        "PrimerApellido," &
+    '        "SegundoApellido," &
+    '        "sexo," &
+    '        "estado," &
+    '        "nombreCompleto) values (" &
+    '        "'" & .Item("primerNombre") & "'," &
+    '        "'" & .Item("dui") & "'," &
+    '        "'" & .Item("nit") & "'," &
+    '        "'" & .Item("fechanacimiento") & "'," &
+    '        "'" & .Item("direccion") & "'," &
+    '        "'" & .Item("telefono") & "'," &
+    '        "'" & .Item("email") & "'," &
+    '        "'" & .Item("SegundoNombre") & "'," &
+    '        "'" & .Item("PrimerApellido") & "'," &
+    '        "'" & .Item("SegundoApellido") & "'," &
+    '        "'" & .Item("sexo") & "'," &
+    '        .Item("sexo") & "," &
+    '        "'" & .Item("nombreCompleto") & "')"
+    '            conn.EjecutarSql(strSql, msjError)
+    '        End With
+    '    Catch ex As Exception
+    '        msjError = ex.Message
+    '    End Try
 
-
-            conn.EjecutarSql(strSql, msjError)
-
-        Catch ex As Exception
-            msjError = ex.Message
-        End Try
-
-    End Sub
+    'End Sub
 
 #End Region
 

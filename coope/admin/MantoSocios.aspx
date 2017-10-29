@@ -72,11 +72,11 @@
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">
-                <ItemStyle HorizontalAlign="Center" Width="400px" />
+                <ItemStyle HorizontalAlign="Center" Width="400px" />         
                 </asp:BoundField>
                 
                 <asp:CommandField HeaderText="Ver productos"  ShowSelectButton="True" >
-                <ItemStyle HorizontalAlign="Center" Width="200px" />
+                <ItemStyle HorizontalAlign="Center" Width="200px"  />
                 </asp:CommandField>
                 <asp:CommandField HeaderText="Dar baja"  ShowSelectButton="True" >
                 

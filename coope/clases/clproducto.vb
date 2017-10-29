@@ -187,6 +187,22 @@ Public Class clproducto
 
     End Sub
 
+    Public Function ObtenerProductosPersona(ByVal _lnidpersona As Integer, msjError As String)
+
+        strSql = " SELECT DISTINCT b.*, 0 AS saldo FROM ahorrosPersona AS a " &
+            "LEFT OUTER JOIN productos AS b ON a.idproducto=b.idproducto " &
+            "WHERE a.idpersona =" & _lnidpersona
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+            Return tabla
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
+    End Function
+
 
 
 End Class

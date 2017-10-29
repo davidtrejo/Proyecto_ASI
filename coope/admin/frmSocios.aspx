@@ -72,11 +72,17 @@
                             </td>
                             <th>Sexo:</th>
                             <td>
-                                <asp:DropDownList ID="ddSexo" runat="server" Width="100px" ></asp:DropDownList>
+                                <asp:DropDownList ID="ddSexo" runat="server" Width="100px" >
+                                    <asp:ListItem Value="M">Masculino</asp:ListItem>
+                                    <asp:ListItem Value="F">Femenino</asp:ListItem>
+                                </asp:DropDownList>
                             </td>            
                         </tr>
-                        
-
+                        <tr>
+                            <td colspan="5">
+                                &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn" OnClick="btnGuardar_Click"></asp:Button>
+                            </td>                                  
+                        </tr>     
                         <tr>
                             <td>
                                 <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
@@ -88,33 +94,5 @@
         </div>
     </div>
 
-    <div class="widget-content form-container">
-        <asp:GridView Width ="100%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="6">
-            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <Columns>
-                <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">
-                <ItemStyle HorizontalAlign="Center" Width="400px" />
-                </asp:BoundField>
-                
-                <asp:CommandField HeaderText="Ver productos"  ShowSelectButton="True" >
-                <ItemStyle HorizontalAlign="Center" Width="200px" />
-                </asp:CommandField>
-                <asp:CommandField HeaderText="Dar baja"  ShowSelectButton="True" >
-                
-                <ItemStyle HorizontalAlign="Center" Width="200px" />
-                </asp:CommandField>
-                
-            </Columns>
-            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-        </asp:GridView>
-    </div>
+    
 </asp:Content>

@@ -122,6 +122,15 @@ Partial Public Class frmSocios
     Protected WithEvents ddSexo As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''Control btnGuardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control lblErrror.
     '''</summary>
     '''<remarks>
@@ -129,13 +138,4 @@ Partial Public Class frmSocios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblErrror As Global.System.Web.UI.WebControls.Label
-    
-    '''<summary>
-    '''Control dgvDatos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents dgvDatos As Global.System.Web.UI.WebControls.GridView
 End Class

@@ -51,7 +51,11 @@
         End Try
     End Sub
 
-    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Protected Sub dgvDatos_PageIndexChanged(sender As Object, e As EventArgs) Handles dgvDatos.PageIndexChanged
+
+    End Sub
+
+    Protected Sub dgvDatos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dgvDatos.SelectedIndexChanged
 
     End Sub
 End Class
