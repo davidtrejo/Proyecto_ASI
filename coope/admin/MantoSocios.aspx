@@ -79,7 +79,7 @@
                 </asp:BoundField>  
                 <asp:TemplateField HeaderText = "Ver productos" >
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "ahorros.aspx?id={0}") %>' Text="Ver Cuentas de Socio" />
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioProductos.aspx?id={0}") %>' Text="Seleccionar" />
                     </ItemTemplate>
                 </asp:TemplateField> 
             </Columns>

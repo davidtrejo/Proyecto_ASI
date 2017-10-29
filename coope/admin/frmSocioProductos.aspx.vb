@@ -2,7 +2,7 @@
     Inherits System.Web.UI.Page
     Dim producto As New clproducto
     Dim persona As New clpersona
-    Public lnidpersona As Integer = 0
+    Dim lnidpersona As Integer = 0
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
@@ -18,7 +18,8 @@
         Try
             Dim msjError As String = ""
             Me.txtSocio.Enabled = False
-            lnidpersona = 1
+            lnidpersona = Request.QueryString("id")
+
             Dim dtPersona As DataTable = persona.ObtenerListaPersonasxcondicion(msjError, " WHERE idpersona=" & lnidpersona)
             Dim dtProdxPers As DataTable = producto.ObtenerProductosPersona(lnidpersona, msjError)
 
