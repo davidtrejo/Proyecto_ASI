@@ -61,6 +61,16 @@
         End Set
     End Property
 
+    Private _nombreAhorro As String
+    Public Property NombreAhorro() As String
+        Get
+            Return _nombreAhorro
+        End Get
+        Set(ByVal value As String)
+            _nombreAhorro = value
+        End Set
+    End Property
+
     Private _fechaInicioAhorro As Date
     Public Property FechaInicio() As Date
         Get
@@ -385,6 +395,13 @@
 
         _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
         _totalAhorro = ObtenerTotalAhorros(idAhorro, msj)
+
+        Dim producto As New clproducto
+
+        producto.leerProducto(_idProducto, msj)
+
+        _nombreAhorro = producto.NombreProducto
+
 
     End Sub
 

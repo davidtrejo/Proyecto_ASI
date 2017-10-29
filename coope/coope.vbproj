@@ -800,6 +800,7 @@
     <Compile Include="clases\clahorro.vb" />
     <Compile Include="clases\clpersona.vb" />
     <Compile Include="clases\clproducto.vb" />
+    <Compile Include="clases\clSolicitudes.vb" />
     <Compile Include="clases\cltransacciones.vb" />
     <Compile Include="clases\clusuario.vb" />
     <Compile Include="clases\conexion.vb" />

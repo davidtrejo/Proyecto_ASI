@@ -19,9 +19,15 @@
                           <table class="table table-striped table-detail-view">
                                  <tbody> 
                                       <tr>
-                                                   <th>Producto:</th>
+                                                   <th>Cuenta:</th>
                                                     <td>
                                                         <dx:ASPxLabel ID="lblProducto" runat="server" Text="ASPxLabel"></dx:ASPxLabel>
+                                                     </td>
+                                              </tr> 
+                                     <tr>
+                                                   <th>Total en Cuenta:</th>
+                                                    <td>
+                                                        <dx:ASPxLabel ID="lblTotal" runat="server" Text=""></dx:ASPxLabel>
                                                      </td>
                                               </tr> 
                                    <tr>
@@ -31,15 +37,15 @@
                                                      </td>
                                               </tr> 
                                                                         <tr>
-                                                   <th></th>
+                                                   <th>Valor a Retirar </th>
                                                     <td>
                                                         <dx:ASPxTextBox ID="txtCantidad" runat="server" Width="170px"></dx:ASPxTextBox>
                                                      </td>
                                               </tr> 
                                      <tr>
-
+                                         <th> </th>
                                          <td>
-                                             <dx:ASPxButton ID="btnRetirar" runat="server" Text="Retirar"></dx:ASPxButton> </td>
+                                             <dx:ASPxButton ID="btnRetirar" runat="server" Text="Retirar" Theme ="Moderno" ></dx:ASPxButton> </td>
                                      </tr>
 
                                               <tr><td>

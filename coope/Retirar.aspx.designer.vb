@@ -32,6 +32,15 @@ Partial Public Class Retirar
     Protected WithEvents lblProducto As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
+    '''Control lblTotal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTotal As Global.DevExpress.Web.ASPxLabel
+    
+    '''<summary>
     '''Control lblMontoMaximoRetiro.
     '''</summary>
     '''<remarks>
