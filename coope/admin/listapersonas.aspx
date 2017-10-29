@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div id="main-header" class="page-header">
+        <p>
       <span class="titular1 block linea1bottom">Buscar Socio <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label><br></span>
+        </p>
     </div>  
     
     <div id="main-content">       

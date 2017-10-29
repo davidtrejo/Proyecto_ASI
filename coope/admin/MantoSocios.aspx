@@ -71,6 +71,9 @@
         <asp:GridView Width ="100%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="6">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
+                 <asp:BoundField DataField="idpersona" HeaderText="SOCIO">
+                <ItemStyle HorizontalAlign="Center" Width="400px" />         
+                </asp:BoundField>
                 <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">
                 <ItemStyle HorizontalAlign="Center" Width="400px" />         
                 </asp:BoundField>
@@ -82,7 +85,12 @@
                 
                 <ItemStyle HorizontalAlign="Center" Width="200px" />
                 </asp:CommandField>
-                
+                  <asp:TemplateField HeaderText = "Ver Cuentas" >
+            <ItemTemplate>
+                <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "ahorros.aspx?id={0}") %>' Text="Ver Cuentas de Socio" />
+                    
+            </ItemTemplate>
+               </asp:TemplateField> 
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
