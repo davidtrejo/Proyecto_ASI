@@ -110,6 +110,7 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\frmSocioProductos.aspx" />
     <Content Include="admin\frmSocios.aspx" />
     <Content Include="admin\gestionar.aspx" />
     <Content Include="admin\inicio.aspx" />
@@ -692,6 +693,13 @@
     </Compile>
     <Compile Include="admin\CrearCuenta.aspx.vb">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmSocioProductos.aspx.designer.vb">
+      <DependentUpon>frmSocioProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmSocioProductos.aspx.vb">
+      <DependentUpon>frmSocioProductos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\frmSocios.aspx.designer.vb">
