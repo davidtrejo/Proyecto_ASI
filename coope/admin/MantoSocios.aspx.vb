@@ -29,10 +29,10 @@
 
         Try
             Dim transacciones As New clpersona
-            If Me.txtNombre.Text.Length = 0 Then
-                MsgBox("Ingrese un nombre")
-                Exit Sub
-            End If
+            'If Me.txtNombre.Text.Length = 0 Then
+            '    MsgBox("Ingrese un nombre")
+            '    Exit Sub
+            'End If
 
             Dim sqlCondicion As String = If(Me.txtNombre.Text.Length > 0, " WHERE nombreCompleto LIKE '%" & Me.txtNombre.Text & "%'", " WHERE NULL")
 

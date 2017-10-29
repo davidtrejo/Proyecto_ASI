@@ -31,14 +31,14 @@
         Dim msjError As String = ""
         Try
             Dim transacciones As New cltransacciones
-            If Me.txtCodigo.Text.Length = 0 Then
-                MsgBox("Ingrese un código de socio")
-                Exit Sub
-            End If
-            If Me.cbxTipoAhorro.Text.Length = 0 Then
-                MsgBox("Seleccione un producto")
-                Exit Sub
-            End If
+            'If Me.txtCodigo.Text.Length = 0 Then
+            '    MsgBox("Ingrese un código de socio")
+            '    Exit Sub
+            'End If
+            'If Me.cbxTipoAhorro.Text.Length = 0 Then
+            '    MsgBox("Seleccione un producto")
+            '    Exit Sub
+            'End If
 
             Dim lnCodigo As Integer = 0
             Dim lnProducto As Integer = 0

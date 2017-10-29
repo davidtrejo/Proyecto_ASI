@@ -171,7 +171,11 @@
                     <ul>
                         <!-- ejemplo li-->
                         <li class='has-sub comision order' style="width: 160px; border-left: 1px solid #808284;">
-                            <a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>
+                            <%--<a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>--%>
+                            <a href='#' class="pr"><span>Productos</span></a>
+                            <ul class="dropdown-menu ">
+                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>                               
+                            </ul>
                         </li>
                      
 
@@ -179,7 +183,9 @@
                              <a href='#' class="pr"><span>Socios</span></a>
                             <ul class="dropdown-menu ">
                                <li> <a href='listapersonas.aspx' class="pr"><span>Lista de Socios</span></a></li>
-                                <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
+                               <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
+                               <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>
+                               <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
                              
 
                             </ul>
@@ -200,12 +206,8 @@
                           </li>
                           <li class='has-sub comision order' style="width: 160px;">
                              <a href="#" class="pr"><span>Listados</span> </a>
-                               <ul class="dropdown-menu ">
-                                <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>
-                                <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
-                                <li><a href="frmSocioProductos.aspx" >kkkk Socios</a></li>
+                               <ul class="dropdown-menu ">                         
                                 <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>
-
                             </ul>
 
                         </li>

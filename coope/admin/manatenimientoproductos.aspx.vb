@@ -36,29 +36,24 @@
         End If
     End Sub
 
-    Protected Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        Dim msjError As String = ""
+    'Protected Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+    '    Dim msjError As String = ""
 
-        Try
-            producto.GuardarProducto(Me.cmdTipoProductos.SelectedValue, Me.txtproducto.Text, Me.txtDescripcion.Text, Me.txttasa.Text, msjError)
+    '    Try
+    '        producto.GuardarProducto(Me.cmdTipoProductos.SelectedValue, Me.txtproducto.Text, Me.txtDescripcion.Text, Me.txttasa.Text, msjError)
 
-            If msjError = "" Then
-                Me.lblErrror.Text = ""
-                grid.DataBind()
-                Me.lblErrror.Visible = False
-            Else
-                Me.lblErrror.Text = "Ocurrió un error al guardar"
-                Me.lblErrror.Visible = True
-            End If
-
-
-        Catch ex As Exception
-
-        End Try
+    '        If msjError = "" Then
+    '            Me.lblErrror.Text = ""
+    '            grid.DataBind()
+    '            Me.lblErrror.Visible = False
+    '        Else
+    '            Me.lblErrror.Text = "Ocurrió un error al guardar"
+    '            Me.lblErrror.Visible = True
+    '        End If
 
 
+    '    Catch ex As Exception
 
-
-
-    End Sub
+    '    End Try
+    'End Sub
 End Class

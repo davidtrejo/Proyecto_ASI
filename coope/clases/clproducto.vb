@@ -167,15 +167,14 @@ Public Class clproducto
 
     End Function
 
-    Public Sub GuardarProducto(tipoproducto As Integer, nombreproducto As String, descripcion As String, tasa As Decimal, ByRef msjError As String)
+    Public Sub GuardarProducto(nombreproducto As String, idtipoproducto As Integer, duracionendias As Integer, ByRef msjError As String)
 
 
         Try
-            strSql = " Insert into productos (nombreproducto,descripcion,tasa,idtipoproducto) values ( "
+            strSql = " Insert into productos (nombreproducto,idtipoproducto,DuracionenDias) values ( "
             strSql &= "'" & nombreproducto & "'" & c
-            strSql &= "'" & descripcion & "'" & c
-            strSql &= tasa & c
-            strSql &= tipoproducto & " )"
+            strSql &= idtipoproducto & c
+            strSql &= duracionendias & " )"
 
             conn.EjecutarSql(strSql, msjError)
 
@@ -183,6 +182,19 @@ Public Class clproducto
             msjError = ex.Message
         End Try
 
+    End Sub
+
+    Public Sub GuardarTasas(ByVal tasa As Integer, ByVal idproducto As Integer, ByVal fechadesde As Date, ByRef msjError As String)
+        Try
+            strSql = " Insert into tasasIntereses (tasa,idproducto,FechaDesde) values ( "
+            strSql &= tasa & c
+            strSql &= idproducto & c
+            strSql &= "'" & fechadesde & "')"
+
+            conn.EjecutarSql(strSql, msjError)
+        Catch ex As Exception
+            msjError = ex.Message
+        End Try
     End Sub
 
     Public Sub leerProducto(idproducto As Integer, msjError As String)
@@ -224,7 +236,9 @@ Public Class clproducto
 
     Public Function ObtenerProductosPersona(ByVal _lnidpersona As Integer, msjError As String)
 
-        strSql = " SELECT DISTINCT b.*, 0 AS saldo FROM ahorrosPersona AS a " &
+        strSql = " SELECT DISTINCT a.idahorro,b.*, " &
+            "(SELECT SUM(valormovimiento) FROM ahorrosPersonaMovimientos WHERE idahorro=a.idahorro) AS saldo " &
+            "FROM ahorrosPersona AS a " &
             "LEFT OUTER JOIN productos AS b ON a.idproducto=b.idproducto " &
             "WHERE a.idpersona =" & _lnidpersona
         Dim tabla As DataTable = New DataTable
@@ -238,6 +252,17 @@ Public Class clproducto
         End Try
     End Function
 
+    Public Function ObtenerProductosxCondicion(ByVal _sqlcondicion As String, ByVal msjError As String)
+        strSql = " SELECT * FROM productos " & _sqlcondicion
+        Dim tabla As DataTable = New DataTable
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+            Return tabla
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
 
+    End Function
 
 End Class
