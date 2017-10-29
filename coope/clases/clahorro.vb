@@ -384,9 +384,29 @@
         leerHistoricoAhorro(_idHistoricoAhorro, msj)
 
         _uFechaProvAhorro = obtenerUltimaFechaProvision(msj, idAhorro)
-
+        _totalAhorro = ObtenerTotalAhorros(idAhorro, msj)
 
     End Sub
+
+    Private Function ObtenerTotalAhorros(idahorro As Integer, ByRef msj As String) As Double
+
+        Try
+            strSql = "  select sum(valormovimiento  ) as Total from ahorrosPersonaMovimientos  where idahorro = " & idahorro
+
+            Dim tabla As DataTable = conn.ObtenerTabla(strSql, msj)
+
+            If tabla.Rows.Count = 1 Then
+                Return tabla.Rows(0).Item("Total")
+            Else
+                Return 0
+            End If
+
+        Catch ex As Exception
+            msj = ex.Message
+            Return 0
+        End Try
+
+    End Function
 
     Public Sub leerHistoricoAhorro(idHistorico As Integer, ByRef msj As String)
 

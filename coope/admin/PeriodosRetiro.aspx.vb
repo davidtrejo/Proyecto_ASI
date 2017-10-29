@@ -17,6 +17,7 @@
             'Me.cmbProducto.DataValueField = "idproducto"
             'Me.cmbProducto.DataBind()
 
+
         End If
 
 

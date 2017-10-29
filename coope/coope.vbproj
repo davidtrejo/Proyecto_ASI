@@ -657,6 +657,7 @@
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Resumen.aspx" />
+    <Content Include="Retirar.aspx" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="SolicitudesRetiro.aspx" />
@@ -865,6 +866,13 @@
     </Compile>
     <Compile Include="Resumen.aspx.vb">
       <DependentUpon>Resumen.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Retirar.aspx.designer.vb">
+      <DependentUpon>Retirar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Retirar.aspx.vb">
+      <DependentUpon>Retirar.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Sitio.Master.designer.vb">

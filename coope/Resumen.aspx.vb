@@ -3,6 +3,8 @@
 
     Dim ahorro As New clahorro
     Dim Usuario As Integer
+    Dim producto As New clproducto
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Session("Usuario") = 1
@@ -12,7 +14,7 @@
         If Not Page.IsPostBack Then
 
             llenarCombo()
-
+            Me.btnRetirar.Visible = False
         End If
 
 
@@ -56,5 +58,22 @@
 
     Protected Sub cmbProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProducto.SelectedIndexChanged
         Me.grid.DataBind()
+        Dim msj As String
+
+        ahorro.leerAhorroPersona(Me.cmbProducto.SelectedValue, msj)
+
+        If producto.ProductoEnPeriodoRetiro(ahorro.IdProducto) = True Then
+            Me.btnRetirar.Visible = True
+        Else Me.btnRetirar.Visible = False
+        End If
+
+
+
+    End Sub
+
+    Protected Sub btnRetirar_Click(sender As Object, e As EventArgs) Handles btnRetirar.Click
+
+        Response.Redirect("Retirar.aspx?idcuenta=" & Me.cmbProducto.SelectedValue)
+
     End Sub
 End Class

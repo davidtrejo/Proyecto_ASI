@@ -78,6 +78,17 @@ Public Class clproducto
         End Set
     End Property
 
+
+    Private _estaEnPeriodoRetiro As Boolean
+    Public Property estaEnPeriodoRetiro() As Boolean
+        Get
+            Return _estaEnPeriodoRetiro
+        End Get
+        Set(ByVal value As Boolean)
+            _estaEnPeriodoRetiro = value
+        End Set
+    End Property
+
     Public Function ObtenerListaProductos(msjError As String) As DataTable
 
         strSql = " select * from productos"
@@ -95,6 +106,30 @@ Public Class clproducto
 
     End Function
 
+    Public Function ProductoEnPeriodoRetiro(Idproducto As Integer) As Boolean
+        Dim msjError As String = ""
+        Try
+
+
+
+            strSql = " select idperiodoRetiro from PeriodosRetiro where  getdate() between FechaDesde and FechaHasta    "
+            strSql &= " and idproducto = " & Idproducto
+
+            Dim tabla As DataTable = conn.ObtenerTabla(strSql, msjError)
+
+            If tabla.Rows.Count <> 0 Then
+                Return True
+            Else Return False
+            End If
+
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
+
+
+
+    End Function
 
     Public Function ObtenerPeriodosRetiro(idproducto As Integer, ByRef msj As String) As DataTable
 

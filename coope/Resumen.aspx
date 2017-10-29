@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Sitio.Master" CodeBehind="Resumen.aspx.vb" Inherits="coope.Resumen" %>
+
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
@@ -77,5 +79,11 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
     
-
+    <br />
+    <br />
+    <table style="width:100%">
+       <tr> <td style ="width:80%" ></td> <td> <dx:ASPxButton ID="btnRetirar" runat="server" Text="Retirar" Theme="Moderno" ></dx:ASPxButton>
+        </td></tr>
+       
+    </table>
 </asp:Content>
