@@ -66,20 +66,35 @@ Public Class conexion
 
     Public Sub EjecutarSql(strCadena As String, ByRef msjError As String)
         Dim cmd As New SqlCommand
-        Dim transSql As SqlTransaction
-        transSql = cmd.Connection.BeginTransaction(IsolationLevel.ReadCommitted)
         Try
             cmd = New SqlCommand(strCadena, conn)
             cmd.ExecuteNonQuery()
-            cmd.Transaction = transSql
-            transSql.Commit()
 
         Catch ex As Exception
             msjError = ex.Message
-            transSql.Rollback()
         End Try
 
     End Sub
+
+    'Public Sub EjecutarSql(strCadena As String, ByRef msjError As String)
+    '    Dim cmd As New SqlCommand
+    '    Dim transSql As SqlTransaction
+    '    transSql = cmd.Connection.BeginTransaction(IsolationLevel.ReadCommitted)
+    '    Try
+    '        cmd = New SqlCommand(strCadena, conn)
+    '        cmd.Transaction = transSql
+    '        cmd.ExecuteNonQuery()
+    '        cmd.Parameters.Clear()
+
+    '        transSql.Commit()
+    '        cmd.Connection.Close()
+    '    Catch ex As Exception
+    '        msjError = ex.Message
+    '        transSql.Rollback()
+    '        cmd.Connection.Close()
+    '    End Try
+
+    'End Sub
 
 
 End Class

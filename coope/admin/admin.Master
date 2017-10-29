@@ -171,7 +171,11 @@
                     <ul>
                         <!-- ejemplo li-->
                         <li class='has-sub comision order' style="width: 160px; border-left: 1px solid #808284;">
-                            <a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>
+                            <%--<a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>--%>
+                            <a href='#' class="pr"><span>Productos</span></a>
+                            <ul class="dropdown-menu ">
+                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>                               
+                            </ul>
                         </li>
                      
 
