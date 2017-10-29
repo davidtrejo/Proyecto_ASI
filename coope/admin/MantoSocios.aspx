@@ -76,21 +76,12 @@
                 </asp:BoundField>
                 <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">
                 <ItemStyle HorizontalAlign="Center" Width="400px" />         
-                </asp:BoundField>
-                
-                <asp:CommandField HeaderText="Ver productos"  ShowSelectButton="True" >
-                <ItemStyle HorizontalAlign="Center" Width="200px"  />
-                </asp:CommandField>
-                <asp:CommandField HeaderText="Dar baja"  ShowSelectButton="True" >
-                
-                <ItemStyle HorizontalAlign="Center" Width="200px" />
-                </asp:CommandField>
-                  <asp:TemplateField HeaderText = "Ver Cuentas" >
-            <ItemTemplate>
-                <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "ahorros.aspx?id={0}") %>' Text="Ver Cuentas de Socio" />
-                    
-            </ItemTemplate>
-               </asp:TemplateField> 
+                </asp:BoundField>  
+                <asp:TemplateField HeaderText = "Ver productos" >
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "ahorros.aspx?id={0}") %>' Text="Ver Cuentas de Socio" />
+                    </ItemTemplate>
+                </asp:TemplateField> 
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
