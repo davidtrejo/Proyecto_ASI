@@ -8,7 +8,7 @@
         sqlCondicion = " WHERE a.idpersona= " & _lnsocio
         sqlCondicion = sqlCondicion & If(_lnProducto.ToString.Length > 0, " AND a.idproducto =" & _lnProducto, sqlCondicion)
 
-        strSql = "SELECT a.NumPrestamo, a.MontoCubiertoenPrestamo, b.valormovimiento,b.fechamovimiento, b.descripcion " &
+        strSql = "SELECT a.NumPrestamo, a.MontoCubiertoenPrestamo, b.* " &
             "FROM ahorrosPersona AS a " &
             "LEFT OUTER JOIN ahorrosPersonaMovimientos AS b ON a.idahorro=b.idahorro " & sqlCondicion
 

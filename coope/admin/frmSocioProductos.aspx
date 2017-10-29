@@ -43,6 +43,9 @@
         <asp:GridView Width ="94%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
+                <asp:BoundField DataField="idahorro" HeaderText="idahorro" Visible ="false">
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
                 <asp:BoundField DataField="idproducto" HeaderText="id">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
@@ -56,7 +59,7 @@
               <asp:TemplateField HeaderText = "Ver detalle">
                   <ItemTemplate>
                       <%--<asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ver detalle" />--%>
-                      <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "frmSocioProductoDetalle.aspx?id={0}&idpersona=") %>' Text="Ver detalle" />
+                      <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idahorro", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ver detalle" />
                   </ItemTemplate>
               </asp:TemplateField>            
             </Columns>
