@@ -224,7 +224,7 @@ Public Class clproducto
 
     Public Function ObtenerProductosPersona(ByVal _lnidpersona As Integer, msjError As String)
 
-        strSql = " SELECT DISTINCT b.*, " &
+        strSql = " SELECT DISTINCT a,idahorro,b.*, " &
             "(SELECT SUM(valormovimiento) FROM ahorrosPersonaMovimientos WHERE idahorro=a.idahorro) AS saldo " &
             "FROM ahorrosPersona AS a " &
             "LEFT OUTER JOIN productos AS b ON a.idproducto=b.idproducto " &

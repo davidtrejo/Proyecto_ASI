@@ -1,15 +1,10 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="frmSocioProductos.aspx.vb" Inherits="coope.frmSocioProductos" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="frmSocioProductoDetalle.aspx.vb" Inherits="coope.frmSocioProductoDetalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 61px;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
     <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Detalle productos socio"></asp:Label><br/></span>
+      <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Detalle movimientos producto"></asp:Label><br/></span>
     </div>  
     
     <div id="main-content">       
@@ -27,8 +22,11 @@
                                           <td colspan="5"><asp:TextBox ID="txtSocio" runat="server" Width="300px" Enabled="False" ></asp:TextBox></td>
                                      </tr> 
                                      <tr>
-                                         <th>Cuentas de ahorro:</th>
-                                         <td colspan="4">&nbsp;<asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn" OnClick="btnAgregar_Click"></asp:Button></td>
+                                         <th>Producto:</th>
+                                         <td colspan="5"><asp:TextBox ID="txtProducto" runat="server" width="300px" Enabled="False"></asp:TextBox></td>
+                                     </tr>
+                                     <tr>
+                                         <th>Movimientos de cuenta:</th>                                         
                                      </tr> 
                                      <tr>
                                          <td><asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label></td>
@@ -43,22 +41,18 @@
         <asp:GridView Width ="94%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="idproducto" HeaderText="id">
+                <asp:BoundField DataField="idmovimiento" HeaderText="id">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:BoundField DataField="nombreproducto" HeaderText="Detalle">
+                <asp:BoundField DataField="fechamovimiento" HeaderText="Fecha">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:BoundField DataField="saldo" HeaderText="Saldo">
+                <asp:BoundField DataField="descripcion" HeaderText="Descripción">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                
-              <asp:TemplateField HeaderText = "Ver detalle">
-                  <ItemTemplate>
-                      <%--<asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ver detalle" />--%>
-                      <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "frmSocioProductoDetalle.aspx?id={0}&idpersona=") %>' Text="Ver detalle" />
-                  </ItemTemplate>
-              </asp:TemplateField>            
+                <asp:BoundField DataField="valormovimiento" HeaderText="Valor">
+                <ItemStyle HorizontalAlign="Center" />
+                </asp:BoundField>
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -74,5 +68,3 @@
     </div>
 
 </asp:Content>
-
-

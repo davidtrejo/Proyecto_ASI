@@ -120,6 +120,7 @@
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
     <Content Include="admin\FrmRptProvisiones.aspx" />
+    <Content Include="admin\frmSocioProductoDetalle.aspx" />
     <Content Include="admin\frmSocioProductos.aspx" />
     <Content Include="admin\frmSocios.aspx" />
     <Content Include="admin\gestionar.aspx" />
@@ -713,6 +714,13 @@
     <Compile Include="admin\FrmRptProvisiones.aspx.vb">
       <DependentUpon>FrmRptProvisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmSocioProductoDetalle.aspx.designer.vb">
+      <DependentUpon>frmSocioProductoDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmSocioProductoDetalle.aspx.vb">
+      <DependentUpon>frmSocioProductoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\frmSocioProductos.aspx.designer.vb">
       <DependentUpon>frmSocioProductos.aspx</DependentUpon>
