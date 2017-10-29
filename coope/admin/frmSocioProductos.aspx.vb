@@ -32,4 +32,8 @@
             Me.lblErrror.Text = "Ocurrió un error al guardar"
         End Try
     End Sub
+
+    Protected Sub dgvDatos_DataBinding(sender As Object, e As EventArgs) Handles dgvDatos.DataBinding
+        ' MTD_SetControls()
+    End Sub
 End Class

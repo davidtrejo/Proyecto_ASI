@@ -52,7 +52,17 @@
                 <asp:BoundField DataField="saldo" HeaderText="Saldo">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:CommandField ShowSelectButton="True" />
+                
+              <asp:TemplateField HeaderText = "Ver Cuentas" >
+            <ItemTemplate>
+                <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "ahorros.aspx?id={0}") %>' Text="Ver Cuentas de Socio" />
+                    
+            </ItemTemplate>
+               </asp:TemplateField> 
+           
+             
+               
+           
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
