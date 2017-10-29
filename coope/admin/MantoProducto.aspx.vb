@@ -34,8 +34,10 @@
     Private Sub MTD_Guardar()
         Dim msjError As String = ""
         Try
+            Dim lnFechaDesde As Date = Date.Now
+
             producto.GuardarProducto(Me.txtNombre.Text, ddClasificacion.SelectedValue, Val(Me.txtDDias.Text), msjError)
-            producto.GuardarTasas(4, ddClasificacion.SelectedValue, Date.Now, msjError)
+            producto.GuardarTasas(4, ddClasificacion.SelectedValue, lnFechaDesde, msjError)
             msjError = "Producto guardado exitosamente"
         Catch ex As Exception
             msjError = "Error al guardar producto"

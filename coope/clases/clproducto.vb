@@ -186,10 +186,11 @@ Public Class clproducto
 
     Public Sub GuardarTasas(ByVal tasa As Integer, ByVal idproducto As Integer, ByVal fechadesde As Date, ByRef msjError As String)
         Try
-            strSql = " Insert into tasasIntereses (tasa,idproducto,FechaDesde) values ( "
+
+            strSql = " Insert into tasasInteres (tasa,idproducto,FechaDesde) values ( "
             strSql &= tasa & c
             strSql &= idproducto & c
-            strSql &= "'" & fechadesde & "')"
+            strSql &= sef2(fechadesde) & ")"
 
             conn.EjecutarSql(strSql, msjError)
         Catch ex As Exception
