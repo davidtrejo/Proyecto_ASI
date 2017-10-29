@@ -10,6 +10,13 @@
         If Not Page.IsPostBack Then
             Me.txtFecha.Value = Date.Now.Date
             llenarcombos()
+
+            If Request.QueryString("id") <> "" Then
+
+                Me.cmbSocio.SelectedValue = Request.QueryString("id")
+
+            End If
+
         End If
 
 

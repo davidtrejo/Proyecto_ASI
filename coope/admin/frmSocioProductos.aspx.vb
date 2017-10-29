@@ -11,7 +11,7 @@
     End Sub
 
     Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-
+        Response.Redirect("CrearCuenta.aspx?id=" & Request.QueryString("id"))
     End Sub
 
     Private Sub MTD_SetControls()

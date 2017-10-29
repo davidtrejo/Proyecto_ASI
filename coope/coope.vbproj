@@ -119,6 +119,7 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\frmSocioBaja.aspx" />
     <Content Include="admin\MantoProducto.aspx" />
     <Content Include="admin\FrmRptProvisiones.aspx" />
     <Content Include="admin\frmSocioProductoDetalle.aspx" />
@@ -707,6 +708,13 @@
     </Compile>
     <Compile Include="admin\CrearCuenta.aspx.vb">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmSocioBaja.aspx.designer.vb">
+      <DependentUpon>frmSocioBaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmSocioBaja.aspx.vb">
+      <DependentUpon>frmSocioBaja.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\MantoProducto.aspx.designer.vb">

@@ -31,7 +31,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom">Mantenimiento de socios <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
+      <span class="titular1 block linea1bottom">Consulta de socios <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
           <br/></span>
     </div>
     
@@ -71,15 +71,24 @@
         <asp:GridView Width ="100%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="6">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                 <asp:BoundField DataField="idpersona" HeaderText="SOCIO">
+                 <asp:BoundField Visible ="false"  DataField="idpersona" HeaderText="SOCIO">
                 <ItemStyle HorizontalAlign="Center" Width="400px" />         
                 </asp:BoundField>
                 <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">
                 <ItemStyle HorizontalAlign="Center" Width="400px" />         
                 </asp:BoundField>  
-                <asp:TemplateField HeaderText = "Ver productos" >
+                <asp:TemplateField HeaderText = "Productos"   >
+                    <ItemStyle HorizontalAlign="Center" Width="400px" /> 
                     <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioProductos.aspx?id={0}") %>' Text="Seleccionar" />
+                       
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioProductos.aspx?id={0}") %>' Text="Ver Productos" />
+                    </ItemTemplate>
+                </asp:TemplateField> 
+                  <asp:TemplateField HeaderText = "Dar de baja"   >
+                    <ItemStyle HorizontalAlign="Center" Width="400px" /> 
+                    <ItemTemplate>
+                       
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioBaja.aspx?id={0}") %>' Text="Dar de Baja" />
                     </ItemTemplate>
                 </asp:TemplateField> 
             </Columns>
