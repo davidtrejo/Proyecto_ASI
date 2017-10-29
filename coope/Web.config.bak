@@ -48,6 +48,7 @@
     <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
     <settings doctypeMode="Xhtml" rightToLeft="false" embedRequiredClientLibraries="false" ieCompatibilityVersion="edge" />
     <errors callbackErrorRedirectUrl="" />
+  
   </devExpress>
-
+  
 </configuration>

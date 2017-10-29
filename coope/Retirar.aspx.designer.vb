@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Resumen
+Partial Public Class Retirar
     
     '''<summary>
     '''Control lbltitulo.
@@ -23,31 +23,31 @@ Partial Public Class Resumen
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control cmbProducto.
+    '''Control lblProducto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbProducto As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblProducto As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
-    '''Control lblErrror.
+    '''Control lblMontoMaximoRetiro.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblErrror As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblMontoMaximoRetiro As Global.DevExpress.Web.ASPxLabel
     
     '''<summary>
-    '''Control grid.
+    '''Control txtCantidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents grid As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents txtCantidad As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
     '''Control btnRetirar.
@@ -57,4 +57,13 @@ Partial Public Class Resumen
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnRetirar As Global.DevExpress.Web.ASPxButton
+    
+    '''<summary>
+    '''Control lblErrror.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblErrror As Global.System.Web.UI.WebControls.Label
 End Class

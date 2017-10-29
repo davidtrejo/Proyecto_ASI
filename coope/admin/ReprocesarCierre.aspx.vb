@@ -1,6 +1,9 @@
 ﻿Public Class ReprocesarCierre
     Inherits System.Web.UI.Page
 
+    Dim ahorro As New clahorro
+
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             Me.txtFecha.Value = Date.Now.Date
@@ -19,13 +22,18 @@
         Me.cmbSocio.DataValueField = "idpersona"
         Me.cmbSocio.DataBind()
 
+        Me.cmbProducto.DataSource = ahorro.ObtenerAhorrosPersona(Me.cmbSocio.SelectedValue, msjError)
+
+        Me.cmbProducto.DataTextField = "nombreproducto"
+        Me.cmbProducto.DataValueField = "idahorro"
+        Me.cmbProducto.DataBind()
+
+
     End Sub
 
 
 
     Protected Sub cmbSocio_TextChanged(sender As Object, e As EventArgs) Handles cmbSocio.TextChanged
-
-        Dim ahorro As New clahorro
 
 
         Dim msjError As String = ""
@@ -43,12 +51,12 @@
 
     Protected Sub btnReprocesar_Click(sender As Object, e As EventArgs) Handles btnReprocesar.Click
 
-        Dim ahorro As New clahorro
+
         Dim msj As String = ""
 
-        If Me.cmbSocio.Text <> "" And Me.cmbProducto.Text <> "" Then
-            ahorro.reprocesasar(Me.txtFecha.Value, msj, cmbProducto.SelectedValue, cmbSocio.SelectedValue)
-        End If
+        ' If Me.cmbSocio.Text <> "" And Me.cmbProducto.Text <> "" Then
+        ahorro.reprocesasar(Me.txtFecha.Value, msj, cmbProducto.SelectedValue, cmbSocio.SelectedValue)
+        ' End If
 
 
     End Sub

@@ -1,6 +1,8 @@
 ﻿Module funciones
 
     'formatea la fecha para insertar en sql
+    Public c As String = ","
+    Public strSql As String = ""
 
     Public Function sef2(Fecha As Date) As String
 
