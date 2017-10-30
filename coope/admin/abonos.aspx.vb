@@ -11,6 +11,18 @@
         End If
     End Sub
 
+    Private Sub limpiar()
+
+        Me.cmbProducto.SelectedValue = Nothing
+        Me.cmbSocio.SelectedValue = Nothing
+        Me.txtDescripcion.Text = ""
+        Me.txtMonto.Text = Nothing
+        Me.DateFechaAplicacion.Date = Date.Now
+
+
+
+    End Sub
+
     Protected Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
         Dim msjError As String = ""
@@ -27,6 +39,9 @@
         ahorro.GuardarAbono(Me.cmbProducto.SelectedValue, Me.txtMonto.Text, Me.txtDescripcion.Text, Me.DateFechaAplicacion.Value, clahorro.TiposMOvimientos.Abono, msjError)
 
         Me.grid.DataBind()
+
+
+        limpiar()
 
 
     End Sub
