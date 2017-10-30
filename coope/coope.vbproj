@@ -119,6 +119,7 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\frmMantoProductosTasa.aspx" />
     <Content Include="admin\frmSocioBaja.aspx" />
     <Content Include="admin\MantoProducto.aspx" />
     <Content Include="admin\FrmRptProvisiones.aspx" />
@@ -129,6 +130,7 @@
     <Content Include="admin\inicio.aspx" />
     <Content Include="admin\listapersonas.aspx" />
     <Content Include="admin\manatenimientoproductos.aspx" />
+    <Content Include="admin\MantoProductoLista.aspx" />
     <Content Include="admin\MantoTransaccionesSocios.aspx" />
     <Content Include="admin\MantoSocios.aspx" />
     <Content Include="admin\PeriodosRetiro.aspx" />
@@ -710,6 +712,13 @@
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmMantoProductosTasa.aspx.designer.vb">
+      <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmMantoProductosTasa.aspx.vb">
+      <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\frmSocioBaja.aspx.designer.vb">
       <DependentUpon>frmSocioBaja.aspx</DependentUpon>
     </Compile>
@@ -778,6 +787,13 @@
     </Compile>
     <Compile Include="admin\manatenimientoproductos.aspx.vb">
       <DependentUpon>manatenimientoproductos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\MantoProductoLista.aspx.designer.vb">
+      <DependentUpon>MantoProductoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\MantoProductoLista.aspx.vb">
+      <DependentUpon>MantoProductoLista.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\MantoTransaccionesSocios.aspx.designer.vb">
@@ -926,6 +942,7 @@
     <EmbeddedResource Include="admin\Reportes\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

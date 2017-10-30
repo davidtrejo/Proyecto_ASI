@@ -49,7 +49,7 @@
                 <asp:BoundField DataField="idproducto" HeaderText="id">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
-                <asp:BoundField DataField="nombreproducto" HeaderText="Detalle">
+                <asp:BoundField DataField="nombreproducto" HeaderText="Producto">
                 <ItemStyle HorizontalAlign="Center" />
                 </asp:BoundField>
                 <asp:BoundField DataField="saldo" HeaderText="Saldo">
@@ -57,9 +57,10 @@
                 </asp:BoundField>
                 
               <asp:TemplateField HeaderText = "Ver detalle">
+                    <ItemStyle HorizontalAlign="Center" Width="400px" /> 
                   <ItemTemplate>
                       <%--<asp:HyperLink runat="server" NavigateUrl='<%# Eval("idproducto", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ver detalle" />--%>
-                      <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idahorro", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ver detalle" />
+                      <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idahorro", "frmSocioProductoDetalle.aspx?id={0}") %>' Text="Ir a detalle" />
                   </ItemTemplate>
               </asp:TemplateField>            
             </Columns>

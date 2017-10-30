@@ -126,12 +126,12 @@
         <div class="MENUBS">
             <ul class="topnav" id="myTopnav">
                 <li><a class="active" href="#">Inicio</a></li>
-                <li><a href="mantenimientoproductos.aspx">Productos</a>
-                   <%-- <ul class="dropdown-menu ">
-                        <li><a href="productos.aspx">Buscar Productos</a></li>
+                <li><a href="#">Productos</a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="productos.aspx">lista Productos</a></li>
                         <li><a href="mantenimientoproductos.aspx?e=a">Agregar Productos</a></li>
-
-                    </ul>--%>
+                         <li><a href="MantoProductoLista.aspx">Agregar Productos</a></li>
+                    </ul>
 
                 </li>
                 <li><a href="ahorros.aspx">Ahorros</a></li>
@@ -174,7 +174,8 @@
                             <%--<a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>--%>
                             <a href='#' class="pr"><span>Productos</span></a>
                             <ul class="dropdown-menu ">
-                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>                               
+                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>      
+                                  <li><a href="MantoProductoLista.aspx">Lista Productos</a></li>
                             </ul>
                         </li>
                      
