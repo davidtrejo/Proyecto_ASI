@@ -463,6 +463,29 @@
 
     End Function
 
+
+    Public Function ObtenerEstadoCuenta(msjError As String, Optional idPersona As Integer = 0) As DataTable
+
+        strSql = " select * from vis_estadoCuenta"
+
+        If idPersona <> 0 Then
+            strSql &= " where idpersona =  " & idPersona
+        End If
+
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+            Return tabla
+
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
+
+
+    End Function
+
     Public Function ObtenerTblAhorros(ByRef msjError As String, Estado As EstadosAhorro, Optional idproducto As Integer = 0, Optional idpersona As Integer = 0, Optional idAhorro As Integer = 0) As DataTable
 
         strSql = " select * from ahorrosPersona "

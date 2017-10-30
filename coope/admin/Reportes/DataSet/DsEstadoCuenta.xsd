@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsEstadoCuenta" targetNamespace="http://tempuri.org/DsEstadoCuenta.xsd" xmlns:mstns="http://tempuri.org/DsEstadoCuenta.xsd" xmlns="http://tempuri.org/DsEstadoCuenta.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DB_A2BDCF_coopepruebaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_A2BDCF_coopepruebaConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DB_A2BDCF_coopepruebaConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsEstadoCuenta" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsEstadoCuenta" msprop:Generator_UserDSName="DsEstadoCuenta">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vis_estadoCuenta" msprop:Generator_TableClassName="vis_estadoCuentaDataTable" msprop:Generator_TableVarName="tablevis_estadoCuenta" msprop:Generator_RowChangedName="vis_estadoCuentaRowChanged" msprop:Generator_TablePropName="vis_estadoCuenta" msprop:Generator_RowDeletingName="vis_estadoCuentaRowDeleting" msprop:Generator_RowChangingName="vis_estadoCuentaRowChanging" msprop:Generator_RowEvHandlerName="vis_estadoCuentaRowChangeEventHandler" msprop:Generator_RowDeletedName="vis_estadoCuentaRowDeleted" msprop:Generator_RowClassName="vis_estadoCuentaRow" msprop:Generator_UserTableName="vis_estadoCuenta" msprop:Generator_RowEvArgName="vis_estadoCuentaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idpersona" msprop:Generator_ColumnVarNameInTable="columnidpersona" msprop:Generator_ColumnPropNameInRow="idpersona" msprop:Generator_ColumnPropNameInTable="idpersonaColumn" msprop:Generator_UserColumnName="idpersona" type="xs:int" />
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idtipoproducto" msprop:Generator_ColumnVarNameInTable="columnidtipoproducto" msprop:Generator_ColumnPropNameInRow="idtipoproducto" msprop:Generator_ColumnPropNameInTable="idtipoproductoColumn" msprop:Generator_UserColumnName="idtipoproducto" type="xs:int" />
+              <xs:element name="NombreTipoProducto" msprop:Generator_ColumnVarNameInTable="columnNombreTipoProducto" msprop:Generator_ColumnPropNameInRow="NombreTipoProducto" msprop:Generator_ColumnPropNameInTable="NombreTipoProductoColumn" msprop:Generator_UserColumnName="NombreTipoProducto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idproducto" msprop:Generator_ColumnVarNameInTable="columnidproducto" msprop:Generator_ColumnPropNameInRow="idproducto" msprop:Generator_ColumnPropNameInTable="idproductoColumn" msprop:Generator_UserColumnName="idproducto" type="xs:int" />
+              <xs:element name="NombreProducto" msprop:Generator_ColumnVarNameInTable="columnNombreProducto" msprop:Generator_ColumnPropNameInRow="NombreProducto" msprop:Generator_ColumnPropNameInTable="NombreProductoColumn" msprop:Generator_UserColumnName="NombreProducto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idmovimiento" msprop:Generator_ColumnVarNameInTable="columnidmovimiento" msprop:Generator_ColumnPropNameInRow="idmovimiento" msprop:Generator_ColumnPropNameInTable="idmovimientoColumn" msprop:Generator_UserColumnName="idmovimiento" type="xs:int" />
+              <xs:element name="idahorro" msprop:Generator_ColumnVarNameInTable="columnidahorro" msprop:Generator_ColumnPropNameInRow="idahorro" msprop:Generator_ColumnPropNameInTable="idahorroColumn" msprop:Generator_UserColumnName="idahorro" type="xs:int" minOccurs="0" />
+              <xs:element name="valormovimiento" msprop:Generator_ColumnVarNameInTable="columnvalormovimiento" msprop:Generator_ColumnPropNameInRow="valormovimiento" msprop:Generator_ColumnPropNameInTable="valormovimientoColumn" msprop:Generator_UserColumnName="valormovimiento" type="xs:decimal" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fechamovimiento" msprop:Generator_ColumnVarNameInTable="columnfechamovimiento" msprop:Generator_ColumnPropNameInRow="fechamovimiento" msprop:Generator_ColumnPropNameInTable="fechamovimientoColumn" msprop:Generator_UserColumnName="fechamovimiento" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idcapitalizacion" msprop:Generator_ColumnVarNameInTable="columnidcapitalizacion" msprop:Generator_ColumnPropNameInRow="idcapitalizacion" msprop:Generator_ColumnPropNameInTable="idcapitalizacionColumn" msprop:Generator_UserColumnName="idcapitalizacion" type="xs:int" minOccurs="0" />
+              <xs:element name="idtipomovimiento" msprop:Generator_ColumnVarNameInTable="columnidtipomovimiento" msprop:Generator_ColumnPropNameInRow="idtipomovimiento" msprop:Generator_ColumnPropNameInTable="idtipomovimientoColumn" msprop:Generator_UserColumnName="idtipomovimiento" type="xs:int" minOccurs="0" />
+              <xs:element name="idhistorico" msprop:Generator_ColumnVarNameInTable="columnidhistorico" msprop:Generator_ColumnPropNameInRow="idhistorico" msprop:Generator_ColumnPropNameInTable="idhistoricoColumn" msprop:Generator_UserColumnName="idhistorico" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

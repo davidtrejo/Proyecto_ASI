@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.DataAccess.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v16.2.Core, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -120,6 +121,7 @@
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
+    <Content Include="admin\FrmRptListado.aspx" />
     <Content Include="admin\frmSocioBaja.aspx" />
     <Content Include="admin\MantoProducto.aspx" />
     <Content Include="admin\FrmRptProvisiones.aspx" />
@@ -659,6 +661,17 @@
     <Content Include="plugins\zocial\zocial-regular-webfont.svg" />
     <Content Include="plugins\zocial\zocial.css" />
     <Content Include="admin\admin.Master" />
+    <Content Include="admin\Reportes\DataSet\DsEstadoCuenta.xsc">
+      <DependentUpon>DsEstadoCuenta.xsd</DependentUpon>
+    </Content>
+    <None Include="admin\Reportes\DataSet\DsEstadoCuenta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsEstadoCuenta.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="admin\Reportes\DataSet\DsEstadoCuenta.xss">
+      <DependentUpon>DsEstadoCuenta.xsd</DependentUpon>
+    </Content>
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Resumen.aspx" />
@@ -717,6 +730,13 @@
     </Compile>
     <Compile Include="admin\frmMantoProductosTasa.aspx.vb">
       <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\FrmRptListado.aspx.designer.vb">
+      <DependentUpon>FrmRptListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\FrmRptListado.aspx.vb">
+      <DependentUpon>FrmRptListado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\frmSocioBaja.aspx.designer.vb">
@@ -823,6 +843,17 @@
     <Compile Include="admin\Productos.aspx.vb">
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\Reportes\DataSet\DsEstadoCuenta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsEstadoCuenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Reportes\RptEstadoCuenta2.Designer.vb">
+      <DependentUpon>RptEstadoCuenta2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Reportes\RptEstadoCuenta2.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="admin\Reportes\XtraReport2.Designer.vb">
       <DependentUpon>XtraReport2.vb</DependentUpon>
@@ -939,6 +970,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="admin\Reportes\RptEstadoCuenta2.resx">
+      <DependentUpon>RptEstadoCuenta2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="admin\Reportes\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
     </EmbeddedResource>
