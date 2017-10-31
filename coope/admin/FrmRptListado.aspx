@@ -25,7 +25,7 @@
                                                         <asp:DropDownList ID="cmbSocio" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
                                                      </td>
                                               </tr> 
-                                      <tr>
+                                     <%-- <tr>
                                                    <th>Producto:</th>
                                                     <td>
                                                          <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
@@ -34,7 +34,7 @@
                                               </tr> 
                               
                                        
-                                      <tr>
+                                      <tr>--%>
                                                  <%--  <th>Fecha Inicio:</th>
                                                     <td>
                                                       
@@ -49,7 +49,7 @@
 
                                                          
                                                      </td>--%>
-                                              </tr>
+                                           <%--   </tr>
                                         <tr>
                                                    <th>Ahorro :</th>
                                                     <td>
@@ -57,7 +57,7 @@
                                                      
                                                      </td>
                                               </tr> 
-                                             
+                                             --%>
                                               <tr>
                                                     <th></th>
                                                     <td>
