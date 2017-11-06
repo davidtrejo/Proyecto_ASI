@@ -134,7 +134,7 @@ Public Class clpersona
 
         Try
 
-            Dim strCadena As String = " select top 1 * from personas where nit = '" & nit & "' and password = '" & password & "'"
+            Dim strCadena As String = " select top 1 * from vis_socios where nit = '" & nit & "' and password = '" & password & "'"
 
 
             Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)
@@ -153,7 +153,7 @@ Public Class clpersona
 
     Public Function ObtenerListaPersonas(msjError As String) As DataTable
 
-        strSql = " select * from personas"
+        strSql = " select * from vis_socios"
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -170,7 +170,7 @@ Public Class clpersona
 
     Public Function ObtenerListaPersonas(msjError As String, combo As Boolean) As DataTable
 
-        strSql = "select '' as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from personas"
+        strSql = "select '' as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from vis_socios"
         Dim tabla As DataTable = New DataTable
 
         Try
@@ -187,7 +187,7 @@ Public Class clpersona
 
     Public Function ObtenerListaPersonasxcondicion(msjError As String, _sqlCondicion As String) As DataTable
         Try
-            strSql = "SELECT * FROM personas " & _sqlCondicion
+            strSql = "SELECT * FROM vis_socios " & _sqlCondicion
             Dim tabla As DataTable = New DataTable
             tabla = conn.ObtenerTabla(strSql, msjError)
             Return tabla
