@@ -2,8 +2,8 @@
     Inherits System.Web.UI.Page
 
     Dim persona As New clpersona
-    Dim ahorro As New clahorro
-    Dim producto As New clproducto
+
+    'Dim producto As New clproducto
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
@@ -35,7 +35,7 @@
 
         'rpt.Parameters.Item("idpersona").Value = Request.QueryString("id")
 
-
+        Dim ahorro As New clahorro
         rpt.DataSource = ahorro.ObtenerEstadoCuenta(msjError, Me.cmbSocio.SelectedValue)
 
         Using stream As New System.IO.MemoryStream
@@ -71,31 +71,31 @@
 
 
 
-        Me.cmbProducto.DataSource = producto.ObtenerListaProductos(msjError)
-        Me.cmbProducto.DataTextField = "nombreproducto"
-        Me.cmbProducto.DataValueField = "idproducto"
-        Me.cmbProducto.DataBind()
+        'Me.cmbProducto.DataSource = producto.ObtenerListaProductos(msjError)
+        'Me.cmbProducto.DataTextField = "nombreproducto"
+        'Me.cmbProducto.DataValueField = "idproducto"
+        'Me.cmbProducto.DataBind()
 
 
 
     End Sub
 
-    Protected Sub cmbSocio_TextChanged(sender As Object, e As EventArgs) Handles cmbSocio.TextChanged
+    'Protected Sub cmbSocio_TextChanged(sender As Object, e As EventArgs) Handles cmbSocio.TextChanged
 
 
 
 
-        Dim msjError As String = ""
-        ''combo productos
+    '    Dim msjError As String = ""
+    '    ''combo productos
 
-        Me.cmbAhorro.DataSource = ahorro.ObtenerAhorrosPersona(Me.cmbSocio.SelectedValue, msjError)
+    '    Me.cmbAhorro.DataSource = ahorro.ObtenerAhorrosPersona(Me.cmbSocio.SelectedValue, msjError)
 
-        Me.cmbAhorro.DataTextField = "nombreproducto"
-        Me.cmbAhorro.DataValueField = "idahorro"
-        Me.cmbAhorro.DataBind()
+    '    Me.cmbAhorro.DataTextField = "nombreproducto"
+    '    Me.cmbAhorro.DataValueField = "idahorro"
+    '    Me.cmbAhorro.DataBind()
 
 
 
-    End Sub
+    'End Sub
 
 End Class
