@@ -122,6 +122,7 @@
     <Content Include="admin\CrearCuenta.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
     <Content Include="admin\FrmRptListado.aspx" />
+    <Content Include="admin\frmSocioAgregar.aspx" />
     <Content Include="admin\frmSocioBaja.aspx" />
     <Content Include="admin\MantoProducto.aspx" />
     <Content Include="admin\FrmRptProvisiones.aspx" />
@@ -739,6 +740,13 @@
       <DependentUpon>FrmRptListado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmSocioAgregar.aspx.designer.vb">
+      <DependentUpon>frmSocioAgregar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmSocioAgregar.aspx.vb">
+      <DependentUpon>frmSocioAgregar.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\frmSocioBaja.aspx.designer.vb">
       <DependentUpon>frmSocioBaja.aspx</DependentUpon>
     </Compile>
@@ -976,6 +984,7 @@
     <EmbeddedResource Include="admin\Reportes\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

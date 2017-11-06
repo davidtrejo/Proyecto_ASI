@@ -151,7 +151,30 @@ Public Class clpersona
 
     End Function
 
-    Public Function ObtenerListaPersonas(msjError As String) As DataTable
+
+
+    Public Function ObtenerListaAgregarSocio(ByRef msjError As String) As DataTable
+
+        '' Obtiene Lista de empleados que no son socios de la cooperativa
+
+        strSql = " select referenciaRRHH, nombrecompleto as Empleado from vis_empleados where referenciarrhh not in ( select referenciarrhh from personas)"
+
+        Dim tabla As DataTable = New DataTable
+
+        Try
+            tabla = conn.ObtenerTabla(strSql, msjError)
+            Return tabla
+
+        Catch ex As Exception
+            msjError = ex.Message
+            Return Nothing
+        End Try
+
+
+    End Function
+
+
+    Public Function ObtenerListaPersonas(ByRef msjError As String) As DataTable
 
         strSql = " select * from vis_socios"
         Dim tabla As DataTable = New DataTable
@@ -168,7 +191,7 @@ Public Class clpersona
 
     End Function
 
-    Public Function ObtenerListaPersonas(msjError As String, combo As Boolean) As DataTable
+    Public Function ObtenerListaPersonas(ByRef  msjError As String, combo As Boolean) As DataTable
 
         strSql = "select '' as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from vis_socios"
         Dim tabla As DataTable = New DataTable
@@ -185,7 +208,7 @@ Public Class clpersona
 
     End Function
 
-    Public Function ObtenerListaPersonasxcondicion(msjError As String, _sqlCondicion As String) As DataTable
+    Public Function ObtenerListaPersonasxcondicion(ByRef msjError As String, _sqlCondicion As String) As DataTable
         Try
             strSql = "SELECT * FROM vis_socios " & _sqlCondicion
             Dim tabla As DataTable = New DataTable
