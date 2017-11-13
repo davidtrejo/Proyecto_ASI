@@ -67,6 +67,8 @@ Partial Public Class RptEstadoCuenta2
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.TopMarginBand1 = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMarginBand1 = New DevExpress.XtraReports.UI.BottomMarginBand()
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.DsEstadoCuenta1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -74,7 +76,7 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel10, Me.XrLabel11, Me.XrLabel12})
         Me.Detail.Dpi = 100.0!
-        Me.Detail.HeightF = 29.0!
+        Me.Detail.HeightF = 16.5!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
         Me.Detail.StyleName = "DataField"
@@ -120,7 +122,7 @@ Partial Public Class RptEstadoCuenta2
         Me.GroupHeaderBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel2, Me.XrLabel1})
         Me.GroupHeaderBand1.Dpi = 100.0!
         Me.GroupHeaderBand1.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("NombreCompleto", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeaderBand1.HeightF = 36.0!
+        Me.GroupHeaderBand1.HeightF = 25.99999!
         Me.GroupHeaderBand1.Level = 3
         Me.GroupHeaderBand1.Name = "GroupHeaderBand1"
         '
@@ -132,7 +134,7 @@ Partial Public Class RptEstadoCuenta2
         Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(120.0!, 0!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel2.SizeF = New System.Drawing.SizeF(247.3333!, 36.0!)
+        Me.XrLabel2.SizeF = New System.Drawing.SizeF(247.3333!, 25.99999!)
         Me.XrLabel2.StyleName = "DataField"
         Me.XrLabel2.StylePriority.UseFont = False
         Me.XrLabel2.Text = "XrLabel2"
@@ -140,19 +142,19 @@ Partial Public Class RptEstadoCuenta2
         'XrLabel1
         '
         Me.XrLabel1.Dpi = 100.0!
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 0!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(6.00001!, 0!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel1.SizeF = New System.Drawing.SizeF(114.0!, 36.0!)
+        Me.XrLabel1.SizeF = New System.Drawing.SizeF(114.0!, 25.99999!)
         Me.XrLabel1.StyleName = "FieldCaption"
-        Me.XrLabel1.Text = "Nombre Completo"
+        Me.XrLabel1.Text = "Socio:"
         '
         'GroupHeaderBand2
         '
         Me.GroupHeaderBand2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel4, Me.XrLabel3})
         Me.GroupHeaderBand2.Dpi = 100.0!
         Me.GroupHeaderBand2.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("NombreTipoProducto", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeaderBand2.HeightF = 36.0!
+        Me.GroupHeaderBand2.HeightF = 16.62499!
         Me.GroupHeaderBand2.Level = 2
         Me.GroupHeaderBand2.Name = "GroupHeaderBand2"
         '
@@ -164,7 +166,7 @@ Partial Public Class RptEstadoCuenta2
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(179.0!, 0!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(238.8334!, 36.0!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(238.8334!, 16.62499!)
         Me.XrLabel4.StyleName = "DataField"
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.Text = "XrLabel4"
@@ -175,16 +177,16 @@ Partial Public Class RptEstadoCuenta2
         Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(36.0!, 0!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(143.0!, 36.0!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(143.0!, 16.62499!)
         Me.XrLabel3.StyleName = "FieldCaption"
-        Me.XrLabel3.Text = "Nombre Tipo Producto"
+        Me.XrLabel3.Text = "Tipo Producto"
         '
         'GroupHeaderBand3
         '
         Me.GroupHeaderBand3.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel6, Me.XrLabel5})
         Me.GroupHeaderBand3.Dpi = 100.0!
         Me.GroupHeaderBand3.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("NombreProducto", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
-        Me.GroupHeaderBand3.HeightF = 36.0!
+        Me.GroupHeaderBand3.HeightF = 25.99999!
         Me.GroupHeaderBand3.Level = 1
         Me.GroupHeaderBand3.Name = "GroupHeaderBand3"
         '
@@ -196,7 +198,7 @@ Partial Public Class RptEstadoCuenta2
         Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(177.0!, 0!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel6.SizeF = New System.Drawing.SizeF(284.9583!, 36.0!)
+        Me.XrLabel6.SizeF = New System.Drawing.SizeF(284.9583!, 25.99999!)
         Me.XrLabel6.StyleName = "DataField"
         Me.XrLabel6.StylePriority.UseFont = False
         Me.XrLabel6.Text = "XrLabel6"
@@ -204,12 +206,12 @@ Partial Public Class RptEstadoCuenta2
         'XrLabel5
         '
         Me.XrLabel5.Dpi = 100.0!
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(66.0!, 0!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(65.99998!, 0!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel5.SizeF = New System.Drawing.SizeF(111.0!, 36.0!)
+        Me.XrLabel5.SizeF = New System.Drawing.SizeF(111.0!, 25.99999!)
         Me.XrLabel5.StyleName = "FieldCaption"
-        Me.XrLabel5.Text = "Nombre Producto"
+        Me.XrLabel5.Text = "Producto"
         '
         'GroupHeaderBand4
         '
@@ -315,7 +317,7 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.GroupFooterBand2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel14, Me.XrLabel15})
         Me.GroupFooterBand2.Dpi = 100.0!
-        Me.GroupFooterBand2.HeightF = 30.0!
+        Me.GroupFooterBand2.HeightF = 19.58332!
         Me.GroupFooterBand2.Level = 1
         Me.GroupFooterBand2.Name = "GroupFooterBand2"
         '
@@ -323,11 +325,13 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.XrLabel14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.valormovimiento", "{0:C2}")})
         Me.XrLabel14.Dpi = 100.0!
-        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 6.0!)
+        Me.XrLabel14.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 0!)
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel14.SizeF = New System.Drawing.SizeF(204.5352!, 18.0!)
         Me.XrLabel14.StyleName = "FieldCaption"
+        Me.XrLabel14.StylePriority.UseFont = False
         XrSummary1.FormatString = "{0:C2}"
         XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrLabel14.Summary = XrSummary1
@@ -336,18 +340,20 @@ Partial Public Class RptEstadoCuenta2
         'XrLabel15
         '
         Me.XrLabel15.Dpi = 100.0!
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(65.99998!, 6.00001!)
+        Me.XrLabel15.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(65.99998!, 0!)
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel15.SizeF = New System.Drawing.SizeF(54.00003!, 18.0!)
+        Me.XrLabel15.SizeF = New System.Drawing.SizeF(96.70836!, 18.0!)
         Me.XrLabel15.StyleName = "FieldCaption"
-        Me.XrLabel15.Text = "Sum"
+        Me.XrLabel15.StylePriority.UseFont = False
+        Me.XrLabel15.Text = "Total Producto"
         '
         'GroupFooterBand3
         '
-        Me.GroupFooterBand3.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel16, Me.XrLabel17})
+        Me.GroupFooterBand3.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel22, Me.XrLabel16, Me.XrLabel17})
         Me.GroupFooterBand3.Dpi = 100.0!
-        Me.GroupFooterBand3.HeightF = 30.0!
+        Me.GroupFooterBand3.HeightF = 20.87501!
         Me.GroupFooterBand3.Level = 2
         Me.GroupFooterBand3.Name = "GroupFooterBand3"
         '
@@ -355,11 +361,13 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.XrLabel16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.valormovimiento", "{0:C2}")})
         Me.XrLabel16.Dpi = 100.0!
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 6.0!)
+        Me.XrLabel16.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 0!)
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel16.SizeF = New System.Drawing.SizeF(204.5352!, 18.0!)
         Me.XrLabel16.StyleName = "FieldCaption"
+        Me.XrLabel16.StylePriority.UseFont = False
         XrSummary2.FormatString = "{0:C2}"
         XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrLabel16.Summary = XrSummary2
@@ -368,18 +376,20 @@ Partial Public Class RptEstadoCuenta2
         'XrLabel17
         '
         Me.XrLabel17.Dpi = 100.0!
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(36.0!, 6.0!)
+        Me.XrLabel17.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(36.0!, 0!)
         Me.XrLabel17.Name = "XrLabel17"
         Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel17.SizeF = New System.Drawing.SizeF(60.0!, 18.0!)
+        Me.XrLabel17.SizeF = New System.Drawing.SizeF(49.58337!, 14.0!)
         Me.XrLabel17.StyleName = "FieldCaption"
-        Me.XrLabel17.Text = "Sum"
+        Me.XrLabel17.StylePriority.UseFont = False
+        Me.XrLabel17.Text = "Total"
         '
         'GroupFooterBand4
         '
         Me.GroupFooterBand4.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel18, Me.XrLabel19})
         Me.GroupFooterBand4.Dpi = 100.0!
-        Me.GroupFooterBand4.HeightF = 30.0!
+        Me.GroupFooterBand4.HeightF = 25.99999!
         Me.GroupFooterBand4.Level = 3
         Me.GroupFooterBand4.Name = "GroupFooterBand4"
         '
@@ -387,11 +397,13 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.XrLabel18.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.valormovimiento", "{0:C2}")})
         Me.XrLabel18.Dpi = 100.0!
-        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 6.0!)
+        Me.XrLabel18.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 2.000014!)
         Me.XrLabel18.Name = "XrLabel18"
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel18.SizeF = New System.Drawing.SizeF(204.5352!, 18.0!)
         Me.XrLabel18.StyleName = "FieldCaption"
+        Me.XrLabel18.StylePriority.UseFont = False
         XrSummary3.FormatString = "{0:C2}"
         XrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
         Me.XrLabel18.Summary = XrSummary3
@@ -400,16 +412,18 @@ Partial Public Class RptEstadoCuenta2
         'XrLabel19
         '
         Me.XrLabel19.Dpi = 100.0!
-        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(6.0!, 6.0!)
+        Me.XrLabel19.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(6.00001!, 0!)
         Me.XrLabel19.Name = "XrLabel19"
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel19.SizeF = New System.Drawing.SizeF(90.0!, 18.0!)
+        Me.XrLabel19.SizeF = New System.Drawing.SizeF(89.99999!, 20.00001!)
         Me.XrLabel19.StyleName = "FieldCaption"
-        Me.XrLabel19.Text = "Sum"
+        Me.XrLabel19.StylePriority.UseFont = False
+        Me.XrLabel19.Text = "Total "
         '
         'ReportFooterBand1
         '
-        Me.ReportFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel20, Me.XrLabel21})
+        Me.ReportFooterBand1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel23, Me.XrLabel20, Me.XrLabel21})
         Me.ReportFooterBand1.Dpi = 100.0!
         Me.ReportFooterBand1.HeightF = 30.0!
         Me.ReportFooterBand1.Name = "ReportFooterBand1"
@@ -418,11 +432,13 @@ Partial Public Class RptEstadoCuenta2
         '
         Me.XrLabel20.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.valormovimiento", "{0:C2}")})
         Me.XrLabel20.Dpi = 100.0!
+        Me.XrLabel20.Font = New System.Drawing.Font("Times New Roman", 8.0!, System.Drawing.FontStyle.Bold)
         Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(439.4648!, 6.0!)
         Me.XrLabel20.Name = "XrLabel20"
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel20.SizeF = New System.Drawing.SizeF(204.5352!, 18.0!)
         Me.XrLabel20.StyleName = "FieldCaption"
+        Me.XrLabel20.StylePriority.UseFont = False
         XrSummary4.FormatString = "{0:C2}"
         XrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report
         Me.XrLabel20.Summary = XrSummary4
@@ -437,7 +453,7 @@ Partial Public Class RptEstadoCuenta2
         Me.XrLabel21.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel21.SizeF = New System.Drawing.SizeF(90.0!, 18.0!)
         Me.XrLabel21.StyleName = "FieldCaption"
-        Me.XrLabel21.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Total"
+        Me.XrLabel21.Text = "Total" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Total"
         '
         'Title
         '
@@ -491,6 +507,32 @@ Partial Public Class RptEstadoCuenta2
         Me.BottomMarginBand1.Dpi = 100.0!
         Me.BottomMarginBand1.HeightF = 100.0!
         Me.BottomMarginBand1.Name = "BottomMarginBand1"
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.NombreProducto")})
+        Me.XrLabel22.Dpi = 100.0!
+        Me.XrLabel22.Font = New System.Drawing.Font("Times New Roman", 8.0!)
+        Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(97.21476!, 0!)
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.SizeF = New System.Drawing.SizeF(270.1185!, 18.0!)
+        Me.XrLabel22.StyleName = "DataField"
+        Me.XrLabel22.StylePriority.UseFont = False
+        Me.XrLabel22.Text = "XrLabel6"
+        '
+        'XrLabel23
+        '
+        Me.XrLabel23.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "vis_estadoCuenta.NombreCompleto")})
+        Me.XrLabel23.Dpi = 100.0!
+        Me.XrLabel23.Font = New System.Drawing.Font("Times New Roman", 8.0!)
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(107.5834!, 3.999996!)
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.SizeF = New System.Drawing.SizeF(247.3333!, 25.99999!)
+        Me.XrLabel23.StyleName = "DataField"
+        Me.XrLabel23.StylePriority.UseFont = False
+        Me.XrLabel23.Text = "XrLabel2"
         '
         'RptEstadoCuenta2
         '
@@ -547,4 +589,6 @@ Partial Public Class RptEstadoCuenta2
     Friend WithEvents DataField As DevExpress.XtraReports.UI.XRControlStyle
     Friend WithEvents TopMarginBand1 As DevExpress.XtraReports.UI.TopMarginBand
     Friend WithEvents BottomMarginBand1 As DevExpress.XtraReports.UI.BottomMarginBand
+    Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
 End Class

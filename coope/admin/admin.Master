@@ -100,7 +100,7 @@
 
         <div class="wrap">
             <div class="logo" style="float: left; width: 165px; height: 61px;">
-                <a href="frmResumen.aspx">
+                <a href="inicio.aspx">
                     <img src="../images/logo.jpg" /></a>
             </div>
 
@@ -115,7 +115,7 @@
 
             </div>
             <div class="banner3" style="float: left; width: 174px; height: 61px;">
-                <a href="https://www.acsa.com.sv/formllamada.html">
+                <a href="">
                     <img src="https://www.acsa.com.sv/images/comente.jpg"></a>
             </div>
             <div style="clear: both;"></div>
@@ -184,6 +184,7 @@
                              <a href='#' class="pr"><span>Socios</span></a>
                             <ul class="dropdown-menu ">
                                <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
+                                <li><a href="frmSocioAgregar.aspx" >Agregar Socios</a></li>
                              <%--  <li> <a href='listapersonas.aspx' class="pr"><span>Lista de Socios</span></a></li>
                                <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
                                <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>

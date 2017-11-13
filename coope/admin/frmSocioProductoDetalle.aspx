@@ -25,18 +25,17 @@
                                          <th>Producto:</th>
                                          <td colspan="5"><asp:TextBox ID="txtProducto" runat="server" width="300px" Enabled="False"></asp:TextBox></td>
                                      </tr>
-                                     <tr>
-                                         <th>Movimientos de cuenta:</th>                                         
-                                     </tr> 
-                                     <tr>
-                                         <td><asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label></td>
-                                     </tr>                                                                                            
+                                     
+                                                                                                                               
                                  </tbody> 
                         </table> 
+                           <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
                     </div>
                 </div> 
             </div>
-    
+     
+                                        Movimientos de cuenta:                                         
+                                     
     <div class="widget-content form-container">
         <asp:GridView Width ="94%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

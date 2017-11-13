@@ -648,7 +648,7 @@
     End Function
 
 
-    Public Function GuardarAhorro(IdProducto As Integer, idpersona As Integer, fechainicio As Date, IdAhorroDeposito As Integer, ByRef msjError As String) As Integer
+    Public Function GuardarAhorro(IdProducto As Integer, idpersona As Integer, fechainicio As Date, IdAhorroDeposito As Integer, ByRef msjError As String, Optional ByVal DepositarEnMismaCuenta As Boolean = False) As Integer
 
         Try
             strSql = " Insert into ahorrosPersona (idproducto,idpersona,idestado) output inserted.idahorro values ( "
@@ -659,7 +659,13 @@
             _idAhorro = conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idahorro")
 
 
-            GuardarHistorico(_idAhorro, IdProducto, "Creación de Cuenta", fechainicio, IdAhorroDeposito, msjError)
+            If DepositarEnMismaCuenta = True Then
+                GuardarHistorico(_idAhorro, IdProducto, "Creación de Cuenta", fechainicio, _idAhorro, msjError)
+            Else
+                GuardarHistorico(_idAhorro, IdProducto, "Creación de Cuenta", fechainicio, IdAhorroDeposito, msjError)
+
+            End If
+
 
 
 
@@ -670,6 +676,7 @@
         Return _idAhorro
 
     End Function
+
 
     Public Sub GuardarHistorico(idahorro As Integer, idProducto As Integer, comentario As String, fechainicio As Date, idahorroDeposito As Integer, ByRef msjError As String)
 

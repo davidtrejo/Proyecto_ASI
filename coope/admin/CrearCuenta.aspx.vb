@@ -92,9 +92,7 @@
 
         End If
 
-
-
-        ahorro.GuardarAhorro(Me.cmbProducto.SelectedValue, Me.cmbSocio.SelectedValue, Me.txtFecha.Value, Me.cmbInteres.SelectedValue, msjError)
+        ahorro.GuardarAhorro(Me.cmbProducto.SelectedValue, Me.cmbSocio.SelectedValue, Me.txtFecha.Value, Me.cmbInteres.SelectedValue, msjError, True)
 
         If msjError = "" Then
             Me.lblErrror.Visible = False

@@ -151,13 +151,11 @@ Public Class clpersona
 
     End Function
 
-
-
     Public Function ObtenerListaAgregarSocio(ByRef msjError As String) As DataTable
 
         '' Obtiene Lista de empleados que no son socios de la cooperativa
 
-        strSql = " select referenciaRRHH, nombrecompleto as Empleado from vis_empleados where referenciarrhh not in ( select referenciarrhh from personas)"
+        strSql = " select referenciaRRHH as Id, nombrecompleto as Empleado from vis_empleados where referenciarrhh not in ( select referenciarrhh from personas)"
 
         Dim tabla As DataTable = New DataTable
 
@@ -257,6 +255,20 @@ Public Class clpersona
     '    End Try
 
     'End Sub
+
+    Public Function agregarSocio(ReferenciaRRHH As String, ByRef msjError As String) As Integer
+
+        strSql = " insert into personas (ReferenciaRRHH)output inserted.idpersona  values( '" & ReferenciaRRHH & "')   "
+
+        Try
+            Return conn.ObtenerTabla(strSql, msjError).Rows(0).Item("idpersona")
+
+        Catch ex As Exception
+            msjError = ex.Message
+            Return 0
+        End Try
+
+    End Function
 
 #End Region
 
