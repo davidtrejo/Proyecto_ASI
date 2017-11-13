@@ -1,0 +1,348 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="admin.master.vb" Inherits="coope.admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/jquery.maskedinput.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" media="all" />
+    <link href="../css/CustomNavBar.css" rel="stylesheet" />
+    <link href="../css/menu.css" rel="stylesheet" />
+
+    <!-- jquery-ui Stylesheets -->
+    <link rel="stylesheet" href="../assets/jui/css/jquery-ui.css" media="screen" />
+    <link rel="stylesheet" href="../assets/jui/jquery-ui.custom.css" media="screen" />
+    <link rel="stylesheet" href="../assets/jui/timepicker/jquery-ui-timepicker.css" media="screen" />
+
+    <!-- Uniform Stylesheet -->
+    <link rel="stylesheet" href="../plugins/uniform/css/uniform.default.css" media="screen" />
+
+    <!-- Rating Plugin -->
+    <link rel="stylesheet" href="../plugins/rating/jquery.rating.css" media="screen" />
+
+
+    <!-- msgBox -->
+    <link rel="stylesheet" href="../plugins/msgbox/jquery.msgbox.css" media="screen" />
+
+    <!-- pnotify -->
+    <link rel="stylesheet" href="../plugins/pnotify/jquery.pnotify.css" media="screen" />
+
+
+    <!-- Plugin Stylsheets first to ease overrides -->
+
+    <!-- Zebra Datepicker -->
+    <link rel="stylesheet" href="../plugins/zebradp/css/mooncake/zebra_datepicker.css" media="screen" />
+
+
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../plugins/select2/select2.css" media="screen" />
+
+    <!-- iButton -->
+    <link rel="stylesheet" href="../plugins/ibutton/jquery.ibutton.css" media="screen" />
+
+    <!-- DataTables -->
+    <link href="../plugins/datatables/TableTools/css/TableTools.css" rel="stylesheet" type="text/css" />
+
+    <!-- Main Layout Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/fonts/icomoon/style.css" media="screen" />
+    <link rel="stylesheet" href="../assets/css/main-style.css" media="screen" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <!-- PrettyPhoto -->
+    <link rel="stylesheet" href="../plugins/prettyphoto/css/prettyPhoto.css" media="screen" />
+
+
+    <!--script para formularios mobiles -->
+
+    <link rel="stylesheet" href="../css/general.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../acsa.ico" />
+    <title>Cooperativa</title>
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+
+
+
+
+<script type="text/javascript">
+    var lhnAccountN = "25295-1";
+    var lhnButtonN = 7141;
+    var lhnChatPosition = 'default';
+    var lhnInviteEnabled = 1;
+    var lhnWindowN = 0;
+    var lhnDepartmentN = 0;
+</script>
+
+
+
+<body scroll="yes" style="overflow-y: scroll;">
+
+    <div style="border-top: 3px solid #1d407b;">
+
+
+        <div class="wrap">
+            <div class="logo" style="float: left; width: 165px; height: 61px;">
+                <a href="inicio.aspx">
+                    <img src="../images/logo.jpg" /></a>
+            </div>
+
+            <div class="banner1" style="float: left; width: 454px; height: 61px;">
+                <img src="../images/banner_temporada01.jpg" />
+            </div>
+            <div class="banner2" style="float: left; width: 202px; height: 61px;">
+                <%--<img src="../images/banner_chatenlinea.jpg">--%>
+                <!-- This code must be installed within the body tags -->
+                <script src="//www.livehelpnow.net/lhn/widgets/chatbutton/lhnchatbutton-current.min.js" type="text/javascript" id="lhnscript"></script>
+
+
+            </div>
+            <div class="banner3" style="float: left; width: 174px; height: 61px;">
+                <a href="">
+                    <img src="https://www.acsa.com.sv/images/comente.jpg"></a>
+            </div>
+            <div style="clear: both;"></div>
+
+
+        </div>
+
+        <div class="MENUBS">
+            <ul class="topnav" id="myTopnav">
+                <li><a class="active" href="#">Inicio</a></li>
+                <li><a href="#">Productos</a>
+                    <ul class="dropdown-menu ">
+                        <li><a href="productos.aspx">lista Productos</a></li>
+                        <li><a href="mantenimientoproductos.aspx?e=a">Agregar Productos</a></li>
+                         <li><a href="MantoProductoLista.aspx">Agregar Productos</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="ahorros.aspx">Ahorros</a></li>
+                <li><a href="listapersonas.aspx">Personas</a></li>
+                  <li><a href="gestionar.aspx">Gestionar</a></li>
+                <li class="icon">
+                    <a href="javascript:void(0);" style="font-size: 15px;" onclick="myFunction()">☰</a>
+                </li>
+            </ul>
+        </div>
+
+        <div style="margin: 3px 0 0; background-color: #e3e3e3; height: 35px;" class="">
+            <div class="wrapWelcome" style="padding: 10px 0px 10px 0px; background-color: #e3e3e3;">
+                <div class="submenuleft">
+                    Bienvenido: <span style="color: #1d407b;">
+                        <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
+                    </span>
+                </div>
+                <div class="submenuright" style="color: #1d407b;">
+                    <div style="color: #1d407b; width: 51px; float: left;">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/inicio.aspx">Inicio</asp:HyperLink></div>
+                    <%-- <div style="color:#1d407b;width:50px;float:left;"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Ayuda</asp:HyperLink> </div>--%>
+                    <div style="color: #1d407b; width: 90px; float: left;">
+                        <asp:HyperLink ID="HyperLink3"
+                            runat="server" NavigateUrl="~/frmLoginAdmin.aspx">Cerrar Sesi&oacute;n</asp:HyperLink>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+        <div class="degrade" style="width: 100%; height: 41px; border: 1px solid #808284; background: -moz-linear-gradient(center top , #FFFFFF, #CACCCE);">
+            <div class="wrap">
+
+                <div id='menu'>
+                    <!-- Inicia el menu -->
+                    <ul>
+                        <!-- ejemplo li-->
+                        <li class='has-sub comision order' style="width: 160px; border-left: 1px solid #808284;">
+                            <%--<a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>--%>
+                            <a href='#' class="pr"><span>Productos</span></a>
+                            <ul class="dropdown-menu ">
+                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>      
+                                  <li><a href="MantoProductoLista.aspx">Lista Productos</a></li>
+                            </ul>
+                        </li>
+                     
+
+                        <li class='has-sub comision order' style="width: 160px;">
+                             <a href='#' class="pr"><span>Socios</span></a>
+                            <ul class="dropdown-menu ">
+                               <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
+                                <li><a href="frmSocioAgregar.aspx" >Agregar Socios</a></li>
+                             <%--  <li> <a href='listapersonas.aspx' class="pr"><span>Lista de Socios</span></a></li>
+                               <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
+                               <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>
+                               --%>
+                             
+
+                            </ul>
+                          
+
+                        </li>
+
+                          <li class='has-sub comision order' style="width: 160px;">
+                              <a href="gestionar.aspx" class="pr"><span>Gestionar</span> </a>
+                               <ul class="dropdown-menu ">
+                                   <li><a href="CrearCuenta.aspx?" >Crear Cuentas</a></li>
+                                    <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
+                                <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
+                                <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
+                                <li><a href="PeriodosRetiro.aspx" >Periodos Retiro</a></li>
+                            </ul>
+
+                          </li>
+                          <li class='has-sub comision order' style="width: 160px;">
+                             <a href="#" class="pr"><span>Listados</span> </a>
+                               <ul class="dropdown-menu ">                         
+                                <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>
+                                    <li><a href="FrmRptListado.aspx" >Estado de Cuenta</a></li>
+                            </ul>
+
+                        </li>
+
+                      
+                    </ul>
+                    <!--Termina el menu -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div style="clear: both"></div>
+
+    <div id="wrapper">
+        <div class="wrap">
+            <form id="form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </form>
+            <div style="clear: both;"></div>
+        </div>
+        <div style="clear: both"></div>
+        <!-- inicio del footer -->
+        <div class="footerr lineagris1">
+            <span class="footertext"></span>
+            <!-- Termina el footer-->
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#menu').slicknav();
+        });
+    </script>
+
+
+    <!-- Core Scripts -->
+    <script src="../assets/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/libs/jquery.placeholder.min.js"></script>
+    <script src="../assets/js/libs/jquery.mousewheel.min.js"></script>
+
+    <!-- Template Script -->
+    <script src="../assets/js/template.js"></script>
+    <script src="../assets/js/setup.js"></script>
+
+    <!-- Customizer, remove if not needed -->
+    <script src="../assets/js/customizer.js"></script>
+
+    <!-- Uniform Script -->
+    <script src="../plugins/uniform/jquery.uniform.min.js"></script>
+
+    <!-- jquery-ui Scripts -->
+    <script src="../assets/jui/js/jquery-ui-1.9.2.min.js"></script>
+    <script src="../assets/jui/jquery-ui.custom.min.js"></script>
+    <script src="../assets/jui/timepicker/jquery-ui-timepicker.min.js"></script>
+    <script src="../assets/jui/jquery.ui.touch-punch.min.js"></script>
+
+
+
+
+    <!-- Plugin Scripts -->
+
+    <!-- Bootstrap FileInput -->
+    <script src="custom-plugins/bootstrap-fileinput.min.js"></script>
+    <!-- Bootstrap InputMask -->
+    <script src="custom-plugins/bootstrap-inputmask.min.js"></script>
+    <!-- iButton -->
+    <script src="../plugins/ibutton/jquery.ibutton.min.js"></script>
+    <!-- AutoSize -->
+    <script src="../plugins/autosize/jquery.autosize-min.js"></script>
+    <!-- PickList -->
+    <script src="custom-plugins/picklist/picklist.min.js"></script>
+    <!-- Select2 -->
+    <script src="../plugins/select2/select2.min.js"></script>
+    <!-- Rating  -->
+    <script src="../plugins/rating/jquery.rating.min.js"></script>
+    <!-- Zebra Datepicker -->
+    <script src="../plugins/zebradp/zebra_datepicker.min.js"></script>
+    <script src="../assets/jui/timepicker/jquery-ui-timepicker.min.js"></script>
+    <!-- Validation -->
+    <script src="../plugins/validate/jquery.validate.min.js"></script>
+    <!-- PrettyPhoto -->
+    <script src="../plugins/prettyphoto/js/jquery.prettyPhoto.min.js"></script>
+    <!-- Freetile -->
+    <script src="../plugins/freetile/jquery.freetile.min.js"></script>
+    <!-- Resize plugin to handle container resizes -->
+    <script src="../plugins/freetile/jquery.resize.min.js"></script>
+
+
+
+    <!-- Plugin Scripts -->
+
+    <!-- msgBox -->
+    <script src="../plugins/msgbox/jquery.msgbox.min.js"></script>
+
+    <!-- pnotify -->
+    <script src="../plugins/pnotify/jquery.pnotify.min.js"></script>
+
+    <!-- Demo Scripts -->
+    <script src="../assets/js/demo/alerts.js"></script>
+
+
+    <!-- DataTables -->
+    <script src="../plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="../plugins/datatables/TableTools/js/TableTools.min.js"></script>
+    <script src="../plugins/datatables/FixedColumns/FixedColumns.min.js"></script>
+    <script src="../plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="../plugins/datatables/jquery.dataTables.columnFilter.js"></script>
+
+    <!-- Demo Scripts -->
+    <%-- <script src="../assets/js/demo/dataTables.js"></script>--%>
+
+    <%-- <!-- Demo Scripts -->
+    <script src="../assets/js/demo/form.js">--%>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
