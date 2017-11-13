@@ -23,13 +23,13 @@ Partial Public Class frmSocioAgregar
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control ASPxComboBox1.
+    '''Control cmbSocios.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ASPxComboBox1 As Global.DevExpress.Web.ASPxComboBox
+    Protected WithEvents cmbSocios As Global.DevExpress.Web.ASPxComboBox
     
     '''<summary>
     '''Control ASPxButton1.

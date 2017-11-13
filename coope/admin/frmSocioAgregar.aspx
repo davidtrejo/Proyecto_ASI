@@ -31,7 +31,7 @@
                         <tr>
                             <th class="auto-style3">Nombre socio:</th>
                             <td class="auto-style3">
-                                <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" ValueType="System.String" Width="252px">
+                                <dx:ASPxComboBox ID="cmbSocios" runat="server" ValueType="System.String" Width="252px">
                                 </dx:ASPxComboBox>
                             </td>
                            

@@ -53,7 +53,7 @@
                            
                             <td>
                                 &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" OnClick="btnBuscar_Click"></asp:Button>
-                                &nbsp;<asp:Button ID="btnAgregar" runat="server" Text="Agregar socio" CssClass="auto-style2"  PostBackUrl="~/admin/frmSocios.aspx"  Width="110px"></asp:Button>
+                                &nbsp;<asp:Button ID="btnAgregar" runat="server" Text="Agregar socio" CssClass="auto-style2"  PostBackUrl="~/admin/frmSocioAgregar.aspx"  Width="110px"></asp:Button>
                             </td>
                         </tr>
                         <tr>
