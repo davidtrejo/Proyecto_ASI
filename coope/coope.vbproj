@@ -120,8 +120,11 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\frmCerrarCuenta.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
+    <Content Include="admin\frmRenovacionDepositos.aspx" />
     <Content Include="admin\FrmRptListado.aspx" />
+    <Content Include="admin\frmRptRetiros.aspx" />
     <Content Include="admin\frmSocioAgregar.aspx" />
     <Content Include="admin\frmSocioBaja.aspx" />
     <Content Include="admin\MantoProducto.aspx" />
@@ -727,6 +730,13 @@
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmCerrarCuenta.aspx.designer.vb">
+      <DependentUpon>frmCerrarCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmCerrarCuenta.aspx.vb">
+      <DependentUpon>frmCerrarCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\frmMantoProductosTasa.aspx.designer.vb">
       <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
     </Compile>
@@ -734,12 +744,24 @@
       <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmRenovacionDepositos.aspx.designer.vb">
+      <DependentUpon>frmRenovacionDepositos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmRenovacionDepositos.aspx.vb">
+      <DependentUpon>frmRenovacionDepositos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\FrmRptListado.aspx.designer.vb">
       <DependentUpon>FrmRptListado.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\FrmRptListado.aspx.vb">
       <DependentUpon>FrmRptListado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmRptRetiros.aspx.designer.vb">
+      <DependentUpon>frmRptRetiros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmRptRetiros.aspx.vb">
+      <DependentUpon>frmRptRetiros.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\frmSocioAgregar.aspx.designer.vb">
       <DependentUpon>frmSocioAgregar.aspx</DependentUpon>
