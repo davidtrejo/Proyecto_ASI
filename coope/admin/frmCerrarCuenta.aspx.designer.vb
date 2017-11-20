@@ -23,6 +23,24 @@ Partial Public Class frmCerrarCuenta
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Control txtSocio.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtSocio As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control btnBuscar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
     '''Control txtMotivo.
     '''</summary>
     '''<remarks>
@@ -75,4 +93,13 @@ Partial Public Class frmCerrarCuenta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dgvDatos As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''Control btnGuardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
 End Class

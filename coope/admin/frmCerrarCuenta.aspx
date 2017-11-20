@@ -48,7 +48,16 @@
             </div>
             <div class="widget-content form-container">
                 <table class="table table-striped table-detail-view">
-                    <tbody> 
+                    <tbody>
+                         <tr>
+                            <th>Seleccione socio:</th>
+                            <td>
+                                <asp:TextBox ID="txtSocio" textmode="Number" runat="server" ></asp:TextBox>                                
+                            </td>
+                            <td colspan="3">
+                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" ></asp:Button>
+                            </td>
+                        </tr> 
                         <tr>
                             <th>Motivo de cierre:</th>
                             <td colspan="4">
@@ -58,7 +67,7 @@
                         <tr>
                             <th>Fecha de cierre:</th>
                             <td colspan="3">
-                                <dx:aspxdateedit ID="DateFechaAplicacion" runat="server"></dx:aspxdateedit>
+                                <dx:aspxdateedit ID="FechaAplicacion" runat="server"></dx:aspxdateedit>
                             </td>
                         </tr>
                         <tr>
@@ -83,20 +92,6 @@
     <div class="widget-content form-container">
         <asp:GridView Width ="100%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-            <Columns>
-                <asp:BoundField DataField="NumPrestamo" HeaderText="Numero Prestamo">
-                <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
-                <asp:BoundField DataField="valormovimiento" HeaderText="Valor de movimiento">
-                <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
-                <asp:BoundField DataField="fechamovimiento" DataFormatString="{0:d}" HeaderText="Fecha">
-                <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
-                <asp:BoundField DataField="descripcion" HeaderText="Detalle">
-                <ItemStyle HorizontalAlign="Center" />
-                </asp:BoundField>
-            </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -108,5 +103,10 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+        <br>
+        </br>
+        <br>
+        </br>
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn" />
     </div>
 </asp:Content>
