@@ -97,9 +97,9 @@
 			<img src="images/banner_temporada01.jpg">
 		</div>
 		<div class="banner2" style="float:left;width:202px;height:61px;">
-			<%--<img src="images/banner_chatenlinea.jpg">--%>
+            <%--<img src="images/banner_chatenlinea.jpg">--%>
             <!-- This code must be installed within the body tags -->
-         <%--   <script src="//www.livehelpnow.net/lhn/widgets/chatbutton/lhnchatbutton-current.min.js" type="text/javascript" id="lhnscript"></script>--%>
+            <%--   <script src="//www.livehelpnow.net/lhn/widgets/chatbutton/lhnchatbutton-current.min.js" type="text/javascript" id="lhnscript"></script>--%>
                
                 
 		</div>
@@ -127,11 +127,11 @@
 		<div class="wrapWelcome" style="padding:10px 0px 10px 0px;background-color:#e3e3e3;">
 			 <div class="submenuleft">
 				Bienvenido: <span style="color:#1d407b;"> 
-        <asp:Label ID="lblAgente" runat="server" Text="Label"></asp:Label> </span>
+        <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label> </span>
 			 </div>
 			 <div class="submenuright" style="color:#1d407b;">
 			 <div style="color:#1d407b;width:51px;float:left;"><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/inicio.aspx">Inicio</asp:HyperLink></div>
-			<%-- <div style="color:#1d407b;width:50px;float:left;"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Ayuda</asp:HyperLink> </div>--%>
+                 <%-- <div style="color:#1d407b;width:50px;float:left;"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Ayuda</asp:HyperLink> </div>--%>
 			  <div style="color:#1d407b;width:90px;float:left;"><asp:HyperLink ID="HyperLink3" 
                       runat="server" NavigateUrl="~/FrmCerrarSesion.aspx">Cerrar Sesi&oacute;n</asp:HyperLink></div>
 			  <div style="clear:both;"></div>
@@ -277,8 +277,7 @@
     <script src="plugins/datatables/jquery.dataTables.columnFilter.js"></script>
     
     <!-- Demo Scripts -->
-   <%-- <script src="assets/js/demo/dataTables.js"></script>--%>
-
+    <%-- <script src="assets/js/demo/dataTables.js"></script>--%>
     <%-- <!-- Demo Scripts -->
     <script src="assets/js/demo/form.js">--%>
     <script>

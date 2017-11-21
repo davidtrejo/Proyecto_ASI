@@ -7,7 +7,7 @@
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Session("Usuario") = 1
+        ' Session("Usuario") = 1
         ''prueba comentario github
         Usuario = Session("Usuario")
 

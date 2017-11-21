@@ -10,7 +10,7 @@ Public Class frmLogin
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         txtUsuario.Focus()
-        Me.txtUsuario.Text = "1123-180592-102-5"
+        'Me.txtUsuario.Text = "1123-180592-102-5"
 
         If Page.IsPostBack = False Then
             '    Dim cookie As HttpCookie = Request.Cookies("CookieInspAutos.ACSA")
@@ -101,6 +101,9 @@ Public Class frmLogin
             If msjError <> "" Then
                 lblError.Text = "Ocurrio un error"
             End If
+
+            Session("Usuario") = persona.IdSocio
+            Session("Socio") = persona.Nombre
 
             Me.lblError.Visible = False
             Response.Redirect("inicio.aspx")

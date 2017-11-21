@@ -91,6 +91,15 @@ Public Class clpersona
         End Set
     End Property
 
+    Private _idSocio As Integer
+    Public Property IdSocio() As Integer
+        Get
+            Return _idSocio
+        End Get
+        Set(ByVal value As Integer)
+            _idSocio = value
+        End Set
+    End Property
 
 
 
@@ -134,12 +143,17 @@ Public Class clpersona
 
         Try
 
-            Dim strCadena As String = " select top 1 * from vis_socios where nit = '" & nit & "' and password = '" & password & "'"
+            Dim strCadena As String = " select top 1 idpersona, nombrecompleto from vis_socios where nit = '" & nit & "' and password = '" & password & "'"
 
 
             Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)
 
             If tabla.Rows.Count = 1 Then
+
+                _idSocio = tabla.Rows(0).Item("idpersona")
+                _nombre = tabla.Rows(0).Item("nombrecompleto")
+
+
                 Return True
             Else
                 Return False
