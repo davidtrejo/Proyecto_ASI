@@ -121,6 +121,7 @@
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
     <Content Include="admin\frmCerrarCuenta.aspx" />
+    <Content Include="admin\FrmCerrarSesionAdmin.aspx" />
     <Content Include="admin\frmMantoCerrarCtaSocio.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
     <Content Include="admin\frmRenovacionDepositos.aspx" />
@@ -737,6 +738,13 @@
     <Compile Include="admin\frmCerrarCuenta.aspx.vb">
       <DependentUpon>frmCerrarCuenta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\FrmCerrarSesionAdmin.aspx.designer.vb">
+      <DependentUpon>FrmCerrarSesionAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\FrmCerrarSesionAdmin.aspx.vb">
+      <DependentUpon>FrmCerrarSesionAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\frmMantoCerrarCtaSocio.aspx.designer.vb">
       <DependentUpon>frmMantoCerrarCtaSocio.aspx</DependentUpon>
