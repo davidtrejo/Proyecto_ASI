@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmCerrarCuenta
+Partial Public Class frmMantoCerrarCtaSocio
     
     '''<summary>
     '''Control lbltitulo.
@@ -23,40 +23,22 @@ Partial Public Class frmCerrarCuenta
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtMotivo.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtMotivo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control cmbDestino.
+    '''Control btnBuscar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cmbDestino As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control txtMonto.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtMonto As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control btnAgregar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control lblErrror.
@@ -75,13 +57,4 @@ Partial Public Class frmCerrarCuenta
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents dgvDatos As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''Control btnGuardar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
 End Class

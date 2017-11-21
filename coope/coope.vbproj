@@ -121,6 +121,7 @@
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
     <Content Include="admin\frmCerrarCuenta.aspx" />
+    <Content Include="admin\frmMantoCerrarCtaSocio.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
     <Content Include="admin\frmRenovacionDepositos.aspx" />
     <Content Include="admin\FrmRptListado.aspx" />
@@ -737,6 +738,13 @@
       <DependentUpon>frmCerrarCuenta.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="admin\frmMantoCerrarCtaSocio.aspx.designer.vb">
+      <DependentUpon>frmMantoCerrarCtaSocio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmMantoCerrarCtaSocio.aspx.vb">
+      <DependentUpon>frmMantoCerrarCtaSocio.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="admin\frmMantoProductosTasa.aspx.designer.vb">
       <DependentUpon>frmMantoProductosTasa.aspx</DependentUpon>
     </Compile>
@@ -749,6 +757,7 @@
     </Compile>
     <Compile Include="admin\frmRenovacionDepositos.aspx.vb">
       <DependentUpon>frmRenovacionDepositos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\FrmRptListado.aspx.designer.vb">
       <DependentUpon>FrmRptListado.aspx</DependentUpon>
@@ -762,6 +771,7 @@
     </Compile>
     <Compile Include="admin\frmRptRetiros.aspx.vb">
       <DependentUpon>frmRptRetiros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\frmSocioAgregar.aspx.designer.vb">
       <DependentUpon>frmSocioAgregar.aspx</DependentUpon>

@@ -49,15 +49,6 @@
             <div class="widget-content form-container">
                 <table class="table table-striped table-detail-view">
                     <tbody>
-                         <tr>
-                            <th>Seleccione socio:</th>
-                            <td>
-                                <asp:TextBox ID="txtSocio" textmode="Number" runat="server" ></asp:TextBox>                                
-                            </td>
-                            <td colspan="3">
-                                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn" ></asp:Button>
-                            </td>
-                        </tr> 
                         <tr>
                             <th>Motivo de cierre:</th>
                             <td colspan="4">
