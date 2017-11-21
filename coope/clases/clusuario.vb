@@ -4,7 +4,18 @@ Public Class clusuario
     Inherits clpersona
     Dim conn As New conexion
 
+#Region "Declaraciones"
 
+    Private _nombreUsuario As String
+    Public Property NombreUsuario() As String
+        Get
+            Return _nombreUsuario
+        End Get
+        Set(ByVal value As String)
+            _nombreUsuario = value
+        End Set
+    End Property
+#End Region
 
 
 
@@ -24,12 +35,15 @@ Public Class clusuario
         Try
 
 
-            Dim strCadena As String = " select * from usuarios where nit = '" & nit & "' and password = '" & password & "'"
+            Dim strCadena As String = " select top 1 nombre from usuarios where nit = '" & nit & "' and password = '" & password & "'"
 
 
             Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)
 
             If tabla.Rows.Count = 1 Then
+
+                _nombreUsuario = tabla.Rows(0).Item("nombre")
+
                 Return True
             Else
                 Return False

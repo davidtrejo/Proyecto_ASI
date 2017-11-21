@@ -120,6 +120,7 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\FrmCerrarSesionAdmin.aspx" />
     <Content Include="admin\frmMantoProductosTasa.aspx" />
     <Content Include="admin\FrmRptListado.aspx" />
     <Content Include="admin\frmSocioAgregar.aspx" />
@@ -725,6 +726,13 @@
     </Compile>
     <Compile Include="admin\CrearCuenta.aspx.vb">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\FrmCerrarSesionAdmin.aspx.designer.vb">
+      <DependentUpon>FrmCerrarSesionAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\FrmCerrarSesionAdmin.aspx.vb">
+      <DependentUpon>FrmCerrarSesionAdmin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\frmMantoProductosTasa.aspx.designer.vb">

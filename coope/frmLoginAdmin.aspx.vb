@@ -10,6 +10,9 @@
         Dim msjError As String = ""
         If usuario.login(Me.txtUsuario.Text, Me.txtPassword.Text, msjError) Then
             Me.lblError.Visible = False
+
+            Session("Administrador") = usuario.NombreUsuario
+
             Response.Redirect("admin/inicio.aspx")
         Else
             Me.lblError.Visible = True

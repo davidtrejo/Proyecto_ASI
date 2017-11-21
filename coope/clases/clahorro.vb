@@ -815,9 +815,13 @@
 
     End Sub
 
-    Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdProducto As Integer = 0, Optional idSocio As Integer = 0, Optional IdAhorro As Integer = 0)
+    Public Sub Provisionar1(ByRef Msj As String, fechaProvision As Date, Optional IdAhorro As Integer = 0)
 
+        Dim strCondicion As String = ""
 
+        If IdAhorro <> 0 Then
+            strCondicion = " and  a.idahorro = " & IdAhorro
+        End If
 
         IgualarProvisionCuentas(fechaProvision, Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
 
@@ -845,8 +849,10 @@
 
 
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
-            strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
-            strSql &= " idahorro <> (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+            strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto 1 son aportaciones
+            strSql &= " idahorro <> (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc ) "
+            strSql &= strCondicion
+
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
@@ -881,6 +887,7 @@
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
             strSql &= " idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+            strSql &= strCondicion
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
