@@ -156,7 +156,7 @@
                     <%-- <div style="color:#1d407b;width:50px;float:left;"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Ayuda</asp:HyperLink> </div>--%>
                     <div style="color: #1d407b; width: 90px; float: left;">
                         <asp:HyperLink ID="HyperLink3"
-                            runat="server" NavigateUrl="~/frmLoginAdmin.aspx">Cerrar Sesi&oacute;n</asp:HyperLink>
+                            runat="server" NavigateUrl="FrmCerrarSesionAdmin.aspx">Cerrar Sesi&oacute;n</asp:HyperLink>
                     </div>
                     <div style="clear: both;"></div>
                 </div>

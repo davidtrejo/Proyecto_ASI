@@ -14,7 +14,7 @@
 
 
      <div id="main-header" class="page-header">
-      <span class="titular1 block linea1bottom">Agregar Socios <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
+      <span class="titular1 block linea1bottom">caAgregar Socios <asp:Label runat="server" ID="lbltitulo" Text =""></asp:Label>
           <br/></span>
     </div>
     

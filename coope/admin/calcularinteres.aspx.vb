@@ -45,8 +45,13 @@
 
 
 
+        If Me.cmbProducto.Text = "" Then
+            ahorro.Provisionar1(msj, txtFecha.Value)
+        Else
+            ahorro.Provisionar1(msj, txtFecha.Value, Me.cmbProducto.SelectedValue)
+        End If
 
-        ahorro.Provisionar1(msj, txtFecha.Value)
+
 
         Response.Redirect("FrmRptProvisiones.aspx")
 
