@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/admin/admin.Master" CodeBehind="frmCerrarCuenta.aspx.vb" Inherits="coope.frmCerrarCuenta" %>
+<%@ Register assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script src="../js/jquery.maskedinput.js"></script>
@@ -58,7 +59,8 @@
                         <tr>
                             <th>Fecha de cierre:</th>
                             <td colspan="3">
-                                <dx:aspxdateedit ID="FechaAplicacion" runat="server"></dx:aspxdateedit>
+                                <dx:ASPxDateEdit ID="dtFechaCierre" runat="server" Width="193px">
+                                </dx:ASPxDateEdit>
                             </td>
                         </tr>
                         <tr>

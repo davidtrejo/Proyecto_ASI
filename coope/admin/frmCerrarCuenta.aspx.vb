@@ -17,8 +17,4 @@
 
         End If
     End Sub
-
-    Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Dim sqlCondicion As String = If(Me.txtNombre.Text.Length > 0, " WHERE nombreCompleto LIKE '%" & Me.txtNombre.Text & "%'", " WHERE NULL")
-    End Sub
 End Class
