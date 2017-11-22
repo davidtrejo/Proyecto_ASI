@@ -35,12 +35,10 @@
     <!-- pnotify -->
     <link rel="stylesheet" href="../plugins/pnotify/jquery.pnotify.css" media="screen" />
 
-
     <!-- Plugin Stylsheets first to ease overrides -->
 
     <!-- Zebra Datepicker -->
     <link rel="stylesheet" href="../plugins/zebradp/css/mooncake/zebra_datepicker.css" media="screen" />
-
 
     <!-- Select2 -->
     <link rel="stylesheet" href="../plugins/select2/select2.css" media="screen" />
@@ -62,8 +60,7 @@
 
     <!-- PrettyPhoto -->
     <link rel="stylesheet" href="../plugins/prettyphoto/css/prettyPhoto.css" media="screen" />
-
-
+    
     <!--script para formularios mobiles -->
 
     <link rel="stylesheet" href="../css/general.css" />
@@ -79,9 +76,6 @@
 
 </head>
 
-
-
-
 <script type="text/javascript">
     var lhnAccountN = "25295-1";
     var lhnButtonN = 7141;
@@ -91,19 +85,14 @@
     var lhnDepartmentN = 0;
 </script>
 
-
-
 <body scroll="yes" style="overflow-y: scroll;">
 
     <div style="border-top: 3px solid #1d407b;">
-
-
         <div class="wrap">
             <div class="logo" style="float: left; width: 165px; height: 61px;">
                 <a href="inicio.aspx">
                     <img src="../images/logo.jpg" /></a>
             </div>
-
             <div class="banner1" style="float: left; width: 454px; height: 61px;">
                 <img src="../images/banner_temporada01.jpg" />
             </div>
@@ -119,8 +108,6 @@
                     <img src="https://www.acsa.com.sv/images/comente.jpg"></a>
             </div>
             <div style="clear: both;"></div>
-
-
         </div>
 
         <div class="MENUBS">
@@ -130,13 +117,12 @@
                     <ul class="dropdown-menu ">
                         <li><a href="productos.aspx">lista Productos</a></li>
                         <li><a href="mantenimientoproductos.aspx?e=a">Agregar Productos</a></li>
-                         <li><a href="MantoProductoLista.aspx">Agregar Productos</a></li>
+                        <li><a href="MantoProductoLista.aspx">Agregar Productos</a></li>
                     </ul>
-
                 </li>
                 <li><a href="ahorros.aspx">Ahorros</a></li>
                 <li><a href="listapersonas.aspx">Personas</a></li>
-                  <li><a href="gestionar.aspx">Gestionar</a></li>
+                <li><a href="gestionar.aspx">Gestionar</a></li>
                 <li class="icon">
                     <a href="javascript:void(0);" style="font-size: 15px;" onclick="myFunction()">☰</a>
                 </li>
@@ -150,10 +136,11 @@
                         <asp:Label ID="lblNombre" runat="server" Text="Label"></asp:Label>
                     </span>
                 </div>
+
                 <div class="submenuright" style="color: #1d407b;">
                     <div style="color: #1d407b; width: 51px; float: left;">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/inicio.aspx">Inicio</asp:HyperLink></div>
-                    <%-- <div style="color:#1d407b;width:50px;float:left;"><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="#">Ayuda</asp:HyperLink> </div>--%>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/admin/inicio.aspx">Inicio</asp:HyperLink>
+                    </div>                    
                     <div style="color: #1d407b; width: 90px; float: left;">
                         <asp:HyperLink ID="HyperLink3"
                             runat="server" NavigateUrl="FrmCerrarSesionAdmin.aspx">Cerrar Sesi&oacute;n</asp:HyperLink>
@@ -163,9 +150,9 @@
                 <div style="clear: both;"></div>
             </div>
         </div>
+
         <div class="degrade" style="width: 100%; height: 41px; border: 1px solid #808284; background: -moz-linear-gradient(center top , #FFFFFF, #CACCCE);">
             <div class="wrap">
-
                 <div id='menu'>
                     <!-- Inicia el menu -->
                     <ul>
@@ -177,53 +164,42 @@
                                <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>      
                                   <li><a href="MantoProductoLista.aspx">Lista Productos</a></li>
                             </ul>
-                        </li>
-                     
-
+                        </li> 
                         <li class='has-sub comision order' style="width: 160px;">
                              <a href='#' class="pr"><span>Socios</span></a>
                             <ul class="dropdown-menu ">
                                <li><a href="MantoSocios.aspx" >Consulta Socios</a></li>
-                                <li><a href="frmSocioAgregar.aspx" >Agregar Socios</a></li>
+                               <li><a href="frmSocioAgregar.aspx" >Agregar Socios</a></li>
                              <%--  <li> <a href='listapersonas.aspx' class="pr"><span>Lista de Socios</span></a></li>
                                <li><a href="ahorros.aspx" >Cuentas de Ahorro</a></li>
                                <li><a href="MantoTransaccionesSocios.aspx" >Movimientos Socios</a></li>
                                --%>
-                             
-
-                            </ul>
-                          
-
+                            </ul>      
                         </li>
-
-                          <li class='has-sub comision order' style="width: 160px;">
-                              <a href="gestionar.aspx" class="pr"><span>Gestionar</span> </a>
+                        <li class='has-sub comision order' style="width: 160px;">
+                            <a href="gestionar.aspx" class="pr"><span>Gestionar</span></a>
                                <ul class="dropdown-menu ">
+                                   <li><a href="frmSocios.aspx?" >Crear socios</a></li>                                   
                                    <li><a href="CrearCuenta.aspx?" >Crear Cuentas</a></li>
-                                    <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
-                                <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
-                                <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
-                                <li><a href="PeriodosRetiro.aspx" >Periodos Retiro</a></li>
+                                   <li><a href="frmMantoCerrarCtaSocio.aspx" >Cerrar cuentas socio</a></li>
+                                   <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
+                                   <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
+                                   <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
+                                   <li><a href="PeriodosRetiro.aspx" >Periodos Retiro</a></li>
                             </ul>
-
-                          </li>
-                          <li class='has-sub comision order' style="width: 160px;">
+                        </li>
+                        <li class='has-sub comision order' style="width: 160px;">
                              <a href="#" class="pr"><span>Listados</span> </a>
                                <ul class="dropdown-menu ">                         
                                 <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>
-                                    <li><a href="FrmRptListado.aspx" >Estado de Cuenta</a></li>
+                                <li><a href="FrmRptListado.aspx" >Estado de Cuenta</a></li>
                             </ul>
-
-                        </li>
-
-                      
+                        </li>                      
                     </ul>
                     <!--Termina el menu -->
                 </div>
-
             </div>
         </div>
-
     </div>
 
     <div style="clear: both"></div>
@@ -243,7 +219,6 @@
             <!-- Termina el footer-->
         </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
@@ -275,10 +250,7 @@
     <script src="../assets/jui/jquery-ui.custom.min.js"></script>
     <script src="../assets/jui/timepicker/jquery-ui-timepicker.min.js"></script>
     <script src="../assets/jui/jquery.ui.touch-punch.min.js"></script>
-
-
-
-
+    
     <!-- Plugin Scripts -->
 
     <!-- Bootstrap FileInput -->
@@ -306,9 +278,7 @@
     <script src="../plugins/freetile/jquery.freetile.min.js"></script>
     <!-- Resize plugin to handle container resizes -->
     <script src="../plugins/freetile/jquery.resize.min.js"></script>
-
-
-
+    
     <!-- Plugin Scripts -->
 
     <!-- msgBox -->
@@ -319,8 +289,7 @@
 
     <!-- Demo Scripts -->
     <script src="../assets/js/demo/alerts.js"></script>
-
-
+    
     <!-- DataTables -->
     <script src="../plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../plugins/datatables/TableTools/js/TableTools.min.js"></script>
@@ -344,5 +313,4 @@
         }
     </script>
 </body>
-
 </html>
