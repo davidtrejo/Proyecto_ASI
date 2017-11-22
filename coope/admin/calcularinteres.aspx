@@ -24,8 +24,19 @@
                                                    <th>Socio:</th>
                                                     <td>                                                        
                                                         <asp:DropDownList ID="cmbSocio" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
+                                                       <img src="../images/ayudaicon.png"  
+                                                           onmouseover="document.getElementById('AyudaSocio').style.display = 'block';"
+                                       onmouseout ="document.getElementById('imgtipo').style.display = 'none';" 
+                                       width="13" height="13" alt="ayuda" style="margin-bottom:4px;"/>
+                                                      
+                                                 <%--       <asp:Label ID="AyudaSocio" runat="server" Text="Si desea hacer el cierre de una sola cuenta seleccione el socio y luego la cuenta a hacer el cierre" alt="ayudaSocio" style="display:none;position:absolute;top:-45px;left:-722px;" ></asp:Label>  
+                                                 --%>     
+                                                        <img alt="ayudaTipoSeguro" style="display:none;position:absolute;top:-45px;left:-722px;" id="AyudaSocio" src="../ayudaNoNit.png" class="siniestrohelp" width="523" height="225"/>
                                                      </td>
+
+
                                               </tr> 
+
                                       <tr>
                                                    <th>Producto:</th>
                                                     <td>
