@@ -28,12 +28,12 @@ Public Class conexion
         ''Conexion produccion
         'conn.ConnectionString = "Data Source=SQL7001.SmarterASP.NET;Initial Catalog=DB_A2B255_coope;User Id=DB_A2B255_coope_admin;Password=Abc12345;"
         ''Conexion desarrollo
-        conn.ConnectionString = "Data Source=SQL5031.smarterasp.net;Initial Catalog=DB_A2BDCF_coopeprueba;User Id=DB_A2BDCF_coopeprueba_admin;Password=Abc12345;"
+        ''conn.ConnectionString = "Data Source=SQL5031.smarterasp.net;Initial Catalog=DB_A2BDCF_coopeprueba;User Id=DB_A2BDCF_coopeprueba_admin;Password=Abc12345;"
 
         ''' cadena de conexion de maquina 
         ''conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
         ''' cadena conexion maquina virtual
-        ''conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=cooperativa1; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=coope; user=cooperativa; password=12345; Integrated Security=SSPI;"
 
         CadenaConexion = conn.ConnectionString
 

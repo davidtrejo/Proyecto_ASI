@@ -152,6 +152,7 @@
     <Content Include="css\core.css" />
     <Content Include="css\CustomNavBar.css" />
     <Content Include="css\demo-styles.css" />
+    <Content Include="css\popup.css" />
     <Content Include="css\general.css" />
     <Content Include="css\jquery.bxslider.css" />
     <Content Include="css\jquery.mobile-1.4.2.min.css" />
@@ -159,6 +160,7 @@
     <Content Include="css\menu\bootstrap.css" />
     <Content Include="css\menu\bootstrap.min.js" />
     <Content Include="css\menu\bootstrapchanged.css" />
+    <Content Include="css\demo.js" />
     <Content Include="css\menu\styles.css" />
     <Content Include="css\menu\visor.js" />
     <Content Include="css\slicknav.css" />
@@ -183,6 +185,7 @@
     <Content Include="images\calculator.png" />
     <Content Include="images\calendar.png" />
     <Content Include="images\caret.png" />
+    <Content Include="images\close.png" />
     <Content Include="images\comente.jpg" />
     <Content Include="images\comisiones.png" />
     <Content Include="images\cooperativa.png" />
@@ -212,8 +215,10 @@
     <Content Include="js\fileinput.js" />
     <Content Include="js\fileinput.min.js" />
     <Content Include="js\jquery-1.4.2.min.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
     <Content Include="js\jquery-1.8.3.min.js" />
     <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="js\jquery.maskedinput.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.smartWizard-2.0.js" />
