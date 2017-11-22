@@ -23,49 +23,13 @@ Partial Public Class frmSocios
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtPrimerNombre.
+    '''Control txtNombreCompleto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtPrimerNombre As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtSegundoNombre.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtSegundoNombre As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtPrimerApe.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtPrimerApe As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtSegundoApe.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtSegundoApe As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtDUI.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtDUI As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNombreCompleto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control txtNit.
@@ -77,49 +41,13 @@ Partial Public Class frmSocios
     Protected WithEvents txtNit As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control txtDireccion.
+    '''Control txtPassword.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtDireccion As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtFNacimiento.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtFNacimiento As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtTelefono.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtTelefono As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control txtEnail.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtEnail As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''Control ddSexo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ddSexo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control btnGuardar.
