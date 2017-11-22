@@ -33,18 +33,13 @@
                          </dx:ListBoxColumn>
                      </Columns>
                  </PropertiesComboBox>
-             </dx:GridViewDataComboBoxColumn>
-<%--         
-             <dx:GridViewDataHyperLinkColumn Caption="Tasas" UnboundType="String" VisibleIndex="4">
-                 <PropertiesHyperLinkEdit NavigateUrlFormatString="~/admin/frmMantoProductosTasa.aspx?id={0}" Text="Ver Tasa" TextFormatString="">
-                 </PropertiesHyperLinkEdit>
-             </dx:GridViewDataHyperLinkColumn>--%>
-         
-              <dx:GridViewDataTextColumn VisibleIndex="4" Caption="Ver Tasa" >
-                                    <DataItemTemplate>
-                                <a id="clickElement" target="_blank" href="frmMantoProductosTasa.aspx?id=<%#Eval("idproducto").ToString()%>">Ver Tasa</a>
-                                </DataItemTemplate>
-                                </dx:GridViewDataTextColumn>
+             </dx:GridViewDataComboBoxColumn>       
+              <dx:GridViewDataTextColumn VisibleIndex="4" Caption="Ver Tasa"  >
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <a id="clickElement" target="_self"  href="frmMantoProductosTasa.aspx?id=<%#Eval("idproducto").ToString()%>">Ver Tasa</a>
+                    </DataItemTemplate>
+              </dx:GridViewDataTextColumn>
         </Columns>
 
           <Styles>
