@@ -1,4 +1,6 @@
 ﻿
+Imports coope
+
 Public Class clusuario
 
     Inherits clpersona
@@ -15,6 +17,17 @@ Public Class clusuario
             _nombreUsuario = value
         End Set
     End Property
+
+    Private _nitUsuario As String
+    Public Property NitUsuario() As String
+        Get
+            Return _nitUsuario
+        End Get
+        Set(ByVal value As String)
+            _nitUsuario = value
+        End Set
+    End Property
+
 #End Region
 
 
@@ -25,8 +38,22 @@ Public Class clusuario
 
     End Sub
 
+    Public Sub InsertarUsuario(_nombreUsuario As String, _nitUsuario As String, _password As String, ByRef msjError As String)
+        Dim sqlInsert As String = "INSERT INTO usuarios (nombre,nit,acceso,password)  VALUES('" &
+            _nombreUsuario & "','" &
+            _nitUsuario & "'," &
+            1 & ",'" &
+            _password & "')"
 
+        Try
+            conn.EjecutarSql(sqlInsert, msjError)
+        Catch ex As Exception
+            msjError = ex.Message
+        End Try
+    End Sub
+#End Region
 
+#Region "Funciones"
     Public Function login(nit As String, password As String, ByRef msjError As String)
 
         Me.Nit = nit
@@ -54,6 +81,7 @@ Public Class clusuario
         End Try
 
     End Function
+
 
 #End Region
 

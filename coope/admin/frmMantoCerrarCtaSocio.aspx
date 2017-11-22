@@ -50,7 +50,7 @@
         <asp:GridView Width ="100%" ID="dgvDatos" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="6">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                 <asp:BoundField Visible ="false"  DataField="idpersona" HeaderText="SOCIO">
+                <asp:BoundField Visible ="false"  DataField="idpersona" HeaderText="SOCIO">
                 <ItemStyle HorizontalAlign="Center" Width="400px" />         
                 </asp:BoundField>
                 <asp:BoundField DataField="nombreCompleto" HeaderText="SOCIO">

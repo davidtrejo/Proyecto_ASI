@@ -20,64 +20,23 @@
                 <table class="table table-striped table-detail-view">
                     <tbody>
                         <tr>
-                            <th>Primer nombre :</th>
+                            <th>Nombre completo:</th>
                             <td>
-                                <asp:TextBox ID="txtPrimerNombre" runat="server" Width="300px"></asp:TextBox>
-                            </td>
-                            <th>Segundo nombre :</th>
-                            <td>
-                                <asp:TextBox ID="txtSegundoNombre" runat="server" Width="300px"></asp:TextBox>
-                            </td> 
-                        </tr>
+                                <asp:TextBox ID="txtNombreCompleto" runat="server" Width="300px" Height="23px"></asp:TextBox>
+                            </td>                           
+                        </tr>                        
                         <tr>
-                            <th>Primer apellido :</th>
+                            <th>NIT:</th>     
                             <td>
-                                <asp:TextBox ID="txtPrimerApe" runat="server" Width="300px"></asp:TextBox>
-                            </td>
-                            <th>Segundo apellido :</th>
-                            <td>
-                                <asp:TextBox ID="txtSegundoApe" runat="server" Width="300px"></asp:TextBox>
-                            </td> 
-                        </tr>
-                        <tr>
-                            <th>Número de DUI:</th>
-                            <td>
-                                <asp:TextBox ID="txtDUI" runat="server" Width="100px"></asp:TextBox>
-                            </td>
-                            <th>NIT:</th>
-                            <td>
-                                <asp:TextBox ID="txtNit" runat="server" Width="100px"></asp:TextBox>
+                                <asp:TextBox ID="txtNit" runat="server" Width="300px" Height="25px"></asp:TextBox>
                             </td>                            
                         </tr>
                          <tr>
-                            <th>Dirección:</th>
+                            <th>Password:</th>
                             <td colspan="4">
-                                <asp:TextBox ID="txtDireccion" runat="server" Width="600px" Height="59px" TextMode="MultiLine"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" Width="300px" Height="25px" TextMode="Password"></asp:TextBox>
                             </td>                             
-                        </tr>
-                        <tr>
-                            <th>F.Nacimiento:</th>
-                            <td>
-                                <asp:TextBox ID="txtFNacimiento" runat="server" Width="100px" ></asp:TextBox>
-                            </td>
-                            <th>Telefono:</th>
-                            <td>
-                                <asp:TextBox ID="txtTelefono" runat="server" Width="100px" ></asp:TextBox>
-                            </td>            
-                        </tr>
-                        <tr>
-                            <th>Email:</th>
-                            <td>
-                                <asp:TextBox ID="txtEnail" runat="server" Width="100px" ></asp:TextBox>
-                            </td>
-                            <th>Sexo:</th>
-                            <td>
-                                <asp:DropDownList ID="ddSexo" runat="server" Width="100px" >
-                                    <asp:ListItem Value="M">Masculino</asp:ListItem>
-                                    <asp:ListItem Value="F">Femenino</asp:ListItem>
-                                </asp:DropDownList>
-                            </td>            
-                        </tr>
+                        </tr>                        
                         <tr>
                             <td colspan="5">
                                 &nbsp;<asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="btn" OnClick="btnGuardar_Click"></asp:Button>
