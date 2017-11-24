@@ -1,4 +1,4 @@
-﻿1<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="admin.master.vb" Inherits="coope.admin" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="admin.master.vb" Inherits="coope.admin" %>
 
 <!DOCTYPE html>
 
