@@ -120,6 +120,7 @@
     <Content Include="admin\calcularinteres.aspx" />
     <Content Include="admin\Capitalizar.aspx" />
     <Content Include="admin\CrearCuenta.aspx" />
+    <Content Include="admin\frmCargarPlanilla.aspx" />
     <Content Include="admin\frmCerrarCuenta.aspx" />
     <Content Include="admin\FrmCerrarSesionAdmin.aspx" />
     <Content Include="admin\frmMantoCerrarCtaSocio.aspx" />
@@ -737,6 +738,13 @@
     </Compile>
     <Compile Include="admin\CrearCuenta.aspx.vb">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmCargarPlanilla.aspx.designer.vb">
+      <DependentUpon>frmCargarPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmCargarPlanilla.aspx.vb">
+      <DependentUpon>frmCargarPlanilla.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="admin\frmCerrarCuenta.aspx.designer.vb">
