@@ -186,7 +186,7 @@
                                    <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
                                    <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
                                    <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li> 
-                                   <li><a href="frmCargarPlanilla.aspx" >Periodos Retiro</a></li>
+                                   <li><a href="frmCargarPlanilla.aspx" >Cargar Planilla</a></li>
                             </ul>
                         </li>
                         <li class='has-sub comision order' style="width: 160px;">
