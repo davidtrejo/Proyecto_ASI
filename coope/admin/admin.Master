@@ -185,7 +185,8 @@
                                    <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
                                    <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
                                    <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
-                                   <li><a href="PeriodosRetiro.aspx" >Periodos Retiro</a></li>
+                                   <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li> 
+                                   <li><a href="frmCargarPlanilla.aspx" >Periodos Retiro</a></li>
                             </ul>
                         </li>
                         <li class='has-sub comision order' style="width: 160px;">
