@@ -6,7 +6,7 @@
         Session.Clear()
 
         Response.Cookies("CookieCoope.ACSA").Expires = DateTime.Now.AddDays(-1)
-        Response.Redirect("frmLoginAdmin.aspx")
+        Response.Redirect("~/frmLoginAdmin.aspx")
     End Sub
 
 End Class
