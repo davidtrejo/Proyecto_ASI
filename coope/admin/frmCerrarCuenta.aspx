@@ -53,7 +53,7 @@
                         <tr>
                             <th>Motivo de cierre:</th>
                             <td colspan="4">
-                                <asp:TextBox ID="txtMotivo" textmode="Number" runat="server" Height="58px" Width="326px"></asp:TextBox>
+                                <asp:TextBox ID="txtMotivo" textmode="MultiLine" runat="server" Height="58px" Width="326px"></asp:TextBox>
                             </td>
                         </tr> 
                         <tr>
@@ -69,7 +69,7 @@
                                 <asp:DropDownList ID="cmbDestino" runat="server" AutoPostBack="True" Height="36px" Width="193px"></asp:DropDownList>
                             </td>
                             <td class="auto-style1">
-                                <asp:TextBox ID="txtMonto" textmode="Number" runat="server" Width="133px" ></asp:TextBox>
+                                <asp:TextBox ID="txtMonto" textmode="Number" runat="server" Width="133px" Height="30px" ></asp:TextBox>
                             </td>
                             <td>         
                                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn" />
