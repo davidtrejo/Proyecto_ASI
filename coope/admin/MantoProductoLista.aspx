@@ -51,8 +51,8 @@
                 <Footer Font-Bold="True" BackColor="#1D407B" ForeColor="White">
                 </Footer>
 
-                <Header BackColor="#1D407B" ForeColor="White">
-                </Header>
+               <%-- <Header BackColor="#1D407B"  ForeColor="White">
+                </Header>--%>
                 
                                  <RowHotTrack Cursor="pointer">
                                  </RowHotTrack>
@@ -60,12 +60,7 @@
                 <AlternatingRow Enabled="true" Wrap="Default" BackColor="#E2E2E2"  />
          </Styles>      
     </dx:ASPxGridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A2BDCF_coopepruebaConnectionString %>"
-        SelectCommand="select a.* from productos as a  "
-        DeleteCommand="delete from Productos where IdProducto = @idProducto"
-         UpdateCommand =" Update productos set  nombreproducto =@nombreproducto ,DuracionenDias = @DuracionenDias where idproducto=@idproducto"
-         InsertCommand =" Insert into productos (nombreProducto,idtipoproducto,DuracionenDias) values(@nombreproducto,@idtipoproducto,@DuracionenDias)  "
-        >
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" >
         <DeleteParameters>  <asp:Parameter Name="idproducto" /> </DeleteParameters>
         <UpdateParameters>  
             <asp:Parameter Name="idproducto" />
@@ -75,6 +70,6 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     
-    <asp:SqlDataSource ID="SqlDSTipoProductos" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A2BDCF_coopepruebaConnectionString %>" SelectCommand="SELECT [idtipoproducto], [nombretipoproducto] FROM [tipoproductos]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDSTipoProductos" runat="server" ></asp:SqlDataSource>
     
 </asp:Content>

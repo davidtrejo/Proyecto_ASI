@@ -58,4 +58,8 @@
     Protected Sub dgvDatos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dgvDatos.SelectedIndexChanged
 
     End Sub
+
+    Protected Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Response.Redirect("CrearCuenta.aspx?id=")
+    End Sub
 End Class

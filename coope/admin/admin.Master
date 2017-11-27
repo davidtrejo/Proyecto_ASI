@@ -161,7 +161,7 @@
                             <%--<a href='manatenimientoproductos.aspx' class="pr"><span>Productos</span></a>--%>
                             <a href='#' class="pr"><span>Productos</span></a>
                             <ul class="dropdown-menu ">
-                               <li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li>      
+                               <%--<li> <a href="MantoProducto.aspx" class="pr"><span>Ingreso productos</span></a></li> --%>     
                                   <li><a href="MantoProductoLista.aspx">Lista Productos</a></li>
                             </ul>
                         </li> 
@@ -179,14 +179,14 @@
                         <li class='has-sub comision order' style="width: 160px;">
                             <a href="gestionar.aspx" class="pr"><span>Gestionar</span></a>
                                <ul class="dropdown-menu ">
-                                   <li><a href="frmSocios.aspx?" >Crear socios</a></li>                                   
+                                                                    
                                    <li><a href="CrearCuenta.aspx?" >Crear Cuentas</a></li>
-                                   <li><a href="frmMantoCerrarCtaSocio.aspx" >Cerrar cuentas socio</a></li>
-                                   <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
                                    <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
-                                   <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>
-                                   <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li> 
+                                   <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
+                                   <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>                                    
                                    <li><a href="frmCargarPlanilla.aspx" >Cargar Planilla</a></li>
+                                    <li><a href="frmSocios.aspx?" >Agregar Administrador</a></li> 
+                                   <li><a href="frmMantoCerrarCtaSocio.aspx" >Cerrar cuentas socio</a></li>
                             </ul>
                         </li>
                         <li class='has-sub comision order' style="width: 160px;">

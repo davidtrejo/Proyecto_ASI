@@ -169,7 +169,7 @@ Public Class clpersona
 
         '' Obtiene Lista de empleados que no son socios de la cooperativa
 
-        strSql = " select referenciaRRHH as Id, nombrecompleto as Empleado from vis_empleados where referenciarrhh not in ( select referenciarrhh from personas)"
+        strSql = " select referenciaRRHH as Id, nombrecompleto as Empleado from vis_empleados where estado = 'A' and referenciarrhh not in ( select referenciarrhh from personas)"
 
         Dim tabla As DataTable = New DataTable
 

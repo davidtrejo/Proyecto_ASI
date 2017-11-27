@@ -91,7 +91,7 @@ Public Class clproducto
 
     Public Function ObtenerListaProductos(msjError As String) As DataTable
 
-        strSql = " select * from productos"
+        strSql = " select * from productos where idproducto not in (1)"
         Dim tabla As DataTable = New DataTable
 
         Try

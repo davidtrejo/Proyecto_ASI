@@ -20,7 +20,7 @@ Public Class frmCargarPlanilla
         ElseIf strFileType.Trim() = ".xlsx" Then
             connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & path__1 & ";Extended Properties=""Excel 12.0;HDR=Yes;IMEX=2"""
         End If
-        Dim query As String = "SELECT [UserName],[Education],[Location] FROM [Sheet1$]"
+        Dim query As String = "SELECT [Cuenta],[Valor] FROM [Sheet1$]"
         Dim conn As New OleDbConnection(connString)
         If conn.State = ConnectionState.Closed Then
             conn.Open()

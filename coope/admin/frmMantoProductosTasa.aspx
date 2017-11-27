@@ -57,6 +57,11 @@
             <dx:GridViewDataTextColumn Caption="Tasa" FieldName="tasa" VisibleIndex="2">
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataDateColumn Caption="Fecha Aplicación" FieldName="FechaDesde" VisibleIndex="3">
+                <PropertiesDateEdit>
+                    <ValidationSettings>
+                        <RequiredField IsRequired="True" />
+                    </ValidationSettings>
+                </PropertiesDateEdit>
             </dx:GridViewDataDateColumn>
         </Columns>
         <Styles>
@@ -68,8 +73,8 @@
                 <Footer Font-Bold="True" BackColor="#1D407B" ForeColor="White">
                 </Footer>
 
-                <Header BackColor="#1D407B" ForeColor="White">
-                </Header>
+         <%--       <Header BackColor="#1D407B" ForeColor="White">
+                </Header>--%>
                 
                                  <RowHotTrack Cursor="pointer">
                                  </RowHotTrack>
@@ -85,9 +90,9 @@
     <br />
 
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_A2BDCF_coopepruebaConnectionString %>" 
-        SelectCommand="SELECT [idtasa], [tasa], [FechaDesde] FROM [tasasInteres] WHERE ([idproducto] = @idproducto) order by idtasa desc"
-          InsertCommand ="Insert into tasasInteres (idproducto,tasa,fechaDesde) values(@idproducto,@tasa,@fechaDesde)"
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+        
+          
         >
         <InsertParameters >
              <asp:QueryStringParameter Name="idproducto" QueryStringField="id" Type="Int32" />

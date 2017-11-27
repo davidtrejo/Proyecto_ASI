@@ -10,12 +10,13 @@
         If Not Page.IsPostBack Then
             Me.txtFecha.Value = Date.Now.Date
             llenarcombos()
-
             If Request.QueryString("id") <> "" Then
-
+                Me.cmbSocio.Enabled = False
                 Me.cmbSocio.SelectedValue = Request.QueryString("id")
+                ObtenerAhorrosPersona()
 
             End If
+
 
         End If
 
@@ -48,8 +49,13 @@
     Protected Sub cmbSocio_TextChanged(sender As Object, e As EventArgs) Handles cmbSocio.TextChanged
 
 
+        ObtenerAhorrosPersona()
 
 
+
+    End Sub
+
+    Private Sub ObtenerAhorrosPersona()
         Dim msjError As String = ""
         ''combo productos
 
@@ -58,7 +64,6 @@
         Me.cmbInteres.DataTextField = "nombreproducto"
         Me.cmbInteres.DataValueField = "idahorro"
         Me.cmbInteres.DataBind()
-
 
 
     End Sub
@@ -96,6 +101,9 @@
 
         If msjError = "" Then
             Me.lblErrror.Visible = False
+            Response.Write("<script language='JavaScript'>alert('Cuenta Agregada \n');</script>")
+            Response.Write("<script language='JavaScript'>location.href = 'frmSocioProductos.aspx?id= " & Me.cmbSocio.SelectedValue & "';</script>")
+
         Else
             Me.lblErrror.Text = "Ocurrio un error al guardar la cuenta "
             Me.lblErrror.Visible = True
