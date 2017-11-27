@@ -184,15 +184,15 @@
                                    <li><a href="calcularinteres.aspx" >Cierre Diario</a></li>
                                    <li><a href="abonos.aspx?" >Movimiento Manual</a></li>
                                    <li><a href="ReprocesarCierre.aspx" >Reprocesar Cierre</a></li>                                    
-                                   <li><a href="frmCargarPlanilla.aspx" >Cargar Planilla</a></li>
-                                    <li><a href="frmSocios.aspx?" >Agregar Administrador</a></li> 
-                                   <li><a href="frmMantoCerrarCtaSocio.aspx" >Cerrar cuentas socio</a></li>
+                                   <%--<li><a href="frmCargarPlanilla.aspx" >Cargar Planilla</a></li>--%>
+                                    <li><a href="frmSocios.aspx?" >Agregar Admin</a></li> 
+                                   <%--<li><a href="frmMantoCerrarCtaSocio.aspx" >Cerrar cuentas socio</a></li>--%>
                             </ul>
                         </li>
                         <li class='has-sub comision order' style="width: 160px;">
                              <a href="#" class="pr"><span>Listados</span> </a>
                                <ul class="dropdown-menu ">                         
-                                <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>
+                               <%-- <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>--%>
                                 <li><a href="FrmRptListado.aspx" >Estado de Cuenta</a></li>
                             </ul>
                         </li>                      

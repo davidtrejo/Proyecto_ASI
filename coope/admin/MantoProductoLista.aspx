@@ -21,8 +21,11 @@
                 <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="nombreproducto"  Caption ="Nombre Producto"  Width ="40%" VisibleIndex="1">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="DuracionenDias" Caption ="Duración en Días" VisibleIndex="3" Width ="20%" >
+                <PropertiesTextEdit>
+                    <ValidationSettings>
+                        <RequiredField ErrorText="Campo Requerido" IsRequired="True" />
+                    </ValidationSettings>
+                </PropertiesTextEdit>
             </dx:GridViewDataTextColumn>
              <dx:GridViewDataComboBoxColumn Caption="Tipo Producto" FieldName="idtipoproducto" VisibleIndex="2">
                  <PropertiesComboBox DataSourceID="SqlDSTipoProductos" TextField="nombretipoproducto" ValueField="idtipoproducto">
@@ -32,6 +35,9 @@
                          <dx:ListBoxColumn Caption="Tipo Producto" FieldName="nombretipoproducto">
                          </dx:ListBoxColumn>
                      </Columns>
+                     <ValidationSettings>
+                         <RequiredField ErrorText="Campo Requerido" IsRequired="True" />
+                     </ValidationSettings>
                  </PropertiesComboBox>
              </dx:GridViewDataComboBoxColumn>       
               <dx:GridViewDataTextColumn VisibleIndex="4" Caption="Ver Tasa"  >
@@ -40,6 +46,13 @@
                         <a id="clickElement" target="_self"  href="frmMantoProductosTasa.aspx?id=<%#Eval("idproducto").ToString()%>">Ver Tasa</a>
                     </DataItemTemplate>
               </dx:GridViewDataTextColumn>
+             <dx:GridViewDataSpinEditColumn Caption="Duración en Días" FieldName="DuracionenDias" VisibleIndex="3" Width="20%">
+                 <PropertiesSpinEdit DisplayFormatString="g">
+                     <ValidationSettings>
+                         <RequiredField ErrorText="Campo Requerido" IsRequired="True" />
+                     </ValidationSettings>
+                 </PropertiesSpinEdit>
+             </dx:GridViewDataSpinEditColumn>
         </Columns>
 
           <Styles>

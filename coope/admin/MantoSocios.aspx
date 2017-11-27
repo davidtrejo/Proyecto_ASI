@@ -27,6 +27,29 @@
     }
     </style>
     
+
+     <link rel="stylesheet" href="../css/popup.css"/>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#open').click(function () {
+            $('#popupSocio').fadeIn('slow');
+            //$('body').css('opacity', '0.5');
+            return false;
+        });
+
+        $('#close').click(function () {
+            $('#popupSocio').fadeOut('slow');
+            //$('body').css('opacity', '1');
+            return false;
+        });
+
+      
+    });
+</script>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -49,6 +72,8 @@
                             <th>Nombre socio:</th>
                             <td>
                                 <asp:TextBox ID="txtNombre" runat="server" Width="300px"></asp:TextBox>
+                                    <a href="#" id="open">   <img src="../images/ayudaicon.png"  width="13" height="13" alt="ayuda" style="margin-bottom:4px;"/></a> 
+
                             </td>
                            
                             <td>
@@ -56,13 +81,10 @@
                                 &nbsp;<asp:Button ID="btnAgregar" runat="server" Text="Agregar socio" CssClass="auto-style2"  PostBackUrl="~/admin/frmSocioAgregar.aspx"  Width="110px"></asp:Button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
-                            </td>
-                        </tr>
+                       
                     </tbody>
                 </table> 
+                 <asp:Label ForeColor ="Red" ID="lblErrror" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </div>
@@ -84,11 +106,18 @@
                         <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioProductos.aspx?id={0}") %>' Text="Ver Productos" />
                     </ItemTemplate>
                 </asp:TemplateField> 
-                  <asp:TemplateField HeaderText = "Dar de baja"   >
+               <%-- <asp:TemplateField HeaderText = "Dar de baja"   >
                     <ItemStyle HorizontalAlign="Center" Width="400px" /> 
                     <ItemTemplate>
                        
                         <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "frmSocioBaja.aspx?id={0}") %>' Text="Dar de Baja" />
+                    </ItemTemplate>
+                </asp:TemplateField> --%>
+                  <asp:TemplateField HeaderText = "Agregar Cuenta"   >
+                    <ItemStyle HorizontalAlign="Center" Width="400px" /> 
+                    <ItemTemplate>
+                       
+                        <asp:HyperLink runat="server" NavigateUrl='<%# Eval("idpersona", "CrearCuenta.aspx?id={0}") %>' Text="Agregar Cuenta" />
                     </ItemTemplate>
                 </asp:TemplateField> 
             </Columns>
@@ -104,4 +133,12 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
     </div>
+
+     <div id="popupSocio" class="popup" style="display: none;">
+                <div class="content-popup">
+                    <div class="close"><a href="#" id="close"><img src="../images/close.png"/></a></div>
+                    <div>Escriba el nombre de un socio para hacer la búsqueda. Aparecerá una lista con las posibles coincidencia</div>
+                </div>
+        </div>
+
 </asp:Content>

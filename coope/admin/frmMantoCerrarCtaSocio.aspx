@@ -7,6 +7,29 @@
         }
     </style>
     
+
+    <link rel="stylesheet" href="../css/popup.css"/>
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#open').click(function () {
+            $('#popupSocio').fadeIn('slow');
+            //$('body').css('opacity', '0.5');
+            return false;
+        });
+
+        $('#close').click(function () {
+            $('#popupSocio').fadeOut('slow');
+            //$('body').css('opacity', '1');
+            return false;
+        });
+
+      
+    });
+</script>
+
     </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,6 +52,8 @@
                             <td class="auto-style1">Nombre socio:</td>
                             <td class="auto-style1">
                                 <asp:TextBox ID="txtNombre" runat="server" Width="300px"></asp:TextBox>
+                                 <a href="#" id="open">   <img src="../images/ayudaicon.png"  width="13" height="13" alt="ayuda" style="margin-bottom:4px;"/></a> 
+
                             </td>
                            
                             <td colspan ="3" class="auto-style1">
@@ -75,4 +100,13 @@
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
     </div>
+
+
+    <div id="popupSocio" class="popup" style="display: none;">
+                <div class="content-popup">
+                    <div class="close"><a href="#" id="close"><img src="../images/close.png"/></a></div>
+                    <div>Escriba el nombre de un socio </div>
+                </div>
+        </div>
+
 </asp:Content>

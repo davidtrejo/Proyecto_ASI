@@ -60,7 +60,7 @@ Public Class frmMantoProductosTasa
         End If
 
         If String.IsNullOrEmpty(e.RowError) AndAlso e.Errors.Count > 0 Then
-            e.RowError = "PorFavor, corregir todos los errores."
+            e.RowError = "Solo se puede agregar una nueva tasa con fecha posterior a la actual "
         End If
 
     End Sub

@@ -54,8 +54,6 @@
             <dx:GridViewDataTextColumn FieldName="idtasa" ReadOnly="True" Visible="False" VisibleIndex="1">
                 <EditFormSettings Visible="False" />
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Tasa" FieldName="tasa" VisibleIndex="2">
-            </dx:GridViewDataTextColumn>
             <dx:GridViewDataDateColumn Caption="Fecha Aplicación" FieldName="FechaDesde" VisibleIndex="3">
                 <PropertiesDateEdit>
                     <ValidationSettings>
@@ -63,6 +61,13 @@
                     </ValidationSettings>
                 </PropertiesDateEdit>
             </dx:GridViewDataDateColumn>
+              <dx:GridViewDataSpinEditColumn Caption="Tasa" FieldName="tasa" VisibleIndex="2">
+                  <PropertiesSpinEdit DisplayFormatString="{0}%" NumberFormat="Custom">
+                      <ValidationSettings>
+                          <RequiredField IsRequired="True" />
+                      </ValidationSettings>
+                  </PropertiesSpinEdit>
+              </dx:GridViewDataSpinEditColumn>
         </Columns>
         <Styles>
                <SelectedRow Cursor="pointer">       </SelectedRow>
