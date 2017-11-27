@@ -773,6 +773,11 @@
 
             If Not IsDBNull(tabla.Rows(0).Item("fechaprovision")) Then
                 UFechaProvision = tabla.Rows(0).Item("fechaprovision")
+
+            Else
+                strSql = " select min(fechaInicio) as fechaprovision from [dbo].[AhorroHistorico] as a "
+                tabla = conn.ObtenerTabla(strSql, msj)
+                UFechaProvision = tabla.Rows(0).Item("fechaprovision")
             End If
 
 
@@ -823,9 +828,10 @@
             strCondicion = " and  a.idahorro = " & IdAhorro
         End If
 
+        uFechaProvAhorro = obtenerUltimaFechaProvision(Msj)
+
         IgualarProvisionCuentas(fechaProvision, Msj)        '' Esto es por si hay cuentas que se han reprocesado y la fecha provisión esta anterior a la de las demas cuentas
 
-        uFechaProvAhorro = obtenerUltimaFechaProvision(Msj)
 
 
         Dim DiasProvision As Integer = DateDiff(DateInterval.Day, uFechaProvAhorro, fechaProvision)
@@ -842,7 +848,7 @@
 
         fecha = DateAdd(DateInterval.Day, 1, uFechaProvAhorro)
 
-        For i As Integer = 0 To DiasProvision
+        For i As Integer = 0 To DiasProvision - 1
 
             '' Obtengo todos los ahorros que voy a provisionar
             '' Primero Correr proceso sobre cuentas que depositen el interes en otras cuentas
@@ -851,6 +857,8 @@
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto 1 son aportaciones
             strSql &= " idahorro <> (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc ) "
+            strSql &= " and (select sum( valormovimiento  ) from ahorrosPersonaMovimientos as c where c.idahorro = a.idahorro  ) > 0  "
+
             strSql &= strCondicion
 
 
@@ -887,6 +895,7 @@
             strSql = " select a.idahorro  from ahorrosPersona  as a inner join productos  as p on p.idproducto = a.idproducto "
             strSql &= " where p.idtipoproducto <> 1 and " '' idtipoproducto son aportaciones
             strSql &= " idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+            strSql &= " and (select sum( valormovimiento  ) from ahorrosPersonaMovimientos as c where c.idahorro = a.idahorro  ) > 0  "
             strSql &= strCondicion
 
             tblAhorro = conn.ObtenerTabla(strSql, Msj)
@@ -945,6 +954,7 @@
         strSql &= " where p.idtipoproducto <> 1 and  IdEstado  = 1  and ( (select max(fechaprovision) from ProvisionInteres as pro where pro.idahorro = a.idahorro   ) is null  " '' idtipoproducto  1 son aportaciones ,  estado 1 es activo 
         strSql &= " or (select max(fechaprovision) from ProvisionInteres as pro where pro.idahorro = a.idahorro) < ( select max(fechaprovision) from ProvisionInteres ) )"
         strSql &= " and  idahorro <> (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+        strSql &= " and (select sum( valormovimiento  ) from ahorrosPersonaMovimientos as c where c.idahorro = a.idahorro  ) > 0  "
 
         tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
@@ -964,6 +974,7 @@
         strSql &= " where p.idtipoproducto <> 1 and  IdEstado  = 1  and ( (select max(fechaprovision) from ProvisionInteres as pro where pro.idahorro = a.idahorro   ) is null  " '' idtipoproducto  1 son aportaciones ,  estado 1 es activo 
         strSql &= " or (select max(fechaprovision) from ProvisionInteres as pro where pro.idahorro = a.idahorro) < ( select max(fechaprovision) from ProvisionInteres ) )"
         strSql &= " and  idahorro = (select top 1 idahorroDeposito  from AhorroHistorico as b where a.idahorro = b.idahorro order by IdHistorico desc )"
+        strSql &= " and (select sum( valormovimiento  ) from ahorrosPersonaMovimientos as c where c.idahorro = a.idahorro  ) > 0  "
 
         tblAhorro = conn.ObtenerTabla(strSql, Msj)
 
@@ -980,9 +991,14 @@
         '' Provisiona una cuenta hasta la fecha que se pase como parametro
 
 
+
         _idAhorro = IdAhorroPersona
 
         leerAhorroPersona(_idAhorro, Msj)
+
+
+
+
 
         '' si es primera vez que se provisionara la cuenta de ahorro se tomara la fecha de Inicio de la cuenta
         If uFechaProvAhorro = Date.MinValue Then

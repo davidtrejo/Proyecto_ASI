@@ -6,6 +6,15 @@
         If Not Page.IsPostBack Then
             Me.txtFecha.Value = Date.Now.Date
             llenarcombos()
+
+            Dim ahorro As New clahorro
+
+            Dim msj As String = ""
+
+            Dim uFechaProvision As Date = ahorro.obtenerUltimaFechaProvision(msj)
+
+            lblFechaProvision.Text = CDate(uFechaProvision)
+
         End If
 
 

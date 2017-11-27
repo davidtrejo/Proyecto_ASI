@@ -42,10 +42,11 @@
     <div id="main-header" class="page-header">
       <span class="titular1 block linea1bottom"> <asp:Label runat="server" ID="lbltitulo" Text ="Cierre Diario"></asp:Label><br/></span>
     </div>  
-    
-    
+        
                         <span class="title"> Para hacer el cierre de todas las cuentas precione el bot&oacute;n aceptar sin seleccionar socio ni cuenta </span>
 					<br />
+    <br />
+    <br />
     <div id="main-content">       
         </div>
            <div class="row-fluid">
@@ -55,6 +56,15 @@
                    	<div class="widget-content form-container">
                           <table class="table table-striped table-detail-view">
                                  <tbody> 
+                                       <tr>
+                                                   <th>Ultimo día de cierre:</th>
+                                                    <td>                                                        
+                                                     <asp:Label ID="lblFechaProvision" runat="server" Text=""></asp:Label> 
+                                           
+                                                    </td>
+
+
+                                              </tr> 
                                        <tr>
                                                    <th>Socio:</th>
                                                     <td>                                                        
