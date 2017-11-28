@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmLoginAdmin.aspx.vb" Inherits="coope.frmLoginAdmin" %>
 
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
@@ -96,18 +98,32 @@
 					
 						<div class="control-group-merged">
 							<div class="control-group">
-                                <asp:TextBox ID="txtUsuario" placeholder="Usuario"  class="big"  
-                                    runat="server" ></asp:TextBox>
-								<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                    ControlToValidate="txtUsuario" CssClass="field-validation-error" 
-                                    ErrorMessage="El nombre de usuario es requrido." ForeColor="#FF3300" />
+                                Usuario:
+                                <dx:ASPxTextBox ID="txtUser" runat="server" Width="170px" NullText="Usuario" Theme="Moderno">
+                                    <MaskSettings Mask="0000-000000-000-0" />
+                                    <ValidationSettings>
+                                        <RequiredField ErrorText="Ingrese su Usuario" IsRequired="True" />
+                                    </ValidationSettings>
+                                </dx:ASPxTextBox>
+                               
+
+							<%--	<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                    ControlToValidate="txtUser" CssClass="field-validation-error" 
+                                    ErrorMessage="El nombre de usuario es requrido." ForeColor="#FF3300" />--%>
 							</div>
 							<div class="control-group">
-                                <asp:TextBox ID="txtPassword"  placeholder="Contrase&ntilde;a"   class="big" 
-                                    runat="server" TextMode="Password"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                               <%-- <asp:TextBox ID="txtPassword"  placeholder="Contrase&ntilde;a"   class="big" 
+                                    runat="server" TextMode="Password"></asp:TextBox>--%>
+                                Password:
+                                <dx:ASPxTextBox ID="txtPass" runat="server" Width="170px" MaxLength="6" Password="True" Theme="Moderno">
+                                    <ValidationSettings>
+                                        <RequiredField ErrorText="Ingrese su contraseña" IsRequired="True" />
+                                    </ValidationSettings>
+                                </dx:ASPxTextBox>
+
+                             <%--   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                     ControlToValidate="txtPassword" CssClass="field-validation-error" 
-                                    ErrorMessage="La contrase&ntilde;a es requerida." ForeColor="#FF3300" />
+                                    ErrorMessage="La contrase&ntilde;a es requerida." ForeColor="#FF3300" />--%>
 								
 							</div>  
                             <div class="control-group">

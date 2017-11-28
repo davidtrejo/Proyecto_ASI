@@ -192,8 +192,9 @@
                         <li class='has-sub comision order' style="width: 160px;">
                              <a href="#" class="pr"><span>Listados</span> </a>
                                <ul class="dropdown-menu ">                         
-                               <%-- <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>--%>
+                               
                                 <li><a href="FrmRptListado.aspx" >Estado de Cuenta</a></li>
+                                    <li><a href="FrmRptProvisiones.aspx" >Provisiones</a></li>
                             </ul>
                         </li>                      
                     </ul>

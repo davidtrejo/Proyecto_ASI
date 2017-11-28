@@ -939,6 +939,7 @@
     <Compile Include="clases\cltransacciones.vb" />
     <Compile Include="clases\clusuario.vb" />
     <Compile Include="clases\conexion.vb" />
+    <Compile Include="clases\Encriptar.vb" />
     <Compile Include="clases\funciones.vb" />
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -1040,6 +1041,7 @@
     <EmbeddedResource Include="admin\Reportes\XtraReport2.resx">
       <DependentUpon>XtraReport2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

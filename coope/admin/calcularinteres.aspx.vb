@@ -60,6 +60,9 @@
             ahorro.Provisionar1(msj, txtFecha.Value, Me.cmbProducto.SelectedValue)
         End If
 
+        uFechaProvision = ahorro.obtenerUltimaFechaProvision(msj)
+
+        lblFechaProvision.Text = CDate(uFechaProvision)
 
 
         ''Response.Redirect("FrmRptProvisiones.aspx")

@@ -23,40 +23,49 @@ Partial Public Class frmSocios
     Protected WithEvents lbltitulo As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
-    '''Control txtNombreCompleto.
+    '''Control txtNombreCompleto1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNombreCompleto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNombreCompleto1 As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
-    '''Control txtNit.
+    '''Control txtNit1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNit As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNit1 As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
-    '''Control txtPassword.
+    '''Control txtPass.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtPass As Global.DevExpress.Web.ASPxTextBox
     
     '''<summary>
-    '''Control btnGuardar.
+    '''Control txtPass2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtPass2 As Global.DevExpress.Web.ASPxTextBox
+    
+    '''<summary>
+    '''Control ASPxButton1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ASPxButton1 As Global.DevExpress.Web.ASPxButton
     
     '''<summary>
     '''Control lblErrror.

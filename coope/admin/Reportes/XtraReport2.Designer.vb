@@ -104,7 +104,7 @@ Partial Public Class XtraReport2
         '
         'SqlDataSource1
         '
-        Me.SqlDataSource1.ConnectionName = "sql5031.smarterasp.net_DB_A2BDCF_coopeprueba_Connection"
+        Me.SqlDataSource1.ConnectionName = "cooperativa1ConnectionString"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         ColumnExpression1.ColumnName = "fechaprovision"
         Table1.Name = "vis_provisiones"

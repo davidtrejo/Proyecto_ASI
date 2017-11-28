@@ -39,6 +39,11 @@ Public Class clusuario
     End Sub
 
     Public Sub InsertarUsuario(_nombreUsuario As String, _nitUsuario As String, _password As String, ByRef msjError As String)
+
+        Dim encrypt As New Encriptar
+
+        _password = encrypt.Encriptar(_password)
+
         Dim sqlInsert As String = "INSERT INTO usuarios (nombre,nit,acceso,password)  VALUES('" &
             _nombreUsuario & "','" &
             _nitUsuario & "'," &
@@ -57,12 +62,17 @@ Public Class clusuario
     Public Function login(nit As String, password As String, ByRef msjError As String)
 
         Me.Nit = nit
-        Me.Pasword = password
+
+        Dim encrypt As New Encriptar
+
+
+
+        Me.Pasword = encrypt.Encriptar(password)
 
         Try
 
 
-            Dim strCadena As String = " select top 1 nombre from usuarios where nit = '" & nit & "' and password = '" & password & "'"
+            Dim strCadena As String = " select top 1 nombre from usuarios where nit = '" & nit & "' and password = '" & Me.Pasword & "'"
 
 
             Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)
@@ -79,6 +89,22 @@ Public Class clusuario
         Catch ex As Exception
             Return False
         End Try
+
+    End Function
+
+    Public Function Existe(Nit As String, ByRef msjError As String)
+
+        Dim strCadena As String = " select top 1 nombre from usuarios where nit = '" & Nit & "'"
+
+
+        Dim tabla As DataTable = conn.ObtenerTabla(strCadena, msjError)
+
+        If tabla.Rows.Count = 1 Then
+
+            Return True
+        Else
+            Return False
+        End If
 
     End Function
 
