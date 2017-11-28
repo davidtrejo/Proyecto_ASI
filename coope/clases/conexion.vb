@@ -31,9 +31,9 @@ Public Class conexion
         ''conn.ConnectionString = "Data Source=SQL5031.smarterasp.net;Initial Catalog=DB_A2BDCF_coopeprueba;User Id=DB_A2BDCF_coopeprueba_admin;Password=Abc12345;"
 
         ''' cadena de conexion de maquina 
-        ''conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=coope3; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        conn.ConnectionString = "Data Source=DESKTOP-RG9QC1P; Initial Catalog=coope3; user=cooperativa; password=12345; Integrated Security=SSPI;"
         ''' cadena conexion maquina virtual
-        conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=coope; user=cooperativa; password=12345; Integrated Security=SSPI;"
+        ''conn.ConnectionString = "Data Source=EDEVIRTUAL-PC; Initial Catalog=coope; user=cooperativa; password=12345; Integrated Security=SSPI;"
 
         CadenaConexion = conn.ConnectionString
 

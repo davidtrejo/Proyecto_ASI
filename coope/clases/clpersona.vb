@@ -205,7 +205,7 @@ Public Class clpersona
 
     Public Function ObtenerListaPersonas(ByRef  msjError As String, combo As Boolean) As DataTable
 
-        strSql = "select '' as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from vis_socios"
+        strSql = "select 0 as idpersona, '' as nombreCompleto union select idpersona,nombreCompleto from vis_socios"
         Dim tabla As DataTable = New DataTable
 
         Try

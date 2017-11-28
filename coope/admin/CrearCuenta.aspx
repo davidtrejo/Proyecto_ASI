@@ -28,14 +28,14 @@
                                       <tr>
                                                    <th>Producto:</th>
                                                     <td>
-                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
+                                                         <asp:DropDownList ID="cmbProducto" runat="server"  CssClass="span6" ></asp:DropDownList>
                                                      
                                                      </td>
                                               </tr> 
                                       <tr>
                                                    <th>Depositar Inter&eacute;s en :</th>
                                                     <td>
-                                                         <asp:DropDownList ID="cmbInteres" runat="server"  CssClass="span6" AutoPostBack="True"></asp:DropDownList>
+                                                         <asp:DropDownList ID="cmbInteres" runat="server"  CssClass="span6" ></asp:DropDownList>
                                                      
                                                      </td>
                                               </tr> 

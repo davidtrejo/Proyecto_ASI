@@ -11,10 +11,10 @@
             Me.txtFecha.Value = Date.Now.Date
             llenarcombos()
             If Request.QueryString("id") <> "" Then
-                Me.cmbSocio.Enabled = False
-                Me.cmbSocio.SelectedValue = Request.QueryString("id")
-                ObtenerAhorrosPersona()
 
+                Me.cmbSocio.SelectedValue = CInt(Request.QueryString("id"))
+                ObtenerAhorrosPersona()
+                Me.cmbSocio.Enabled = False
             End If
 
 
@@ -73,6 +73,11 @@
     Protected Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
 
         Dim msjError As String = ""
+
+        If Me.txtFecha.Value < Date.Now.Date Then
+            Response.Write("<script language='JavaScript'>alert('No se puede crear una cuenta con fecha retroactiva \n');</script>")
+            Exit Sub 
+        End If
 
 
         If Me.cmbProducto.SelectedValue = "" Then

@@ -29,7 +29,7 @@
                 <table class="table table-striped table-detail-view">
                     <tbody>
                         <tr>
-                            <th class="auto-style3">Nombre socio:</th>
+                            <th class="auto-style3">Nombre Empleado:</th>
                             <td class="auto-style3">
                                 <dx:ASPxComboBox ID="cmbSocios" runat="server" ValueType="System.String" Width="252px">
                                 </dx:ASPxComboBox>
