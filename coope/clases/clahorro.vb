@@ -205,6 +205,16 @@
         End Set
     End Property
 
+    Private _uFechaProvisionCuenta As Date
+    Public Property uFechaProvisionCuenta() As Date
+        Get
+            Return _uFechaProvisionCuenta
+        End Get
+        Set(ByVal value As Date)
+            _uFechaProvisionCuenta = value
+        End Set
+    End Property
+
     '' ************ variables para movimientos de la cuenta de ahorros **********************
     Private _idmovimiento As Integer
     Public Property IdMovimiento() As Integer
